@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://birqyoesacalq"]
+
+[ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
+[ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
+[ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="3_1yd81"]
+[ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="4_5wcnr"]
+[ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/data/beetlebot_model_data.tres" id="5_v2ndd"]
+[ext_resource type="Shader" path="res://viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
+[ext_resource type="Script" path="res://viewer/turner.gd" id="7_0tn27"]
+[ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
+[ext_resource type="PackedScene" path="res://viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
+[ext_resource type="Script" path="res://viewer/animation_selector.gd" id="10_ylcjv"]
+[ext_resource type="Script" path="res://viewer/parameters.gd" id="11_rc064"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cejc"]
+ground_horizon_color = Color(0.898039, 0.898039, 0.905882, 1)
+
+[sub_resource type="Sky" id="Sky_fa2m7"]
+sky_material = SubResource("ProceduralSkyMaterial_4cejc")
+
+[sub_resource type="Environment" id="Environment_cw67r"]
+background_mode = 1
+background_color = Color(0.105882, 0.105882, 0.105882, 1)
+sky = SubResource("Sky_fa2m7")
+ambient_light_source = 2
+ambient_light_color = Color(0.52549, 0.52549, 0.52549, 1)
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25vcg"]
+render_priority = 0
+shader = ExtResource("6_s8bys")
+shader_parameter/grid_color = Color(0.764706, 0.815686, 0.878431, 1)
+shader_parameter/grid_opacity = 0.025
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pcsvn"]
+size = Vector2(4, 4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_purc5"]
+size = Vector2(2, 1)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3jhs4")
+known_models = [ExtResource("2_40jqj"), ExtResource("3_1yd81"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_cw67r")
+
+[node name="Ground" type="MeshInstance3D" parent="World"]
+material_override = SubResource("ShaderMaterial_25vcg")
+mesh = SubResource("PlaneMesh_pcsvn")
+skeleton = NodePath("../..")
+
+[node name="Turner" type="Node3D" parent="World"]
+transform = Transform3D(0.906308, 0.0368336, -0.42101, 0, 0.996195, 0.0871557, 0.422618, -0.0789899, 0.902859, 0, 0.6, 0)
+script = ExtResource("7_0tn27")
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="World/Turner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+fov = 60.0
+
+[node name="BackgroundPlane" type="MeshInstance3D" parent="World/Turner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+material_override = ExtResource("8_nxs1c")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_purc5")
+skeleton = NodePath("../..")
+
+[node name="BackLight" type="DirectionalLight3D" parent="World/Turner"]
+transform = Transform3D(0.707107, -0.298836, 0.640856, -1.49012e-08, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, -0.609801, 1.49012e-08)
+light_energy = 0.65
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+
+[node name="FrontLight" type="OmniLight3D" parent="World/Turner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.653888, 0, -0.722009)
+light_energy = 0.5
+shadow_enabled = true
+omni_attenuation = 0.554785
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ModelSelector" parent="UI" instance=ExtResource("9_yvaan")]
+layout_mode = 1
+
+[node name="AnimationSelector" type="OptionButton" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -87.0
+offset_right = 41.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("10_ylcjv")
+
+[node name="Parameters" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -345.0
+offset_top = -148.0
+offset_right = -32.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("11_rc064")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Parameters"]
+layout_mode = 2
+alignment = 2
+
+[connection signal="selection_changed" from="UI/ModelSelector" to="." method="_on_model_selector_selection_changed"]
+[connection signal="item_selected" from="UI/AnimationSelector" to="." method="use_method"]
+[connection signal="slider_value_changed" from="UI/Parameters" to="." method="slider_update"]

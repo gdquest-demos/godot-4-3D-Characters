@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0uum62k51nw5"]
+
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_fflw3"]
+[ext_resource type="Texture2D" uid="uid://71jjagmyh0fq" path="res://resources/models_data/model_vignettes/beetle_bot_vignette.png" id="3_8p8ri"]
+
+[resource]
+script = ExtResource("2_fflw3")
+name = "Beetle bot"
+scene_path = "res://models/beetle_bot/beetlebot_skin.tscn"
+vignette = ExtResource("3_8p8ri")
+y_offset = 0.0
+scale_compensation = 0.65
+camera_offset_y = 0.25
+name_methods = null
+range_values = null

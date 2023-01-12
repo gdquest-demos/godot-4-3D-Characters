@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://viewer/ui/model_selector/ModelSelector.gd" id="1_8owei"]
+[ext_resource type="PackedScene" path="res://viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
+[ext_resource type="Script" path="res://viewer/ui/model_selector/bubble_scroll.gd" id="3_8hjj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikg2k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tq1yf"]
+
+[sub_resource type="Theme" id="Theme_b1ojb"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ikg2k")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_tq1yf")
+
+[node name="ModelSelector" type="VBoxContainer"]
+clip_contents = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -176.0
+offset_right = 332.0
+offset_bottom = -32.0
+grow_vertical = 0
+mouse_force_pass_scroll_events = false
+alignment = 2
+script = ExtResource("1_8owei")
+model_tag_scene = ExtResource("2_botqh")
+
+[node name="ScrollContainer" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 52.0
+theme = SubResource("Theme_b1ojb")
+script = ExtResource("3_8hjj3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+offset_right = 201.0
+offset_bottom = 664.0
+mouse_filter = 0
+theme_override_constants/separation = 8
+
+[node name="ModelTag" parent="." instance=ExtResource("2_botqh")]
+offset_top = 56.0
+offset_right = 201.0
+offset_bottom = 144.0
+
+[connection signal="pressed" from="ModelTag" to="." method="_on_model_tag_pressed"]

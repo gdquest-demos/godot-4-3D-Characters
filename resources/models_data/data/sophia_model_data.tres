@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bnsssw75oypyi"]
+
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="1_s4qgj"]
+[ext_resource type="Texture2D" uid="uid://b4npvm4odpc0b" path="res://resources/models_data/model_vignettes/sophia_vignette.png" id="2_k1lan"]
+
+[resource]
+script = ExtResource("1_s4qgj")
+name = "Sophia"
+scene_path = "res://models/sophia/sophia_skin.tscn"
+vignette = ExtResource("2_k1lan")
+y_offset = 0.0
+scale_compensation = 1.8
+camera_offset_y = 0.6

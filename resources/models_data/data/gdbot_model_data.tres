@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwp3yy3ku4f0p"]
+
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_mcau0"]
+[ext_resource type="Texture2D" uid="uid://bxkudy6pdo2f1" path="res://resources/models_data/model_vignettes/gdbot_vignette.png" id="3_quhkk"]
+
+[resource]
+script = ExtResource("2_mcau0")
+name = "GDbot"
+scene_path = "res://models/gdbot/gdbot_skin.tscn"
+vignette = ExtResource("3_quhkk")
+y_offset = 0.0
+scale_compensation = 0.65
+camera_offset_y = 0.6
+name_methods = PackedStringArray("Idle:idle", "Walk:walk")
+range_values = PackedStringArray("Walk/Run blending:walk_run_blending")

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cqdapslfy1rva"]
+
+[ext_resource type="Shader" path="res://viewer/assets/shaders/bg.gdshader" id="1_4vwfw"]
+[ext_resource type="Texture2D" uid="uid://bcls3ehldqget" path="res://viewer/assets/textures/gdquest_logo_sdf.png" id="2_2b3l1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4vwfw")
+shader_parameter/logo_scale = 2.0
+shader_parameter/logo_opacity = 0.025
+shader_parameter/border_color = Color(0.117647, 0.117647, 0.141176, 1)
+shader_parameter/center_color = Color(0.137255, 0.14902, 0.160784, 1)
+shader_parameter/ratio = Vector2(2, 1)
+shader_parameter/logo_sampler_sdf = ExtResource("2_2b3l1")
