@@ -7,10 +7,14 @@ extends MarginContainer
 
 signal slider_value_changed(value : float, index : int)
 
-func add_slider(tag_name : String, range_value_index):
-	
+func has_childrens():
+	return _v_box.get_child_count() > 0
+
+func clear():
 	for child in _v_box.get_children():
 		child.queue_free()
+
+func add_slider(tag_name : String, range_value_index):
 	
 	var slider : HSlider = HSlider.new()
 	slider.connect("value_changed", _slider_changed.bind(range_value_index))

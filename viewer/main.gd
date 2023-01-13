@@ -43,24 +43,23 @@ func set_model(model_data : ModelData):
 	current_model = next_model
 	
 	# Set animations settings
+	animation_selector.hide()
 	current_methods = model_data.name_methods
 	if current_methods.size() != 0:
 		var method_names = current_methods.map(func(m): return m.name)
 		animation_selector.setup(method_names)
 		animation_selector.show()
 		use_method(0)
-	else:
-		animation_selector.hide()
-	
+		
+	# Set animations settings
 	current_range_values = model_data.range_values
-	
-	if current_methods.size() != 0:
+	if parameters.has_childrens():
+		parameters.clear()
+		await get_tree().node_removed
+	# Slides
+	if current_range_values.size() != 0:
 		for range_index in current_range_values.size():
 			parameters.add_slider(current_range_values[range_index].name, range_index)
-		await get_tree().tree_changed
-		parameters.show()
-	else:
-		parameters.hide()
 	
 	
 func use_method(index):

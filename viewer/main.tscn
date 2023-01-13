@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=22 format=3 uid="uid://birqyoesacalq"]
 
 [ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://viewer/turner.gd" id="7_0tn27"]
 [ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
 [ext_resource type="PackedScene" path="res://viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
+[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://viewer/assets/textures/down_arrow_icon.png" id="10_ojfeu"]
 [ext_resource type="Script" path="res://viewer/animation_selector.gd" id="10_ylcjv"]
 [ext_resource type="Script" path="res://viewer/parameters.gd" id="11_rc064"]
 
@@ -39,6 +40,23 @@ size = Vector2(4, 4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_purc5"]
 size = Vector2(2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgvou"]
+bg_color = Color(0, 0, 0, 0.901961)
+
+[sub_resource type="Theme" id="Theme_wcmeb"]
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_kgvou")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.901961)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
@@ -107,6 +125,13 @@ offset_right = 41.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_wcmeb")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("10_ojfeu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4wrdr")
 script = ExtResource("10_ylcjv")
 
 [node name="Parameters" type="MarginContainer" parent="UI"]
