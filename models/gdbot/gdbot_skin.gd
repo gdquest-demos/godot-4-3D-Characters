@@ -22,3 +22,9 @@ func idle():
 	
 func walk():
 	_main_state_machine.travel("Walk")
+
+func jump():
+	_main_state_machine.travel("Jump")
+	
+func fall():
+	_main_state_machine.travel("Fall")
