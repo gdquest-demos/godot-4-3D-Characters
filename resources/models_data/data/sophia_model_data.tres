@@ -11,3 +11,5 @@ vignette = ExtResource("2_k1lan")
 y_offset = 0.0
 scale_compensation = 1.8
 camera_offset_y = 0.6
+name_methods = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall", "Wall Slide:wall_slide", "Edge Grab:edge_grab")
+range_values = PackedStringArray("Walk/Run blending:walk_run_blending")

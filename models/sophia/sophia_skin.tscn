@@ -1,10 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://mwqqyoo76wvc"]
+[gd_scene load_steps=32 format=3 uid="uid://mwqqyoo76wvc"]
 
 [ext_resource type="PackedScene" uid="uid://douscbe20506q" path="res://models/sophia/mini_sophia.glb" id="1_f2l4o"]
 [ext_resource type="Script" path="res://models/sophia/sophia_skin.gd" id="1_n654l"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6p1p2"]
+animation = &"edge_grab"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nbvpm"]
+animation = &"fall"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ol1ag"]
 animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pi516"]
+animation = &"jump_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l8rp2"]
 animation = &"walk"
@@ -25,30 +34,91 @@ xfade_time = 0.1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gya5w"]
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qheo5"]
-advance_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yhoyv"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5buat"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ftmml"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d7qu3"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tw4mq"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ahfq5"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b7x4s"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lktcr"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmm8y"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5us0l"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iobv4"]
+states/End/position = Vector2(811, 113)
+states/Fall/node = SubResource("AnimationNodeAnimation_nbvpm")
+states/Fall/position = Vector2(677, 211)
+states/Idle/node = SubResource("AnimationNodeAnimation_ol1ag")
+states/Idle/position = Vector2(517, 113)
+states/Jump/node = SubResource("AnimationNodeAnimation_pi516")
+states/Jump/position = Vector2(517, 211)
+states/Start/position = Vector2(591, 6)
+states/Walk/node = SubResource("AnimationNodeBlendSpace1D_3evyl")
+states/Walk/position = Vector2(677, 113)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_odecw"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_gya5w"), "Fall", "Jump", SubResource("AnimationNodeStateMachineTransition_yhoyv"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_5buat"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ftmml"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_d7qu3"), "Walk", "Fall", SubResource("AnimationNodeStateMachineTransition_tw4mq"), "Fall", "Walk", SubResource("AnimationNodeStateMachineTransition_ahfq5"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_b7x4s"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_lktcr"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_mmm8y"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_5us0l")]
+graph_offset = Vector2(-23, -33)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m5ht5"]
+animation = &"wall_slide"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kk7jr"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sl4d4"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n7btb"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pedld"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sx10c"]
+states/EdgeGrab/node = SubResource("AnimationNodeAnimation_6p1p2")
+states/EdgeGrab/position = Vector2(654, 28)
 states/End/position = Vector2(819, 107)
-states/Start/position = Vector2(364, 113)
-states/idle/node = SubResource("AnimationNodeAnimation_ol1ag")
-states/idle/position = Vector2(521, 113)
-states/run/node = SubResource("AnimationNodeBlendSpace1D_3evyl")
-states/run/position = Vector2(657, 113)
-transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_odecw"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_gya5w"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_qheo5")]
+states/Start/position = Vector2(362, 113)
+states/StateMachine/node = SubResource("AnimationNodeStateMachine_iobv4")
+states/StateMachine/position = Vector2(581, 113)
+states/WallSlide/node = SubResource("AnimationNodeAnimation_m5ht5")
+states/WallSlide/position = Vector2(519, 28)
+transitions = ["StateMachine", "WallSlide", SubResource("AnimationNodeStateMachineTransition_kk7jr"), "WallSlide", "StateMachine", SubResource("AnimationNodeStateMachineTransition_sl4d4"), "EdgeGrab", "StateMachine", SubResource("AnimationNodeStateMachineTransition_n7btb"), "StateMachine", "EdgeGrab", SubResource("AnimationNodeStateMachineTransition_pedld")]
+graph_offset = Vector2(-19, -46)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0cs6v"]
-graph_offset = Vector2(-561, 3)
+graph_offset = Vector2(-123, 8)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_sx10c")
 nodes/StateMachine/position = Vector2(40, 120)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_7wk21"]
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_c40bs"]
+
 [node name="SophiaSkin" type="Node3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_n654l")
-_force_loop = PackedStringArray("idle", "walk", "happy_run")
+_force_loop = PackedStringArray("idle", "walk", "happy_run", "wall_slide", "jump_up", "fall", "edge_grab")
 
 [node name="mini_sophia" parent="." instance=ExtResource("1_f2l4o")]
 
@@ -140,6 +210,7 @@ tree_root = SubResource("AnimationNodeBlendTree_0cs6v")
 anim_player = NodePath("../mini_sophia/AnimationPlayer")
 active = true
 parameters/StateMachine/playback = SubResource("AnimationNodeStateMachinePlayback_7wk21")
-parameters/StateMachine/run/blend_position = 0.00191939
+parameters/StateMachine/StateMachine/playback = SubResource("AnimationNodeStateMachinePlayback_c40bs")
+parameters/StateMachine/StateMachine/Walk/blend_position = 0
 
 [editable path="mini_sophia"]
