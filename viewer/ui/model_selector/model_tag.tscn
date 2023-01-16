@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://bfs31qyude6h2"]
 
 [ext_resource type="Shader" path="res://viewer/assets/shaders/icon.gdshader" id="1_mtufu"]
 [ext_resource type="Script" path="res://viewer/ui/model_selector/model_tag.gd" id="1_xy4n0"]
@@ -38,7 +38,7 @@ theme_override_constants/separation = 16
 material = SubResource("ShaderMaterial_fsaak")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Item"]
 layout_mode = 2
