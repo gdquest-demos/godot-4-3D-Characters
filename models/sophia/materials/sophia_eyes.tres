@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b3oxsg3uw17gl"]
+
+[ext_resource type="Texture2D" uid="uid://bhraucuo8k2yp" path="res://models/sophia/textures/eyes_diffuse_map.png" id="1_kf6dw"]
+[ext_resource type="Texture2D" uid="uid://b02thoifvyg4r" path="res://models/sophia/textures/eyes_normal_map.png" id="2_wg0mw"]
+
+[resource]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_kf6dw")
+normal_enabled = true
+normal_texture = ExtResource("2_wg0mw")
+uv1_scale = Vector3(1, 0.2, 1)

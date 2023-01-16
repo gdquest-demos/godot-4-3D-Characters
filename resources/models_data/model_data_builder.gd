@@ -14,6 +14,10 @@ var scene : PackedScene
 @export_group("Parameters")
 @export var name_methods : PackedStringArray : get = _get_methods
 @export var range_values : PackedStringArray : get = _get_ranges
+@export var options_setter : Array[OptionSetterListData]
+
+func _get_options(options_index):
+	return _array_string_to_dict(options_setter[options_index].options_values)
 
 func _get_methods():
 	return _array_string_to_dict(name_methods)

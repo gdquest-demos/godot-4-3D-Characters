@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bh71cwt3sn7ce"]
+
+[ext_resource type="Texture2D" uid="uid://b5gyl777x0o2r" path="res://models/sophia/textures/mouth_diffuse_map.png" id="1_k21fy"]
+[ext_resource type="Texture2D" uid="uid://c4ifpte3v0yyr" path="res://models/sophia/textures/mouth_normal_map.png" id="2_cprna"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_k21fy")
+normal_enabled = true
+normal_texture = ExtResource("2_cprna")
+uv1_scale = Vector3(1, 0.2, 1)

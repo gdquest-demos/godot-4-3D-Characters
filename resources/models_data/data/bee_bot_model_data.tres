@@ -13,3 +13,4 @@ scale_compensation = 0.65
 camera_offset_y = 0.6
 name_methods = null
 range_values = null
+options_setter = null

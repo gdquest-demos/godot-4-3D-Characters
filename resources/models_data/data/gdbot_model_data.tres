@@ -13,3 +13,4 @@ scale_compensation = 0.65
 camera_offset_y = 0.6
 name_methods = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall")
 range_values = PackedStringArray("Walk/Run blending:walk_run_blending")
+options_setter = null

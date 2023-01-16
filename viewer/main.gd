@@ -9,6 +9,7 @@ extends Node
 var current_model : Node3D = null
 var current_methods = []
 var current_range_values = []
+var current_options_setters = []
 
 func _ready():
 	for model_data in known_models:
@@ -60,12 +61,27 @@ func set_model(model_data : ModelData):
 	if current_range_values.size() != 0:
 		for range_index in current_range_values.size():
 			parameters.add_slider(current_range_values[range_index].name, range_index)
-	
-	
+	# Setters
+	for option_setter_index in model_data.options_setter.size():
+		var setter = model_data.options_setter[option_setter_index]
+		var options = model_data._get_options(option_setter_index)
+		var options_names = options.map(func(m): return m.name)
+		current_options_setters.append({
+			"bind_variable": setter.set_variable_name,
+			"options": options
+		})
+		var option_button : OptionButton = parameters.add_options(setter.list_name, options_names)
+		option_button.connect("item_selected", set_setter.bind(option_setter_index))
+		
 func use_method(index):
 	var method = current_methods[index].value
 	current_model.call(method)
 	
+func set_setter(index, option_setter_index):
+	var variable_name = current_options_setters[option_setter_index].bind_variable
+	var new_value = current_options_setters[option_setter_index].options[index].value
+	current_model.set(variable_name, new_value)
+
 func slider_update(index, value):
 	var slider = current_range_values[index].value
 	current_model.set(slider, value)

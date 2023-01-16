@@ -13,9 +13,15 @@ _global_script_classes=[{
 "class": &"ModelData",
 "language": &"GDScript",
 "path": "res://resources/models_data/model_data_builder.gd"
+}, {
+"base": "Resource",
+"class": &"OptionSetterListData",
+"language": &"GDScript",
+"path": "res://resources/models_data/option_list_data_builder.gd"
 }]
 _global_script_class_icons={
-"ModelData": ""
+"ModelData": "",
+"OptionSetterListData": ""
 }
 
 [application]
