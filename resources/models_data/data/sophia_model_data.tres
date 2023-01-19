@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://resources/models_data/option_list_data_builder.gd" id="1_scwtu"]
 [ext_resource type="Texture2D" uid="uid://b4npvm4odpc0b" path="res://resources/models_data/model_vignettes/sophia_vignette.png" id="2_k1lan"]
 
-[sub_resource type="Resource" id="Resource_gp8jo"]
+[sub_resource type="Resource" id="Resource_3wbpd"]
 script = ExtResource("1_scwtu")
-list_name = "Eyes expression"
+list_name = "Eyes expressions"
 set_variable_name = "_current_eyes"
 options_values = PackedStringArray("Default:default", "Closed:closed", "Surprised:surprised", "Worried:worried", "Angry:angry")
 
@@ -18,6 +18,6 @@ vignette = ExtResource("2_k1lan")
 y_offset = 0.0
 scale_compensation = 1.8
 camera_offset_y = 0.6
-name_methods = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall", "Wall Slide:wall_slide", "Edge Grab:edge_grab")
-range_values = PackedStringArray("Walk/Run blending:walk_run_blending")
-options_setter = [SubResource("Resource_gp8jo")]
+animations_list = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall", "Wall Slide:wall_slide", "Edge Grab:edge_grab")
+range_bind = PackedStringArray("Walk/Run blending:walk_run_blending")
+dropdown_bind = [SubResource("Resource_3wbpd")]

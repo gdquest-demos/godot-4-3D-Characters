@@ -7,23 +7,24 @@ extends Node
 @onready var parameters = $UI/Parameters
 
 var current_model : Node3D = null
-var current_methods = []
+var current_animations = []
 var current_range_values = []
-var current_options_setters = []
+var dropdown_list = []
 
 func _ready():
 	for model_data in known_models:
 		model_data.scene = load(model_data.scene_path)
 	model_selector.setup(known_models)
 	set_model(known_models[0])
+	animation_selector.connect("item_selected", func(item_index : int):
+		call_method(current_animations[item_index].value)
+		)
 	
 func _on_model_selector_selection_changed(value):
 	set_model(known_models[value])
 	
 func set_model(model_data : ModelData):
-	
 	# Set model
-	
 	var next_model = model_data.scene.instantiate()
 	next_model.position.y = model_data.y_offset
 	next_model.hide()
@@ -43,45 +44,47 @@ func set_model(model_data : ModelData):
 	t.tween_property(next_model, "scale", base_scale, 0.2)
 	current_model = next_model
 	
-	# Set animations settings
+	# Set animations
 	animation_selector.hide()
-	current_methods = model_data.name_methods
-	if current_methods.size() != 0:
-		var method_names = current_methods.map(func(m): return m.name)
+	current_animations = model_data.animations_list
+	if current_animations.size() != 0:
+		var method_names = current_animations.map(func(m): return m.name)
 		animation_selector.setup(method_names)
 		animation_selector.show()
-		use_method(0)
+		call_method(current_animations[0].value)
 		
-	# Set animations settings
-	current_range_values = model_data.range_values
+	# Set model parameters
+	current_range_values = model_data.range_bind
+	# Check if the parameters panel already show something, remove the children if so.
 	if parameters.has_childrens():
 		parameters.clear()
 		await get_tree().node_removed
-	# Slides
+		
+	# Ranges
 	if current_range_values.size() != 0:
 		for range_index in current_range_values.size():
-			parameters.add_slider(current_range_values[range_index].name, range_index)
-	# Setters
-	for option_setter_index in model_data.options_setter.size():
-		var setter = model_data.options_setter[option_setter_index]
+			var slider : HSlider = parameters.add_slider(current_range_values[range_index].name)
+			slider.connect("value_changed", func(value : float):
+				set_variable(current_range_values[range_index].value, remap(value, 0, 100, 0, 1))
+				)
+	# Dropdown
+	for option_setter_index in model_data.dropdown_bind.size():
+		var setter = model_data.dropdown_bind[option_setter_index]
 		var options = model_data._get_options(option_setter_index)
 		var options_names = options.map(func(m): return m.name)
-		current_options_setters.append({
+		dropdown_list.append({
 			"bind_variable": setter.set_variable_name,
 			"options": options
 		})
 		var option_button : OptionButton = parameters.add_options(setter.list_name, options_names)
-		option_button.connect("item_selected", set_setter.bind(option_setter_index))
+		option_button.connect("item_selected", func(dropdown_choice_index):
+			var v_name = dropdown_list[option_setter_index].bind_variable
+			var v_value = dropdown_list[option_setter_index].options[dropdown_choice_index].value
+			set_variable(v_name, v_value)
+			)
 		
-func use_method(index):
-	var method = current_methods[index].value
-	current_model.call(method)
+func call_method(method_name : String):
+	current_model.call(method_name)
 	
-func set_setter(index, option_setter_index):
-	var variable_name = current_options_setters[option_setter_index].bind_variable
-	var new_value = current_options_setters[option_setter_index].options[index].value
+func set_variable(variable_name, new_value):
 	current_model.set(variable_name, new_value)
-
-func slider_update(index, value):
-	var slider = current_range_values[index].value
-	current_model.set(slider, value)

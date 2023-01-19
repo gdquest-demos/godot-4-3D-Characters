@@ -9652,6 +9652,7 @@ bones/88/rotation = Quaternion(-0.343356, 0.329734, -0.111078, 0.872378)
 bones/89/rotation = Quaternion(-0.128978, 0.0216333, -0.0456235, 0.990361)
 
 [node name="sophia_mesh" parent="mini_sophia/Armature/Skeleton3D" index="0"]
+lod_bias = 5.0
 surface_material_override/1 = ExtResource("3_hrjkk")
 surface_material_override/2 = SubResource("StandardMaterial3D_8r7u4")
 surface_material_override/3 = ExtResource("6_yl3ne")

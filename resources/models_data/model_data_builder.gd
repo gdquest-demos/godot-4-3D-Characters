@@ -12,18 +12,20 @@ var scene : PackedScene
 @export var camera_offset_y = 0.5
 
 @export_group("Parameters")
-@export var name_methods : PackedStringArray : get = _get_methods
-@export var range_values : PackedStringArray : get = _get_ranges
-@export var options_setter : Array[OptionSetterListData]
+# Animation list:
+# Name: Displayed Value: called
+@export var animations_list : PackedStringArray : get = _get_animations
+@export var range_bind : PackedStringArray : get = _get_ranges
+@export var dropdown_bind : Array[OptionSetterListData]
 
 func _get_options(options_index):
-	return _array_string_to_dict(options_setter[options_index].options_values)
+	return _array_string_to_dict(dropdown_bind[options_index].options_values)
 
-func _get_methods():
-	return _array_string_to_dict(name_methods)
+func _get_animations():
+	return _array_string_to_dict(animations_list)
 	
 func _get_ranges():
-	return _array_string_to_dict(range_values)
+	return _array_string_to_dict(range_bind)
 
 func _array_string_to_dict(source_array : PackedStringArray):
 	var result = []

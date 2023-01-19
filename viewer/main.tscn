@@ -154,6 +154,8 @@ layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 2
 
+[node name="HSlider" type="HSlider" parent="."]
+offset_right = 8.0
+offset_bottom = 16.0
+
 [connection signal="selection_changed" from="UI/ModelSelector" to="." method="_on_model_selector_selection_changed"]
-[connection signal="item_selected" from="UI/AnimationSelector" to="." method="use_method"]
-[connection signal="slider_value_changed" from="UI/Parameters" to="." method="slider_update"]
