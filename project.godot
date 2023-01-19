@@ -8,22 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Resource",
-"class": &"ModelData",
-"language": &"GDScript",
-"path": "res://resources/models_data/model_data_builder.gd"
-}, {
-"base": "Resource",
-"class": &"OptionSetterListData",
-"language": &"GDScript",
-"path": "res://resources/models_data/option_list_data_builder.gd"
-}]
-_global_script_class_icons={
-"ModelData": "",
-"OptionSetterListData": ""
-}
-
 [application]
 
 config/name="3D Characters Repository"
@@ -35,6 +19,10 @@ config/icon="res://character_icon.png"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor]
+
+export/convert_text_resources_to_binary=true
 
 [rendering]
 

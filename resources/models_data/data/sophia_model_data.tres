@@ -7,7 +7,8 @@
 [sub_resource type="Resource" id="Resource_3wbpd"]
 script = ExtResource("1_scwtu")
 list_name = "Eyes expressions"
-set_variable_name = "_current_eyes"
+mode = 0
+bind_name = "_current_eyes"
 options_values = PackedStringArray("Default:default", "Closed:closed", "Surprised:surprised", "Worried:worried", "Angry:angry")
 
 [resource]

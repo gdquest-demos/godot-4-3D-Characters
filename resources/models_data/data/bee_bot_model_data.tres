@@ -12,5 +12,5 @@ y_offset = 0.35
 scale_compensation = 0.65
 camera_offset_y = 0.6
 animations_list = null
-range_values = null
-options_setter = null
+range_bind = null
+dropdown_bind = null

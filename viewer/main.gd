@@ -52,15 +52,14 @@ func set_model(model_data : ModelData):
 		animation_selector.setup(method_names)
 		animation_selector.show()
 		call_method(current_animations[0].value)
-		
-	# Set model parameters
-	current_range_values = model_data.range_bind
+	
 	# Check if the parameters panel already show something, remove the children if so.
 	if parameters.has_childrens():
 		parameters.clear()
 		await get_tree().node_removed
 		
 	# Ranges
+	current_range_values = model_data.range_bind
 	if current_range_values.size() != 0:
 		for range_index in current_range_values.size():
 			var slider : HSlider = parameters.add_slider(current_range_values[range_index].name)
@@ -68,21 +67,24 @@ func set_model(model_data : ModelData):
 				set_variable(current_range_values[range_index].value, remap(value, 0, 100, 0, 1))
 				)
 	# Dropdown
+	dropdown_list = []
 	for option_setter_index in model_data.dropdown_bind.size():
 		var setter = model_data.dropdown_bind[option_setter_index]
 		var options = model_data._get_options(option_setter_index)
 		var options_names = options.map(func(m): return m.name)
 		dropdown_list.append({
-			"bind_variable": setter.set_variable_name,
+			"bind_variable": setter.bind_name,
 			"options": options
 		})
 		var option_button : OptionButton = parameters.add_options(setter.list_name, options_names)
 		option_button.connect("item_selected", func(dropdown_choice_index):
-			var v_name = dropdown_list[option_setter_index].bind_variable
 			var v_value = dropdown_list[option_setter_index].options[dropdown_choice_index].value
-			set_variable(v_name, v_value)
+			if setter.mode == setter.MODE.SET:
+				set_variable(setter.bind_name, v_value)
+			elif setter.mode == setter.MODE.CALL:
+				current_model.call(setter.bind_name, v_value)
 			)
-		
+	
 func call_method(method_name : String):
 	current_model.call(method_name)
 	
