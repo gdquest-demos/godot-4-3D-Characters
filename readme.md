@@ -14,10 +14,11 @@ This repository contains our open-source 3D models, pre-configured and compatibl
 **Properties**
 `_walk_run_blend_position`: A setter that changes the blending between the walking and running animation.
 **Methods**
-`idle()`: sets the model in an idle state
-`walk()`: sets the model in a walking state
-`jump()`: sets the model in a ascending state
-`fall()`: sets the model in a falling state
+ - `idle()`: sets the model in an idle state
+ - `walk()`: sets the model in a walking state
+ - `jump()`: sets the model in a ascending state
+ - `fall()`: sets the model in a falling state
+
 `set_face()`: sets the model's face to a desired expression
  - `"default"`: displays the default blinking animation
  - `"happy"`: displays a happy face
