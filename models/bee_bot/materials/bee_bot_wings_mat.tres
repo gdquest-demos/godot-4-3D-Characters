@@ -7,5 +7,5 @@
 render_priority = 0
 shader = ExtResource("1_b2ohr")
 shader_parameter/emission_color = Color(1, 0.584314, 0, 1)
-shader_parameter/global_intensity = null
+shader_parameter/global_intensity = 1.0
 shader_parameter/wing_pattern_sampler = ExtResource("2_wfea8")
