@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="./character_icon.png"/>
+<img width="128" height="128" src="./character_icon.png"/>
 <br/>
 3D Characters Repository</h1>
 
