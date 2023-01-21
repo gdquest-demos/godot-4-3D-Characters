@@ -153,5 +153,3 @@ script = ExtResource("11_rc064")
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 2
-
-[connection signal="selection_changed" from="UI/ModelSelector" to="." method="_on_model_selector_selection_changed"]

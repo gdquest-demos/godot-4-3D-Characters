@@ -19,8 +19,9 @@ func _ready():
 	animation_selector.connect("item_selected", func(item_index : int):
 		call_method(current_animations[item_index].value)
 		)
+	model_selector.connect("selection_changed", _on_model_selection)
 	
-func _on_model_selector_selection_changed(value):
+func _on_model_selection(value):
 	set_model(known_models[value])
 	
 func set_model(model_data : ModelData):
