@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://cj6led5eh25bo"]
 
 [ext_resource type="Script" path="res://viewer/ui/model_selector/ModelSelector.gd" id="1_8owei"]
-[ext_resource type="PackedScene" path="res://viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
+[ext_resource type="PackedScene" uid="uid://bfs31qyude6h2" path="res://viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
 [ext_resource type="Script" path="res://viewer/ui/model_selector/bubble_scroll.gd" id="3_8hjj3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikg2k"]
@@ -30,22 +30,18 @@ model_tag_scene = ExtResource("2_botqh")
 [node name="ScrollContainer" type="Control" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(300, 52)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 52.0
+layout_mode = 2
 theme = SubResource("Theme_b1ojb")
 script = ExtResource("3_8hjj3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 0
 offset_right = 201.0
 offset_bottom = 664.0
 mouse_filter = 0
 theme_override_constants/separation = 8
 
 [node name="ModelTag" parent="." instance=ExtResource("2_botqh")]
-offset_top = 56.0
-offset_right = 201.0
-offset_bottom = 144.0
+layout_mode = 2
 
 [connection signal="pressed" from="ModelTag" to="." method="_on_model_tag_pressed"]
