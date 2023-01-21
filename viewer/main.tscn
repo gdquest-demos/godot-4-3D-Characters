@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=21 format=3 uid="uid://birqyoesacalq"]
 
 [ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://viewer/turner.gd" id="7_0tn27"]
 [ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
 [ext_resource type="PackedScene" uid="uid://cj6led5eh25bo" path="res://viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
+[ext_resource type="Theme" uid="uid://dioqrbukc6tl0" path="res://viewer/main_theme.tres" id="10_l4eat"]
 [ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://viewer/assets/textures/down_arrow_icon.png" id="10_ojfeu"]
 [ext_resource type="Script" path="res://viewer/animation_selector.gd" id="10_ylcjv"]
 [ext_resource type="Script" path="res://viewer/parameters.gd" id="11_rc064"]
@@ -40,12 +41,6 @@ size = Vector2(4, 4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_purc5"]
 size = Vector2(2, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgvou"]
-bg_color = Color(0, 0, 0, 0.901961)
-
-[sub_resource type="Theme" id="Theme_wcmeb"]
-PopupMenu/styles/panel = SubResource("StyleBoxFlat_kgvou")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
 content_margin_left = 12.0
@@ -125,7 +120,7 @@ offset_right = 41.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_wcmeb")
+theme = ExtResource("10_l4eat")
 theme_override_constants/arrow_margin = 8
 theme_override_icons/arrow = ExtResource("10_ojfeu")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
