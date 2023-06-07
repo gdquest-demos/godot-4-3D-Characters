@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ModelData" load_steps=3 format=3 uid="uid://buvfq0afpoes1"]
+
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_5y6bq"]
+[ext_resource type="Texture2D" uid="uid://xv0ee4kxc1jo" path="res://resources/models_data/model_vignettes/gobot_vignette.png" id="2_cq5he"]
+
+[resource]
+script = ExtResource("2_5y6bq")
+name = "Gobot"
+scene_path = "res://models/gobot/gobot_skin.tscn"
+vignette = ExtResource("2_cq5he")
+y_offset = 0.0
+scale_compensation = 0.65
+camera_offset_y = 0.5
+animations_list = PackedStringArray("Idle:idle", "Move:move", "Fall:fall", "Jump:jump", "Victory:victory_sign", "Hurt:hurt")
+range_bind = PackedStringArray()
+dropdown_bind = Array[Resource("res://resources/models_data/option_list_data_builder.gd")]([])

@@ -3,8 +3,11 @@ extends Node
 @export var known_models : Array[ModelData]
 @onready var model_selector = $UI/ModelSelector
 @onready var animation_selector = $UI/AnimationSelector
-@onready var turner = $World/Turner
+@onready var turner = %Turner
 @onready var parameters = $UI/Parameters
+@onready var model_holder = %ModelHolder
+
+
 
 var current_model : Node3D = null
 var current_animations = []
@@ -25,25 +28,26 @@ func _on_model_selection(value):
 	set_model(known_models[value])
 	
 func set_model(model_data : ModelData):
-	# Set model
-	var next_model = model_data.scene.instantiate()
-	next_model.position.y = model_data.y_offset
-	next_model.hide()
-	$World.add_child(next_model)
-	
+	# Check if a model is already displayed
 	if current_model != null:
-		var t = create_tween()
-		t.tween_property(current_model, "scale", current_model.scale * 0.8, 0.1)
-		await t.finished
-		current_model.queue_free()
-	
+		# Purge Model Holder
+		for child in model_holder.get_children():
+			child.queue_free()
+		await get_tree().process_frame
+		
+	# Set the new current model node
+	current_model = model_data.scene.instantiate()
+	# Set a model wrapper and put the model in it
 	var base_scale = Vector3.ONE * model_data.scale_compensation
-	next_model.scale = base_scale * 0.8
-	next_model.show()
+	var wrapper = Node3D.new()
+	wrapper.position.y = model_data.y_offset
+	wrapper.scale = base_scale * 0.8
+	wrapper.add_child(current_model)
+	model_holder.add_child(wrapper)
+	
 	var t = create_tween().set_parallel(true)
-	t.tween_property($World/Turner, "position:y", model_data.camera_offset_y, 0.2)
-	t.tween_property(next_model, "scale", base_scale, 0.2)
-	current_model = next_model
+	t.tween_property(turner, "position:y", model_data.camera_offset_y, 0.2)
+	t.tween_property(wrapper, "scale", base_scale, 0.2)
 	
 	# Set animations
 	animation_selector.hide()
@@ -57,7 +61,6 @@ func set_model(model_data : ModelData):
 	# Check if the parameters panel already show something, remove the children if so.
 	if parameters.has_childrens():
 		parameters.clear()
-		await get_tree().node_removed
 		
 	# Ranges
 	current_range_values = model_data.range_bind

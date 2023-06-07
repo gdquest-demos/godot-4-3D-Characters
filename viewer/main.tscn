@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=22 format=3 uid="uid://birqyoesacalq"]
 
 [ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
 [ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="3_1yd81"]
+[ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/data/gobot_model_data.tres" id="3_hqcav"]
 [ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="4_5wcnr"]
 [ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/data/beetlebot_model_data.tres" id="5_v2ndd"]
 [ext_resource type="Shader" path="res://viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
@@ -27,6 +28,8 @@ sky = SubResource("Sky_fa2m7")
 ambient_light_source = 2
 ambient_light_color = Color(0.52549, 0.52549, 0.52549, 1)
 tonemap_mode = 2
+tonemap_exposure = 1.1
+tonemap_white = 0.9
 ssao_enabled = true
 glow_enabled = true
 
@@ -55,7 +58,7 @@ corner_radius_bottom_left = 8
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
-known_models = [ExtResource("2_40jqj"), ExtResource("3_1yd81"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")]
+known_models = Array[Resource("res://resources/models_data/model_data_builder.gd")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
 
 [node name="World" type="Node3D" parent="."]
 
@@ -68,6 +71,7 @@ mesh = SubResource("PlaneMesh_pcsvn")
 skeleton = NodePath("../..")
 
 [node name="Turner" type="Node3D" parent="World"]
+unique_name_in_owner = true
 transform = Transform3D(0.906308, 0.0368336, -0.42101, 0, 0.996195, 0.0871557, 0.422618, -0.0789899, 0.902859, 0, 0.6, 0)
 script = ExtResource("7_0tn27")
 metadata/_edit_group_ = true
@@ -83,17 +87,20 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_purc5")
 skeleton = NodePath("../..")
 
-[node name="BackLight" type="DirectionalLight3D" parent="World/Turner"]
+[node name="FrontLight" type="DirectionalLight3D" parent="World/Turner"]
 transform = Transform3D(0.707107, -0.298836, 0.640856, -1.49012e-08, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, -0.609801, 1.49012e-08)
 light_energy = 0.65
 shadow_enabled = true
-directional_shadow_max_distance = 20.0
+directional_shadow_max_distance = 10.0
 
-[node name="FrontLight" type="OmniLight3D" parent="World/Turner"]
+[node name="BackLight" type="OmniLight3D" parent="World/Turner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.653888, 0, -0.722009)
 light_energy = 0.5
 shadow_enabled = true
 omni_attenuation = 0.554785
+
+[node name="ModelHolder" type="Node3D" parent="World"]
+unique_name_in_owner = true
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

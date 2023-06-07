@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4npvm4odpc0b"
-path="res://.godot/imported/sophia_vignette.png-8794c0177680fc3f4eab20eae62019e6.ctex"
+uid="uid://xv0ee4kxc1jo"
+path="res://.godot/imported/gobot_vignette.png-0af72363e26e493937fb391897e2b664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/models_data/model_vignettes/sophia_vignette.png"
-dest_files=["res://.godot/imported/sophia_vignette.png-8794c0177680fc3f4eab20eae62019e6.ctex"]
+source_file="res://resources/models_data/model_vignettes/gobot_vignette.png"
+dest_files=["res://.godot/imported/gobot_vignette.png-0af72363e26e493937fb391897e2b664.ctex"]
 
 [params]
 
