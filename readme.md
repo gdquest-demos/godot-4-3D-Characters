@@ -12,68 +12,66 @@ This repository contains our open-source 3D models, pre-configured and compatibl
 4. To use the model, you need to instantiate the `model_name_skin.tscn` scene. This is the default scene where the model is set up and where you can call specific methods.
 
 # Models
+
+## Godot robot
+
+![Little blue and round robot](screenshots/godot-robot.png)
+
+- `idle()`: Sets the model to a neutral, action-free state.
+- `move()`: Animates the model to simulate walking or forward movement.
+- `fall()`: Puts the model into a downward animation, imitating a fall.
+- `jump()`: Transitions the model to an upward-leaping animation, simulating a jump.
+- `victory_sign()`: Makes a victory sign.
+
 ## GDbot
+
+![](screenshots/gdbot.png)
 
 **Properties**
 
-`_walk_run_blend_position`: This property represents the blending between the walking and running animations of the model. It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between the two animations, resulting in the model appearing to walk or run depending on the value.
+- `_walk_run_blend_position`: This property represents the blending between the walking and running animations of the model. It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between the two animations, resulting in the model appearing to walk or run depending on the value.
 
-**Methods**
+****Methods****
 
-`idle()`: This method sets the model in an idle state, in which the model will be in a neutral position, not performing any action.
-
-`walk()`: This method sets the model in a walking state, in which the model will animate as if it is walking or moving forward.
-
-`jump()`: This method sets the model in a ascending state, in which the model will animate as if it is jumping or leaping upwards.
-
-`fall()`: This method sets the model in a falling state, in which the model will animate as if it is falling or dropping downwards.
-
-`set_face()`: This method sets the model's face to a desired expression. The method accepts different string values, such as "default", "happy", "dizzy", "sleepy". Depending on the value passed to the method, the model's face will display different animations, such as the default blinking animation, a happy face, a spiraling eyes animation or a sleepy face.
+- `idle()`: Sets the model to a neutral, action-free state.
+- `walk()`: Animates the model to simulate walking or forward movement.
+- `jump()`: Transitions the model to an upward-leaping animation, simulating a jump.
+- `fall()`: Puts the model into a downward animation, imitating a fall.
+- `set_face()`: Changes the model's facial expression based on input string values like "default", "happy", "dizzy", "sleepy". Corresponding animations include default blinking, a joyful expression, spiraling eyes, or a drowsy countenance.
 
 Note: You can add new expressions by editing `gdbot_face.tscn`. It's a 2D scene that is picked up by a viewport node and displayed on Gdbot's face.
 
 ## Sophia
 
+![](screenshots/sophia.png)
+
 **Properties**
 
-`_walk_run_blend_position`: This property represents the blending between the walking and running animations of the model. It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between the two animations, resulting in the model appearing to walk or run depending on the value.
-
-`_current_eyes`: This property represents the current texture of Sophia's eyes. It can be set to different string values such as "default", "happy", "surprised", "frowning", "disgust" to change the texture of Sophia's eyes. This is done by offsetting the UV position of the material applied to the eyes, which results in a different texture being displayed on the model's eyes.
+- `_walk_run_blend_position:` Defines the blend between walking and running animations for the model. Values between 0.0 and 1.0 control the transition between these animations.
+- `_current_eyes`: Controls Sophia's current eye texture. It can change the eye texture by offsetting the UV position of the material applied to the eyes. Assign a string value between "default", "happy", "surprised", "frowning", "disgust".
 
 **Methods**
 
-`idle()`: This method sets the model in an idle state, in which the model will be in a neutral position, not performing any action.
-
-`walk()`: This method sets the model in a walking state, in which the model will animate as if it is walking or moving forward.
-
-`jump()`: This method sets the model in a ascending state, in which the model will animate as if it is jumping or leaping upwards.
-
-`fall()`: This method sets the model in a falling state, in which the model will animate as if it is falling or dropping downwards.
-
-`wall_slide()`: This method sets the model in a wall sliding state, in which the model will animate as if it is sliding down a wall.
-
-`edge_grab()`: This method sets the model in a edge grabbing state, in which the model will animate as if it is grabbing onto the edge of a platform or surface.
+- `idle()`: Transitions the model to a neutral, action-free state.
+- `walk()`: Simulates walking or forward movement in the model.
+- `jump()`: Animates the model as if jumping or leaping upwards.
+- `fall()`: Animates the model falling.
+- `wall_slide()`: Makes the model slide down a wall.
+- `edge_grab()`: Makes the model grab onto the edge of a platform or surface.
 
 ## Bee bot
 
 **Methods**
 
-`idle()`: This method sets the model in an idle state, in which the model will be in a neutral position, not performing any action.
-
-`attack()`: This method sets the model in an attacking state, in which the model will animate as if it is attacking or engaging in combat.
-
-`power_off()`: This method sets the model in a power off state, in which the model will animate as if it is shutting down or turning off.
-
+- `idle()`: Puts the model in a neutral, non-action state.
+- `attack()`: Simulates an attacking or combat stance in the model.
+- `power_off()`: Animates the model shutting down or turning off.
 
 ## Beetle bot
 
 **Methods**
 
-`idle()`: This method sets the model in an idle state, in which the model will be in a neutral position, not performing any action.
-
-`walk()`: This method sets the model in a walking state, in which the model will animate as if it is walking or moving forward.
-
-`attack()`: This method sets the model in an attacking state, in which the model will animate as if it is attacking or engaging in combat.
-
-`power_off()`: This method sets the model in a power off state, in which the model will animate as if it is shutting down or turning off.
-
+- `idle()`: Transitions the model to a neutral, idle state.
+- `walk()`: Animates the model as if walking or moving forward.
+- `attack()`: Represents the model in an attacking or combat mode.
+- `power_off()`: Animates the model shutting down or turning off.
