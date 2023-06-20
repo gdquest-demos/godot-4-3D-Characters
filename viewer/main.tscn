@@ -15,6 +15,17 @@
 [ext_resource type="Script" path="res://viewer/animation_selector.gd" id="10_ylcjv"]
 [ext_resource type="Script" path="res://viewer/parameters.gd" id="11_rc064"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.901961)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cejc"]
 ground_horizon_color = Color(0.898039, 0.898039, 0.905882, 1)
 
@@ -45,20 +56,68 @@ size = Vector2(4, 4)
 [sub_resource type="QuadMesh" id="QuadMesh_purc5"]
 size = Vector2(2, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-bg_color = Color(0, 0, 0, 0.901961)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
 known_models = Array[Resource("res://resources/models_data/model_data_builder.gd")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="TopLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ModelSelector" parent="TopLayer/UI" instance=ExtResource("9_yvaan")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="AnimationSelector" type="OptionButton" parent="TopLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -87.0
+offset_right = 41.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("10_l4eat")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("10_ojfeu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4wrdr")
+script = ExtResource("10_ylcjv")
+
+[node name="Parameters" type="MarginContainer" parent="TopLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -345.0
+offset_top = -148.0
+offset_right = -32.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("11_rc064")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/UI/Parameters"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 2
 
 [node name="World" type="Node3D" parent="."]
 
@@ -101,57 +160,3 @@ omni_attenuation = 0.554785
 
 [node name="ModelHolder" type="Node3D" parent="World"]
 unique_name_in_owner = true
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="ModelSelector" parent="UI" instance=ExtResource("9_yvaan")]
-layout_mode = 1
-
-[node name="AnimationSelector" type="OptionButton" parent="UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -87.0
-offset_right = 41.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("10_l4eat")
-theme_override_constants/arrow_margin = 8
-theme_override_icons/arrow = ExtResource("10_ojfeu")
-theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4wrdr")
-script = ExtResource("10_ylcjv")
-
-[node name="Parameters" type="MarginContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -345.0
-offset_top = -148.0
-offset_right = -32.0
-offset_bottom = -56.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("11_rc064")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Parameters"]
-layout_mode = 2
-theme_override_constants/separation = 16
-alignment = 2

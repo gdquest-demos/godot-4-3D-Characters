@@ -26,10 +26,10 @@ func _unhandled_input(event):
 	var wheel_direction = 0.0
 	if (event is InputEventMouseButton): 
 		if event.button_index == MOUSE_BUTTON_LEFT: _is_grabbing = event.pressed
-		var wheel_up = event.button_index == MOUSE_BUTTON_WHEEL_UP
-		var wheel_down = event.button_index == MOUSE_BUTTON_WHEEL_DOWN
-		
-		wheel_direction = float(wheel_down) - float(wheel_up)
+		if event.pressed:
+			var wheel_up = event.button_index == MOUSE_BUTTON_WHEEL_UP
+			var wheel_down = event.button_index == MOUSE_BUTTON_WHEEL_DOWN
+			wheel_direction = float(wheel_down) - float(wheel_up)
 	
 	if wheel_direction != 0:
 		_camera.position.z += wheel_direction * 0.25

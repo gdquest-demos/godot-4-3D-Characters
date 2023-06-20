@@ -1,13 +1,11 @@
 extends Node
 
 @export var known_models : Array[ModelData]
-@onready var model_selector = $UI/ModelSelector
-@onready var animation_selector = $UI/AnimationSelector
+@onready var model_selector = %ModelSelector
+@onready var animation_selector = %AnimationSelector
 @onready var turner = %Turner
-@onready var parameters = $UI/Parameters
+@onready var parameters = %Parameters
 @onready var model_holder = %ModelHolder
-
-
 
 var current_model : Node3D = null
 var current_animations = []
