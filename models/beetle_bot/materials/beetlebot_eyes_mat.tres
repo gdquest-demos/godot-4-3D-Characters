@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_n44cl")
-shader_parameter/intensity = 2.0
+shader_parameter/intensity = 1.25
 shader_parameter/screen_color = Color(0.619608, 0.862745, 0, 0.0784314)
 shader_parameter/screen_red_offset = Vector2(0, 0)
 shader_parameter/screen_green_offset = Vector2(0, 0)

@@ -1986,7 +1986,7 @@ animation = &"Run"
 animation = &"custom_lib/run_step"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_01yhm"]
-graph_offset = Vector2(-167, 95)
+graph_offset = Vector2(-300.033, 68.2149)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_c6v15")
 nodes/Add2/position = Vector2(320, 120)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_q8y1g")
@@ -2068,18 +2068,18 @@ states/Idle/node = SubResource("AnimationNodeAnimation_1rkjh")
 states/Idle/position = Vector2(452, 99)
 states/Jump/node = SubResource("AnimationNodeAnimation_gnq7n")
 states/Jump/position = Vector2(588, 196)
-states/Move/node = SubResource("AnimationNodeBlendTree_01yhm")
-states/Move/position = Vector2(588, 95)
+states/Run/node = SubResource("AnimationNodeBlendTree_01yhm")
+states/Run/position = Vector2(588, 95)
 states/Start/position = Vector2(322, 100)
 states/VictorySign/node = SubResource("AnimationNodeAnimation_f1d5g")
 states/VictorySign/position = Vector2(452, 18)
 states/WallSlide/node = SubResource("AnimationNodeAnimation_fakhc")
 states/WallSlide/position = Vector2(588, 298)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sjbi1"), "Fall", "Jump", SubResource("AnimationNodeStateMachineTransition_wchuq"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_iwlv2"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_v20h8"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_oh2i0"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_iahjh"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_slt1s"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_sftgr"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_rqio1"), "Move", "Jump", SubResource("AnimationNodeStateMachineTransition_lqjfl"), "Jump", "Move", SubResource("AnimationNodeStateMachineTransition_7c7xu"), "Move", "Fall", SubResource("AnimationNodeStateMachineTransition_8p8m5"), "Fall", "Move", SubResource("AnimationNodeStateMachineTransition_g3ni0"), "Fall", "EdgeGrab", SubResource("AnimationNodeStateMachineTransition_utcak"), "EdgeGrab", "Jump", SubResource("AnimationNodeStateMachineTransition_sg0e6"), "Fall", "WallSlide", SubResource("AnimationNodeStateMachineTransition_2psp0"), "WallSlide", "Jump", SubResource("AnimationNodeStateMachineTransition_wsvct"), "Idle", "VictorySign", SubResource("AnimationNodeStateMachineTransition_uar4f"), "VictorySign", "Idle", SubResource("AnimationNodeStateMachineTransition_llrwj")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sjbi1"), "Fall", "Jump", SubResource("AnimationNodeStateMachineTransition_wchuq"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_iwlv2"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_v20h8"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_oh2i0"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_iahjh"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_slt1s"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_sftgr"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rqio1"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_lqjfl"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_7c7xu"), "Run", "Fall", SubResource("AnimationNodeStateMachineTransition_8p8m5"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_g3ni0"), "Fall", "EdgeGrab", SubResource("AnimationNodeStateMachineTransition_utcak"), "EdgeGrab", "Jump", SubResource("AnimationNodeStateMachineTransition_sg0e6"), "Fall", "WallSlide", SubResource("AnimationNodeStateMachineTransition_2psp0"), "WallSlide", "Jump", SubResource("AnimationNodeStateMachineTransition_wsvct"), "Idle", "VictorySign", SubResource("AnimationNodeStateMachineTransition_uar4f"), "VictorySign", "Idle", SubResource("AnimationNodeStateMachineTransition_llrwj")]
 graph_offset = Vector2(-185, -49)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8xvna"]
-graph_offset = Vector2(-138, 57)
+graph_offset = Vector2(-216, 57)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_g4wg5")
 nodes/Animation/position = Vector2(180, 300)
 nodes/Flip/node = SubResource("AnimationNodeAnimation_oi1x1")
@@ -2098,10 +2098,10 @@ node_connections = [&"output", 0, &"HurtShot", &"FlipShot", 0, &"StateMachine", 
 [node name="GobotSkin" type="Node3D" node_paths=PackedStringArray("gobot_model")]
 script = ExtResource("1_rwke8")
 gobot_model = NodePath("gobot/Armature/Skeleton3D/Gobot")
-left_eye_mat_override = "surface_material_override/1"
-right_eye_mat_override = "surface_material_override/2"
-open_eye = ExtResource("3_aysq5")
-close_eye = ExtResource("3_atmtp")
+_left_eye_mat_override = "surface_material_override/1"
+_right_eye_mat_override = "surface_material_override/2"
+_open_eye = ExtResource("3_aysq5")
+_close_eye = ExtResource("3_atmtp")
 
 [node name="gobot" parent="." instance=ExtResource("1_qg1mb")]
 
@@ -2110,14 +2110,14 @@ bones/0/position = Vector3(0.125361, 0.0989139, 0.0728901)
 bones/0/rotation = Quaternion(0.772549, 0.107691, -0.136221, 0.610749)
 bones/1/position = Vector3(-0.109875, 0.0989111, -0.0510765)
 bones/1/rotation = Quaternion(0.679368, -0.310085, 0.392234, 0.537083)
-bones/2/position = Vector3(0, 0.35979, 0)
-bones/2/rotation = Quaternion(0.0697412, 0.0209048, -0.00146181, 0.997345)
-bones/3/rotation = Quaternion(1, -5.77409e-11, -7.50255e-08, 3.72829e-09)
-bones/4/rotation = Quaternion(-0.427643, -0.144043, -0.0393744, 0.891528)
-bones/5/rotation = Quaternion(0.269863, 1.10387e-06, -9.21434e-06, 0.962899)
-bones/6/rotation = Quaternion(-0.189774, 0.55115, 0.200072, 0.787522)
-bones/7/rotation = Quaternion(0.446458, -1.02192e-06, 1.52844e-05, 0.894805)
-bones/8/rotation = Quaternion(-0.618156, -0.284404, -0.686612, 0.256048)
+bones/2/position = Vector3(0, 0.357083, 0)
+bones/2/rotation = Quaternion(0.0697349, 0.0248084, -0.00173477, 0.997256)
+bones/3/rotation = Quaternion(1, -5.78106e-11, -7.50265e-08, 3.72784e-09)
+bones/4/rotation = Quaternion(-0.449087, -0.1393, -0.0411221, 0.881604)
+bones/5/rotation = Quaternion(0.302414, 1.0865e-06, -1.03345e-05, 0.953177)
+bones/6/rotation = Quaternion(-0.197068, 0.552523, 0.210998, 0.781897)
+bones/7/rotation = Quaternion(0.468384, -1.00863e-06, 1.6022e-05, 0.883525)
+bones/8/rotation = Quaternion(-0.630167, -0.279845, -0.675607, 0.261023)
 bones/9/rotation = Quaternion(2.16937e-07, 5.35541e-07, -0.395029, 0.918669)
 bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217438, 0.680017)
 bones/11/rotation = Quaternion(0.487906, -0.0174399, 0.00854542, 0.87268)
@@ -2125,7 +2125,7 @@ bones/12/rotation = Quaternion(-0.371224, -0.00197697, 0.00585366, 0.928523)
 bones/13/rotation = Quaternion(-0.502333, 1.50049e-05, -2.85054e-05, 0.864674)
 bones/14/rotation = Quaternion(-0.371224, -0.00197698, 0.00585369, 0.928523)
 bones/15/rotation = Quaternion(-0.502333, 1.49999e-05, -2.85068e-05, 0.864674)
-bones/16/rotation = Quaternion(-0.695527, 0.251887, 0.608109, 0.288096)
+bones/16/rotation = Quaternion(-0.684697, 0.256928, 0.620278, 0.28361)
 bones/17/rotation = Quaternion(2.27203e-07, -5.84749e-07, 0.395029, 0.918669)
 bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217438, 0.680017)
 bones/19/rotation = Quaternion(0.487906, 0.0174399, -0.00854541, 0.87268)
@@ -2169,6 +2169,6 @@ parameters/FlipShot/request = 0
 parameters/HurtShot/active = false
 parameters/HurtShot/request = 0
 parameters/StateMachine/playback = SubResource("AnimationNodeStateMachinePlayback_chj4k")
-parameters/StateMachine/Move/Add2/add_amount = 1.0
+parameters/StateMachine/Run/Add2/add_amount = 1.0
 
 [editable path="gobot"]

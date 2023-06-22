@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0gfx2lihdq44"
-path="res://.godot/imported/bee_bot.glb-0e9712afa61fdfe04c9111c65c89826a.scn"
+uid="uid://dbqoj8oam1dsg"
+path="res://.godot/imported/beetle_bot_fused.glb-2bab892159f1836e86b5d18db40eaa71.scn"
 
 [deps]
 
-source_file="res://models/bee_bot/bee_bot.glb"
-dest_files=["res://.godot/imported/bee_bot.glb-0e9712afa61fdfe04c9111c65c89826a.scn"]
+source_file="res://models/beetle_bot/model/beetle_bot_fused.glb"
+dest_files=["res://.godot/imported/beetle_bot_fused.glb-2bab892159f1836e86b5d18db40eaa71.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "animations": {
-"Idle": {
+"Bob": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
@@ -1829,7 +1829,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": null
 },
-"head_movement": {
+"idle": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
@@ -3628,11 +3628,11 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": null
 },
-"power_off": {
+"walk": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",

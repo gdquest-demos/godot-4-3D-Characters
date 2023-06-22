@@ -12,7 +12,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.0, 0.0, 2.0, 0.0, 2.0, 0.0]
+"values": [0.0, 0.0, 2.0, 0.0, 2.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -21,10 +21,10 @@ tracks/1/path = NodePath("Armature/Skeleton3D/bee_bot2:surface_material_override
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.05, 0.1, 0.15, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.0, 4.0, 0.0]
+"values": [0.0, 1.0, 0.0, 4.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false

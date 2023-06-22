@@ -1,5 +1,6 @@
 extends Node3D
 
+## Represents the blending between the walking and running animations. It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between the two animations, resulting in the model appearing to walk or run depending on the value.
 var walk_run_blending = 0.0 : set = _set_walk_run_blending
 
 # Set loop on some animation
@@ -45,27 +46,33 @@ func _set_walk_run_blending(value : float):
 	walk_run_blending = value
 	_animation_tree.set(_walk_run_blend_position, walk_run_blending)
 
+## Sets the model to a neutral, action-free state.
 func idle():
 	_main_state_machine.travel("StateMachine")
 	_second_state_machine.travel("Idle")
-	
+
+## Sets the model to a walking or running animation or forward movement.
 func walk():
 	_main_state_machine.travel("StateMachine")
 	_second_state_machine.travel("Walk")
 	
+## Sets the model to an upward-leaping animation, simulating a jump.
 func jump():
 	_main_state_machine.travel("StateMachine")
 	_second_state_machine.travel("Jump")
 	
+## Sets the model to a downward animation, imitating a fall.
 func fall():
 	_main_state_machine.travel("StateMachine")
 	_second_state_machine.travel("Fall")
-	
-func wall_slide():
-	_main_state_machine.travel("WallSlide")
-	
+
+## Sets the model to an edge-grabbing animation.
 func edge_grab():
 	_main_state_machine.travel("EdgeGrab")
+
+## Sets the model to a wall-sliding animation.
+func wall_slide():
+	_main_state_machine.travel("WallSlide")
 
 func _set_blinking(value : bool):
 	_blinking = value
