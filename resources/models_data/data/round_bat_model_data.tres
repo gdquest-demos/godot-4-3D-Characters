@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ModelData" load_steps=3 format=3 uid="uid://e2lsqklpx61"]
+
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="1_c0bl0"]
+[ext_resource type="Texture2D" uid="uid://b76ei28a2hyd" path="res://resources/models_data/model_vignettes/round_bat_vignette.png" id="2_adp6m"]
+
+[resource]
+script = ExtResource("1_c0bl0")
+name = "Round Bat"
+scene_path = "res://models/round_bat/round_bat_skin.tscn"
+vignette = ExtResource("2_adp6m")
+y_offset = 0.5
+scale_compensation = 0.9
+camera_offset_y = 0.5
+animations_list = PackedStringArray()
+range_bind = PackedStringArray()
+dropdown_bind = Array[Resource("res://resources/models_data/option_list_data_builder.gd")]([])
