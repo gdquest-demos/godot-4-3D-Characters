@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=23 format=3 uid="uid://birqyoesacalq"]
 
 [ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
 [ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="3_1yd81"]
 [ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/data/gobot_model_data.tres" id="3_hqcav"]
 [ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="4_5wcnr"]
+[ext_resource type="Resource" uid="uid://e2lsqklpx61" path="res://resources/models_data/data/round_bat_model_data.tres" id="5_leino"]
 [ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/data/beetlebot_model_data.tres" id="5_v2ndd"]
 [ext_resource type="Shader" path="res://viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
 [ext_resource type="Script" path="res://viewer/turner.gd" id="7_0tn27"]
@@ -58,7 +59,7 @@ size = Vector2(2, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
-known_models = Array[Resource("res://resources/models_data/model_data_builder.gd")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
+known_models = Array[Resource("res://resources/models_data/model_data_builder.gd")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("5_leino"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
 
 [node name="TopLayer" type="CanvasLayer" parent="."]
 
@@ -150,12 +151,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.707107, -0.298836, 0.640856, -1.49012e-08, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, -0.609801, 1.49012e-08)
 light_energy = 0.65
 shadow_enabled = true
-directional_shadow_max_distance = 10.0
+directional_shadow_max_distance = 20.0
+directional_shadow_pancake_size = 0.0
 
 [node name="BackLight" type="OmniLight3D" parent="World/Turner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.653888, 0, -0.722009)
 light_energy = 0.5
-shadow_enabled = true
 omni_attenuation = 0.554785
 
 [node name="ModelHolder" type="Node3D" parent="World"]
