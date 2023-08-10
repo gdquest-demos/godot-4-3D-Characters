@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfs31qyude6h2"]
+[gd_scene load_steps=6 format=3 uid="uid://bfs31qyude6h2"]
 
 [ext_resource type="Shader" path="res://viewer/assets/shaders/icon.gdshader" id="1_mtufu"]
 [ext_resource type="Script" path="res://viewer/ui/model_selector/model_tag.gd" id="1_xy4n0"]
+[ext_resource type="Texture2D" uid="uid://bfeoirwptq5uv" path="res://icon.svg" id="3_ecrb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjiq"]
 bg_color = Color(0, 0, 0, 1)
@@ -35,9 +36,11 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/Item"]
+texture_filter = 4
 material = SubResource("ShaderMaterial_fsaak")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("3_ecrb1")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Item"]
