@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ejs88styylln"]
+
+[ext_resource type="Texture2D" uid="uid://d3gigd8y5hjg" path="res://models/sophia/model/sophia_mouth_smile_diffuse.png" id="1_8gei4"]
+[ext_resource type="Texture2D" uid="uid://c36m8cv33f0yi" path="res://models/sophia/model/sophia_mouth_smile_normal.png" id="2_e4i0b"]
+
+[resource]
+resource_name = "mouth_mat"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_8gei4")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_e4i0b")
