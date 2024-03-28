@@ -159,7 +159,7 @@ nodes/HurtShot/position = Vector2(60, 140)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_v8u50")
 nodes/Idle/position = Vector2(-160, 160)
 nodes/output/position = Vector2(280, 160)
-node_connections = [&"output", 0, &"HurtShot", &"HurtShot", 0, &"Idle", &"HurtShot", 1, &"Hurt"]
+node_connections = [&"HurtShot", 0, &"Idle", &"HurtShot", 1, &"Hurt", &"output", 0, &"HurtShot"]
 
 [node name="RoundBatSkin" type="Node3D"]
 script = ExtResource("1_vbemd")

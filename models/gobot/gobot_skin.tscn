@@ -1994,7 +1994,7 @@ nodes/Animation/position = Vector2(120, 100)
 nodes/Step/node = SubResource("AnimationNodeAnimation_l1uic")
 nodes/Step/position = Vector2(100, 220)
 nodes/output/position = Vector2(560, 80)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Step"]
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Step", &"output", 0, &"Add2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1d5g"]
 animation = &"VictorySign"
@@ -2091,7 +2091,7 @@ nodes/HurtShot/position = Vector2(420, 80)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_fdt88")
 nodes/StateMachine/position = Vector2(0, 80)
 nodes/output/position = Vector2(580, 80)
-node_connections = [&"output", 0, &"HurtShot", &"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"HurtShot", 0, &"FlipShot", &"HurtShot", 1, &"Animation"]
+node_connections = [&"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"HurtShot", 0, &"FlipShot", &"HurtShot", 1, &"Animation", &"output", 0, &"HurtShot"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_chj4k"]
 
