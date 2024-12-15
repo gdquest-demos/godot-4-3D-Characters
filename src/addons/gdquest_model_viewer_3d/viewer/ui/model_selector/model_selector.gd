@@ -12,7 +12,7 @@ var _is_open = false : set = _set_is_open
 
 signal selection_changed(value : int)
 
-func setup(new_model_list : Array[Resource]): # array[ModelData]
+func setup(new_model_list : Array[ModelData]):
 	model_list = new_model_list
 	model_tag.tag_name = model_list[0].name
 	model_tag.icon_texture = model_list[0].vignette

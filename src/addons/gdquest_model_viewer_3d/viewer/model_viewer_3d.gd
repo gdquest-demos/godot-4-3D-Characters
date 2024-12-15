@@ -2,7 +2,7 @@ extends Node
 
 const ModelSelector = preload("./ui/model_selector/model_selector.gd")
 
-@export var known_models : Array[Resource] # array[ModelData]
+@export var known_models : Array[ModelData]
 @onready var model_selector = %ModelSelector as ModelSelector
 @onready var animation_selector = %AnimationSelector
 @onready var turner = %Turner
