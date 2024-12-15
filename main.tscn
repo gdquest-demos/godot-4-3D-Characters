@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp15o8pi3t8t3"]
+[gd_scene load_steps=8 format=3 uid="uid://vvg5t4da8vg7"]
 
 [ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/gdquest_model_viewer_3d.gd" id="1_hkj8v"]
-[ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/data/beetlebot_model_data.tres" id="2_1sljj"]
-[ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="3_oo8mq"]
-[ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="4_uy5iw"]
-[ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/data/gobot_model_data.tres" id="5_msdmc"]
-[ext_resource type="Resource" uid="uid://e2lsqklpx61" path="res://resources/models_data/data/round_bat_model_data.tres" id="6_vwhnl"]
-[ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="7_xcp64"]
+[ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/beetlebot_model_data.tres" id="2_1sljj"]
+[ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/bee_bot_model_data.tres" id="3_oo8mq"]
+[ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/gobot_model_data.tres" id="5_d7mk8"]
+[ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/gdbot_model_data.tres" id="5_msdmc"]
+[ext_resource type="Resource" uid="uid://e2lsqklpx61" path="res://resources/models_data/round_bat_model_data.tres" id="6_gdx7t"]
+[ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/sophia_model_data.tres" id="7_lyn7l"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hkj8v")
-known_models = Array[Resource]([ExtResource("2_1sljj"), ExtResource("3_oo8mq"), ExtResource("4_uy5iw"), ExtResource("5_msdmc"), ExtResource("6_vwhnl"), ExtResource("7_xcp64")])
+known_models = Array[Resource]([ExtResource("2_1sljj"), ExtResource("3_oo8mq"), ExtResource("5_msdmc"), ExtResource("5_d7mk8"), ExtResource("6_gdx7t"), ExtResource("7_lyn7l")])

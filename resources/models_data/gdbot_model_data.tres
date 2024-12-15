@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ModelData" load_steps=5 format=3 uid="uid://cwp3yy3ku4f0p"]
 
-[ext_resource type="Script" path="res://resources/models_data/option_list_data_builder.gd" id="1_qi7lk"]
-[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_mcau0"]
-[ext_resource type="Texture2D" uid="uid://bxkudy6pdo2f1" path="res://resources/models_data/model_vignettes/gdbot_vignette.png" id="3_quhkk"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_qi7lk"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_mcau0"]
+[ext_resource type="Texture2D" uid="uid://bxkudy6pdo2f1" path="res://resources/models_data/gdbot_vignette.png" id="3_0e4oe"]
 
 [sub_resource type="Resource" id="Resource_00o35"]
 script = ExtResource("1_qi7lk")
@@ -15,7 +15,7 @@ options_values = PackedStringArray("Default:default", "Happy:happy", "Dizzy:dizz
 script = ExtResource("2_mcau0")
 name = "GDbot"
 scene_path = "res://models/gdbot/gdbot_skin.tscn"
-vignette = ExtResource("3_quhkk")
+vignette = ExtResource("3_0e4oe")
 y_offset = 0.0
 scale_compensation = 0.65
 camera_offset_y = 0.6

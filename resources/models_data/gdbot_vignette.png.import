@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76ei28a2hyd"
-path="res://.godot/imported/round_bat_vignette.png-2de8b874b7e1dea6e380a58ae16262e0.ctex"
+uid="uid://bxkudy6pdo2f1"
+path="res://.godot/imported/gdbot_vignette.png-37bfa16166fe5c2b6827e8d70c84fb21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/models_data/model_vignettes/round_bat_vignette.png"
-dest_files=["res://.godot/imported/round_bat_vignette.png-2de8b874b7e1dea6e380a58ae16262e0.ctex"]
+source_file="res://resources/models_data/gdbot_vignette.png"
+dest_files=["res://.godot/imported/gdbot_vignette.png-37bfa16166fe5c2b6827e8d70c84fb21.ctex"]
 
 [params]
 

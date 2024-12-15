@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ModelData" load_steps=3 format=3 uid="uid://dc7wkocr2c2uv"]
 
-[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_082r2"]
-[ext_resource type="Texture2D" uid="uid://dyrml3l0ufim2" path="res://resources/models_data/model_vignettes/beebot_vignette.png" id="2_gxckf"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_082r2"]
+[ext_resource type="Texture2D" uid="uid://dyrml3l0ufim2" path="res://resources/models_data/beebot_vignette.png" id="2_gxckf"]
 
 [resource]
 script = ExtResource("2_082r2")

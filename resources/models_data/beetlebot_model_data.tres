@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ModelData" load_steps=4 format=3 uid="uid://c0uum62k51nw5"]
+
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_4noyt"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_8yamy"]
+[ext_resource type="Texture2D" uid="uid://71jjagmyh0fq" path="res://resources/models_data/beetle_bot_vignette.png" id="3_8p8ri"]
+
+[resource]
+script = ExtResource("2_8yamy")
+name = "Beetle bot"
+scene_path = "res://models/beetle_bot/beetlebot_skin.tscn"
+vignette = ExtResource("3_8p8ri")
+y_offset = 0.0
+scale_compensation = 0.65
+camera_offset_y = 0.25
+animations_list = PackedStringArray("Idle:idle", "Walk:walk", "Attack:attack", "Power off:power_off")
+range_bind = PackedStringArray()
+dropdown_bind = Array[ExtResource("1_4noyt")]([])

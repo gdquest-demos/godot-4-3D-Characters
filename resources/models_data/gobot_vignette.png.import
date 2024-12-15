@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xv0ee4kxc1jo"
-path="res://.godot/imported/gobot_vignette.png-0af72363e26e493937fb391897e2b664.ctex"
+path="res://.godot/imported/gobot_vignette.png-787a17780b1ee588fd16fde9f8330f13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/models_data/model_vignettes/gobot_vignette.png"
-dest_files=["res://.godot/imported/gobot_vignette.png-0af72363e26e493937fb391897e2b664.ctex"]
+source_file="res://resources/models_data/gobot_vignette.png"
+dest_files=["res://.godot/imported/gobot_vignette.png-787a17780b1ee588fd16fde9f8330f13.ctex"]
 
 [params]
 
