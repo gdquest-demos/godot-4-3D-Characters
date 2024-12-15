@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcls3ehldqget"
-path.s3tc="res://.godot/imported/gdquest_logo_sdf.png-527f9f04f22b4cefac993ed8a6d8c575.s3tc.ctex"
+path.s3tc="res://.godot/imported/gdquest_logo_sdf.png-98b2400d807abafebce1b06ba77b3333.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://viewer/assets/textures/gdquest_logo_sdf.png"
-dest_files=["res://.godot/imported/gdquest_logo_sdf.png-527f9f04f22b4cefac993ed8a6d8c575.s3tc.ctex"]
+source_file="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/gdquest_logo_sdf.png"
+dest_files=["res://.godot/imported/gdquest_logo_sdf.png-98b2400d807abafebce1b06ba77b3333.s3tc.ctex"]
 
 [params]
 

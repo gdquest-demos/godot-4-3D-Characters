@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj6led5eh25bo"]
 
-[ext_resource type="Script" path="res://viewer/ui/model_selector/ModelSelector.gd" id="1_8owei"]
-[ext_resource type="PackedScene" uid="uid://bfs31qyude6h2" path="res://viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
-[ext_resource type="Script" path="res://viewer/ui/model_selector/bubble_scroll.gd" id="3_8hjj3"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_selector.gd" id="1_8owei"]
+[ext_resource type="PackedScene" uid="uid://bfs31qyude6h2" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/bubble_scroll.gd" id="3_8hjj3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikg2k"]
 

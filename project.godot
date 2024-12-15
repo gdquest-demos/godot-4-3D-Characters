@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="3D Characters Repository"
-run/main_scene="res://viewer/model_viewer_3d.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://character_icon.png"
 
@@ -21,6 +21,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdquest_model_viewer_3d/plugin.cfg")
 
 [rendering]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfs31qyude6h2"]
 
-[ext_resource type="Shader" path="res://viewer/assets/shaders/icon.gdshader" id="1_mtufu"]
-[ext_resource type="Script" path="res://viewer/ui/model_selector/model_tag.gd" id="1_xy4n0"]
+[ext_resource type="Shader" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/icon.gdshader" id="1_mtufu"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_tag.gd" id="1_xy4n0"]
 [ext_resource type="Texture2D" uid="uid://ya08nse1qni2" path="res://character_icon.png" id="3_vur6e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjiq"]

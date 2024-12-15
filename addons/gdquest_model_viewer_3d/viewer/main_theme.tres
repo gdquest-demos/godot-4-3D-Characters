@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dioqrbukc6tl0"]
 
-[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://viewer/assets/textures/down_arrow_icon.png" id="1_8g03f"]
+[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png" id="1_8g03f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
 content_margin_left = 12.0

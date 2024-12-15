@@ -1,21 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=17 format=3 uid="uid://birqyoesacalq"]
 
-[ext_resource type="Script" path="res://viewer/model_viewer_3d.gd" id="1_3jhs4"]
-[ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
-[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_vrbur"]
-[ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="3_1yd81"]
-[ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/data/gobot_model_data.tres" id="3_hqcav"]
-[ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="4_5wcnr"]
-[ext_resource type="Resource" uid="uid://e2lsqklpx61" path="res://resources/models_data/data/round_bat_model_data.tres" id="5_leino"]
-[ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/models_data/data/beetlebot_model_data.tres" id="5_v2ndd"]
-[ext_resource type="Shader" path="res://viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
-[ext_resource type="Script" path="res://viewer/turner.gd" id="7_0tn27"]
-[ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
-[ext_resource type="PackedScene" uid="uid://cj6led5eh25bo" path="res://viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
-[ext_resource type="Theme" uid="uid://dioqrbukc6tl0" path="res://viewer/main_theme.tres" id="10_l4eat"]
-[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://viewer/assets/textures/down_arrow_icon.png" id="10_ojfeu"]
-[ext_resource type="Script" path="res://viewer/animation_selector.gd" id="10_ylcjv"]
-[ext_resource type="Script" path="res://viewer/parameters.gd" id="11_rc064"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_viewer_3d.gd" id="1_3jhs4"]
+[ext_resource type="Shader" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/turner.gd" id="7_0tn27"]
+[ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://addons/gdquest_model_viewer_3d/viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
+[ext_resource type="PackedScene" uid="uid://cj6led5eh25bo" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
+[ext_resource type="Theme" uid="uid://dioqrbukc6tl0" path="res://addons/gdquest_model_viewer_3d/viewer/main_theme.tres" id="10_l4eat"]
+[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png" id="10_ojfeu"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/animation_selector.gd" id="10_ylcjv"]
+[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/parameters.gd" id="11_rc064"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
 content_margin_left = 12.0
@@ -60,7 +53,6 @@ size = Vector2(2, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
-known_models = Array[ExtResource("2_vrbur")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("5_leino"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
 
 [node name="TopLayer" type="CanvasLayer" parent="."]
 

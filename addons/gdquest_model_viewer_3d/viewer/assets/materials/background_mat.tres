@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cqdapslfy1rva"]
 
-[ext_resource type="Shader" path="res://viewer/assets/shaders/bg.gdshader" id="1_4vwfw"]
-[ext_resource type="Texture2D" uid="uid://bcls3ehldqget" path="res://viewer/assets/textures/gdquest_logo_sdf.png" id="2_2b3l1"]
+[ext_resource type="Shader" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/bg.gdshader" id="1_4vwfw"]
+[ext_resource type="Texture2D" uid="uid://bcls3ehldqget" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/gdquest_logo_sdf.png" id="2_2b3l1"]
 
 [resource]
 render_priority = 0
