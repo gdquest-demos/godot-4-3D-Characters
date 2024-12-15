@@ -22,6 +22,10 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
+[editor]
+
+movie_writer/movie_file="../movie/frame.png"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdquest_model_viewer_3d/plugin.cfg")
