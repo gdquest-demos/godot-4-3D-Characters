@@ -1,5 +1,4 @@
 extends Resource
-class_name OptionSetterListData
 
 enum MODE {SET, CALL}
 

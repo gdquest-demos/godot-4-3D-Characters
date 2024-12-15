@@ -1,6 +1,8 @@
 extends Resource
 class_name ModelData
 
+const OptionSetterListData = preload("./option_list_data_builder.gd")
+
 @export_group("Model Info")
 
 @export var name : String = ""
