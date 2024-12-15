@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=24 format=3 uid="uid://birqyoesacalq"]
 
-[ext_resource type="Script" path="res://viewer/main.gd" id="1_3jhs4"]
+[ext_resource type="Script" path="res://viewer/model_viewer_3d.gd" id="1_3jhs4"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/models_data/data/gdbot_model_data.tres" id="2_40jqj"]
+[ext_resource type="Script" path="res://resources/models_data/model_data_builder.gd" id="2_vrbur"]
 [ext_resource type="Resource" uid="uid://bnsssw75oypyi" path="res://resources/models_data/data/sophia_model_data.tres" id="3_1yd81"]
 [ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/models_data/data/gobot_model_data.tres" id="3_hqcav"]
 [ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/models_data/data/bee_bot_model_data.tres" id="4_5wcnr"]
@@ -59,7 +60,7 @@ size = Vector2(2, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3jhs4")
-known_models = Array[Resource("res://resources/models_data/model_data_builder.gd")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("5_leino"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
+known_models = Array[ExtResource("2_vrbur")]([ExtResource("2_40jqj"), ExtResource("3_hqcav"), ExtResource("3_1yd81"), ExtResource("5_leino"), ExtResource("4_5wcnr"), ExtResource("5_v2ndd")])
 
 [node name="TopLayer" type="CanvasLayer" parent="."]
 
@@ -91,12 +92,12 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("10_l4eat")
-theme_override_constants/arrow_margin = 8
-theme_override_icons/arrow = ExtResource("10_ojfeu")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4wrdr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4wrdr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("10_ojfeu")
 script = ExtResource("10_ylcjv")
 
 [node name="Parameters" type="MarginContainer" parent="TopLayer/UI"]

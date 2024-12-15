@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="3D Characters Repository"
-run/main_scene="res://viewer/main.tscn"
+run/main_scene="res://viewer/model_viewer_3d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://character_icon.png"
 
