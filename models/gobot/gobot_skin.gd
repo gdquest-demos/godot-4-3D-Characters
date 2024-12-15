@@ -1,6 +1,7 @@
 extends Node3D
 
 ## Emitted when Gobot's feet hit the ground will running.
+@warning_ignore("unused_signal")
 signal foot_step
 ## Gobot's MeshInstance3D model.
 @export var gobot_model: MeshInstance3D
