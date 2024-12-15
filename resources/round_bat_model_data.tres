@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_dt7st")
 name = "Round Bat"
-scene_path = "res://models/gdquest_round_bat/round_bat_skin.tscn"
+scene_path = "res://addons/gdquest_round_bat/round_bat_skin.tscn"
 vignette = ExtResource("3_cufyi")
 y_offset = 0.5
 scale_compensation = 0.9

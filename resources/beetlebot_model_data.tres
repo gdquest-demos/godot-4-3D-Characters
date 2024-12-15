@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_8yamy")
 name = "Beetle bot"
-scene_path = "res://models/gdquest_beetle_bot/beetlebot_skin.tscn"
+scene_path = "res://addons/gdquest_beetle_bot/beetlebot_skin.tscn"
 vignette = ExtResource("3_nhhax")
 y_offset = 0.0
 scale_compensation = 0.65

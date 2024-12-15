@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_dn46e")
 name = "Gobot"
-scene_path = "res://models/gdquest_gobot/gobot_skin.tscn"
+scene_path = "res://addons/gdquest_gobot/gobot_skin.tscn"
 vignette = ExtResource("3_onmb7")
 y_offset = 0.0
 scale_compensation = 0.65

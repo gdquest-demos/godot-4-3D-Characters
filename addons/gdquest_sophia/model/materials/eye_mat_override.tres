@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dye01l0ct4fby"]
+
+[ext_resource type="Texture2D" uid="uid://ctfbobgg7ts8d" path="res://addons/gdquest_sophia/model/textures/eyes_diffuse_map.png" id="1_oox6g"]
+[ext_resource type="Texture2D" uid="uid://bjvo8w2ptm7fc" path="res://addons/gdquest_sophia/model/textures/eyes_normal_map.png" id="2_r1vvu"]
+
+[resource]
+resource_name = "eye_mat_L"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_oox6g")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_r1vvu")
+uv1_scale = Vector3(1, 0.5, 1)

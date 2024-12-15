@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cruyb7vmbaabx"]
+
+[ext_resource type="Shader" path="res://addons/gdquest_bee_bot/shader/bee_wings_shader.gdshader" id="1_b2ohr"]
+[ext_resource type="Texture2D" uid="uid://blaqa1tkmd0xx" path="res://addons/gdquest_bee_bot/textures/wing_pattern.png" id="2_wfea8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b2ohr")
+shader_parameter/emission_color = Color(1, 0.584314, 0, 1)
+shader_parameter/global_intensity = 1.0
+shader_parameter/wing_pattern_sampler = ExtResource("2_wfea8")

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cdqqp1tvfod18"]
+
+[ext_resource type="Shader" path="res://addons/gdquest_models_shared/shaders/screen_shader.gdshader" id="1_e2dsf"]
+[ext_resource type="Texture2D" uid="uid://diovavdu1x8kw" path="res://addons/gdquest_gdbot/texture/open.png" id="2_rkdwa"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_e2dsf")
+shader_parameter/intensity = 2.0
+shader_parameter/screen_color = Color(0.101961, 0.662745, 1, 0.0196078)
+shader_parameter/screen_red_offset = Vector2(0, 0)
+shader_parameter/screen_green_offset = Vector2(0, 0)
+shader_parameter/screen_blue_offset = Vector2(0, 0)
+shader_parameter/pixel_size = 32.0
+shader_parameter/face_texture = ExtResource("2_rkdwa")

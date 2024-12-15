@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cdp5t51v8o1rs"]
+
+[ext_resource type="Texture2D" uid="uid://bqj7x6pcb73iy" path="res://addons/gdquest_sophia/model/sophia_eye_open_diffuse.png" id="1_a6jqn"]
+[ext_resource type="Texture2D" uid="uid://pcq7xge7vncv" path="res://addons/gdquest_sophia/model/sophia_eye_open_normal.png" id="2_iuhho"]
+
+[resource]
+resource_name = "eye_mat_R"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_a6jqn")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_iuhho")

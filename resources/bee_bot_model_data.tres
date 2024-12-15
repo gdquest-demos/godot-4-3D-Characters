@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_082r2")
 name = "Bee bot"
-scene_path = "res://models/gdquest_bee_bot/bee_bot_skin.tscn"
+scene_path = "res://addons/gdquest_bee_bot/bee_bot_skin.tscn"
 vignette = ExtResource("2_perqg")
 y_offset = 0.35
 scale_compensation = 1.0

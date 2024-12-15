@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_s4qgj")
 name = "Sophia"
-scene_path = "res://models/gdquest_sophia/sophia_skin.tscn"
+scene_path = "res://addons/gdquest_sophia/sophia_skin.tscn"
 vignette = ExtResource("3_r3aix")
 y_offset = 0.0
 scale_compensation = 0.6

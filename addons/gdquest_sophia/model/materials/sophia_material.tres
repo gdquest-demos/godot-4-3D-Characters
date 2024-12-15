@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bv3j2e7k6f5xf"]
+
+[ext_resource type="Texture2D" uid="uid://6jb7dt4d54ck" path="res://addons/gdquest_sophia/model/sophia_diffuse.png" id="1_m7hxq"]
+[ext_resource type="Texture2D" uid="uid://dbg3uqtvqxigv" path="res://addons/gdquest_sophia/model/sophia_roughness.png" id="2_fbyat"]
+[ext_resource type="Texture2D" uid="uid://mdhln8lltmyo" path="res://addons/gdquest_sophia/model/sophia_normal.png" id="3_tmo2m"]
+[ext_resource type="Texture2D" uid="uid://dxqmgxq6o21yr" path="res://addons/gdquest_sophia/model/SSS.png" id="4_luinf"]
+
+[resource]
+resource_name = "sophia_material"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_m7hxq")
+metallic_texture = ExtResource("2_fbyat")
+metallic_texture_channel = 2
+roughness = 0.8
+roughness_texture = ExtResource("2_fbyat")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_tmo2m")
+rim_enabled = true
+rim = 0.5
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.25
+subsurf_scatter_skin_mode = true
+subsurf_scatter_texture = ExtResource("4_luinf")

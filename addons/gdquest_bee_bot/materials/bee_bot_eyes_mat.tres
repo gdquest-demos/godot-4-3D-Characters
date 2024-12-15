@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dx8xfrepk0a68"]
+
+[ext_resource type="Shader" path="res://addons/gdquest_models_shared/shaders/screen_shader.gdshader" id="1_itpnc"]
+[ext_resource type="Texture2D" uid="uid://bvxkh2pa1nqdq" path="res://addons/gdquest_models_shared/textures/eye_mask.png" id="2_acs8v"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_itpnc")
+shader_parameter/intensity = 2.0
+shader_parameter/screen_color = Color(1, 0.584314, 0, 0.0784314)
+shader_parameter/screen_red_offset = Vector2(0, 0)
+shader_parameter/screen_green_offset = Vector2(0, 0)
+shader_parameter/screen_blue_offset = Vector2(0, 0)
+shader_parameter/pixel_size = 32.0
+shader_parameter/face_texture = ExtResource("2_acs8v")
