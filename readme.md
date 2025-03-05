@@ -36,7 +36,7 @@ This repository contains our open-source 3D models, pre-configured and compatibl
 		<img width="64" src="./src/resources/round_bat_vignette.png"/>
 		</th>
 		<th>
-		<img width="64" src="./src/resources/beebot_vignette.png"/>
+		<img width="64" src="./src/resources/bee_bot_vignette.png"/>
 		</th>
 		<th>
 		<img width="64" src="./src/resources/beetle_bot_vignette.png"/>
