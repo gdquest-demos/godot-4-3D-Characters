@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ModelData" load_steps=5 format=3 uid="uid://cwp3yy3ku4f0p"]
 
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_qi7lk"]
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_mcau0"]
+[ext_resource type="Script" uid="uid://bpk07sgyftnyy" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_qi7lk"]
+[ext_resource type="Script" uid="uid://cieem5bgp44xo" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_mcau0"]
 [ext_resource type="Texture2D" uid="uid://bxkudy6pdo2f1" path="res://resources/gdbot_vignette.png" id="3_0e4oe"]
 
 [sub_resource type="Resource" id="Resource_00o35"]
@@ -16,7 +16,6 @@ script = ExtResource("2_mcau0")
 name = "GDbot"
 scene_path = "res://addons/gdquest_gdbot/gdbot_skin.tscn"
 vignette = ExtResource("3_0e4oe")
-y_offset = 0.0
 scale_compensation = 0.65
 camera_offset_y = 0.6
 animations_list = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall")

@@ -1,32 +1,37 @@
 extends Node2D
 
-var _blinking = null : set = _set_blinking
-@onready var _animation_player : AnimationPlayer = $AnimationPlayer
-@onready var _blinking_timer : Timer = $BlinkTimer
-@onready var _closed_eyes_timer : Timer = $ClosedTimer
-@onready var _left_eye : Sprite2D = $LeftEye
-@onready var _right_eye : Sprite2D = $RightEye
+var _blinking = null:
+	set = _set_blinking
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _blinking_timer: Timer = $BlinkTimer
+@onready var _closed_eyes_timer: Timer = $ClosedTimer
+@onready var _left_eye: Sprite2D = $LeftEye
+@onready var _right_eye: Sprite2D = $RightEye
 
 var eyes_textures = {
-	"open" : preload("./texture/parts/eye_open.png"),
-	"closed" : preload("./texture/parts/eye_close.png")
+	"open": preload("./texture/parts/eye_open.png"),
+	"closed": preload("./texture/parts/eye_close.png"),
 }
 
-var current_face = null : set = _set_face
+var current_face = null:
+	set = _set_face
 
-func _ready():
-	_blinking_timer.connect("timeout", _on_blink_timer_timeout)
+
+func _ready() -> void:
+	_blinking_timer.timeout.connect(_on_blink_timer_timeout)
 	_set_blinking(true)
 	current_face = "default"
-	
-func _set_blinking(value : bool):
+
+
+func _set_blinking(value: bool) -> void:
 	_blinking = value
 	if _blinking:
 		_blinking_timer.start()
 	else:
 		_blinking_timer.stop()
-		
-func _on_blink_timer_timeout():
+
+
+func _on_blink_timer_timeout() -> void:
 	# Play secondary action rather than blink
 	if randf_range(0.0, 1.0) > 0.9:
 		_animation_player.play("look_around")
@@ -44,12 +49,15 @@ func _on_blink_timer_timeout():
 		_blinking_timer.wait_time = randf_range(1.0, 4.0)
 	_blinking_timer.start()
 
-func _set_eyes(eyes_name : String):
+
+func _set_eyes(eyes_name: String) -> void:
 	_left_eye.texture = eyes_textures[eyes_name]
 	_right_eye.texture = eyes_textures[eyes_name]
-	
-func _set_face(face_name):
-	if current_face == face_name: return
+
+
+func _set_face(face_name: String) -> void:
+	if current_face == face_name:
+		return
 	current_face = face_name
 	_animation_player.play("RESET")
 	_animation_player.seek(0.0, true)

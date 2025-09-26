@@ -1,25 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://birqyoesacalq"]
+[gd_scene load_steps=15 format=3 uid="uid://birqyoesacalq"]
 
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_viewer_3d.gd" id="1_3jhs4"]
-[ext_resource type="Shader" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/turner.gd" id="7_0tn27"]
+[ext_resource type="Script" uid="uid://bijckwsxrp35q" path="res://addons/gdquest_model_viewer_3d/viewer/model_viewer_3d.gd" id="1_3jhs4"]
+[ext_resource type="Shader" uid="uid://cmu4l7tiy7ipg" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
+[ext_resource type="Script" uid="uid://dku3luw8maxcb" path="res://addons/gdquest_model_viewer_3d/viewer/turner.gd" id="7_0tn27"]
 [ext_resource type="Material" uid="uid://cqdapslfy1rva" path="res://addons/gdquest_model_viewer_3d/viewer/assets/materials/background_mat.tres" id="8_nxs1c"]
 [ext_resource type="PackedScene" uid="uid://cj6led5eh25bo" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_selector.tscn" id="9_yvaan"]
 [ext_resource type="Theme" uid="uid://dioqrbukc6tl0" path="res://addons/gdquest_model_viewer_3d/viewer/main_theme.tres" id="10_l4eat"]
-[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png" id="10_ojfeu"]
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/animation_selector.gd" id="10_ylcjv"]
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/parameters.gd" id="11_rc064"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-bg_color = Color(0, 0, 0, 0.901961)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[ext_resource type="Script" uid="uid://b3iqdl3p46v67" path="res://addons/gdquest_model_viewer_3d/viewer/animation_selector.gd" id="10_ylcjv"]
+[ext_resource type="Script" uid="uid://c64vs8kud8f6g" path="res://addons/gdquest_model_viewer_3d/viewer/parameters.gd" id="11_rc064"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4cejc"]
 ground_horizon_color = Color(0.898039, 0.898039, 0.905882, 1)
@@ -64,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("10_l4eat")
 
 [node name="ModelSelector" parent="TopLayer/UI" instance=ExtResource("9_yvaan")]
 unique_name_in_owner = true
@@ -71,6 +60,7 @@ layout_mode = 1
 
 [node name="AnimationSelector" type="OptionButton" parent="TopLayer/UI"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -83,13 +73,6 @@ offset_right = 41.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("10_l4eat")
-theme_override_styles/focus = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4wrdr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_4wrdr")
-theme_override_constants/arrow_margin = 8
-theme_override_icons/arrow = ExtResource("10_ojfeu")
 script = ExtResource("10_ylcjv")
 
 [node name="Parameters" type="MarginContainer" parent="TopLayer/UI"]

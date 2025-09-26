@@ -1,8 +1,30 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dioqrbukc6tl0"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dioqrbukc6tl0"]
 
 [ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png" id="1_8g03f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa11v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.901961)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.901961)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvkoa"]
 content_margin_left = 12.0
 content_margin_top = 8.0
 content_margin_right = 12.0
@@ -24,13 +46,46 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdvkf"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.9019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.175, 0.175, 0.175, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvg6q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.901961)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 HBoxContainer/constants/separation = 8
+HSlider/styles/slider = SubResource("StyleBoxFlat_aa11v")
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
+OptionButton/constants/arrow_margin = 8
 OptionButton/icons/arrow = ExtResource("1_8g03f")
-OptionButton/styles/normal = SubResource("StyleBoxFlat_4wrdr")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_4wrdr")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_4wrdr")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_xvkoa")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_txpvc")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_cdvkf")
 VBoxContainer/constants/separation = 8
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_yvg6q")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://vvg5t4da8vg7"]
+[gd_scene load_steps=9 format=3 uid="uid://vvg5t4da8vg7"]
 
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/gdquest_model_viewer_3d.gd" id="1_hkj8v"]
+[ext_resource type="Script" uid="uid://2elcbvga7dcs" path="res://addons/gdquest_model_viewer_3d/gdquest_model_viewer_3d.gd" id="1_hkj8v"]
 [ext_resource type="Resource" uid="uid://c0uum62k51nw5" path="res://resources/beetlebot_model_data.tres" id="2_1sljj"]
+[ext_resource type="Script" uid="uid://cieem5bgp44xo" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_5vw27"]
 [ext_resource type="Resource" uid="uid://dc7wkocr2c2uv" path="res://resources/bee_bot_model_data.tres" id="3_oo8mq"]
 [ext_resource type="Resource" uid="uid://buvfq0afpoes1" path="res://resources/gobot_model_data.tres" id="5_d7mk8"]
 [ext_resource type="Resource" uid="uid://cwp3yy3ku4f0p" path="res://resources/gdbot_model_data.tres" id="5_msdmc"]
@@ -10,4 +11,4 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hkj8v")
-known_models = Array[Resource]([ExtResource("2_1sljj"), ExtResource("3_oo8mq"), ExtResource("5_msdmc"), ExtResource("5_d7mk8"), ExtResource("6_gdx7t"), ExtResource("7_lyn7l")])
+known_models = Array[ExtResource("2_5vw27")]([ExtResource("2_1sljj"), ExtResource("3_oo8mq"), ExtResource("5_msdmc"), ExtResource("5_d7mk8"), ExtResource("6_gdx7t"), ExtResource("7_lyn7l")])
