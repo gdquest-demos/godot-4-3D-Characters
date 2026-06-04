@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ModelData" load_steps=5 format=3 uid="uid://cwp3yy3ku4f0p"]
+[gd_resource type="Resource" script_class="ModelData" format=3 uid="uid://cwp3yy3ku4f0p"]
 
 [ext_resource type="Script" uid="uid://bpk07sgyftnyy" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_qi7lk"]
 [ext_resource type="Script" uid="uid://cieem5bgp44xo" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_mcau0"]

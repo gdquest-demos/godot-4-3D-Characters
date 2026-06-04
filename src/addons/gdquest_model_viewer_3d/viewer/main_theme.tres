@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dioqrbukc6tl0"]
+[gd_resource type="Theme" format=3 uid="uid://dioqrbukc6tl0"]
 
-[ext_resource type="Texture2D" uid="uid://b3hg20sllwpo" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png" id="1_8g03f"]
+[ext_resource type="Texture2D" uid="uid://dw5rkas031u6" path="res://addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.svg" id="1_xvkoa"]
+[ext_resource type="FontFile" uid="uid://b8pmr856lnmnx" path="res://addons/gdquest_model_viewer_3d/fonts/Montserrat-Bold.ttf" id="2_aa11v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa11v"]
 content_margin_left = 4.0
@@ -13,6 +14,30 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ffu8"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eccjl"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wrdr"]
 content_margin_left = 12.0
 content_margin_top = 8.0
@@ -23,6 +48,18 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3t2n"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvkoa"]
 content_margin_left = 12.0
@@ -35,6 +72,18 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxfgv"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txpvc"]
 content_margin_left = 12.0
 content_margin_top = 8.0
@@ -45,6 +94,44 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7muqo"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Gradient" id="Gradient_5jsij"]
+offsets = PackedFloat32Array(0.55, 0.6, 0.95, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.3372549, 0.61960787, 1, 1, 0.339118, 0.6239463, 1, 1, 0.33999997, 0.62600005, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjwy5"]
+gradient = SubResource("Gradient_5jsij")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_clk20"]
+offsets = PackedFloat32Array(0.95, 1)
+colors = PackedColorArray(0.27450982, 0.27450982, 0.27450982, 1, 0.27, 0.27, 0.27, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ajxab"]
+gradient = SubResource("Gradient_clk20")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdvkf"]
 content_margin_left = 12.0
@@ -74,18 +161,36 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [resource]
+default_font = ExtResource("2_aa11v")
+default_font_size = 49
 HBoxContainer/constants/separation = 8
 HSlider/styles/slider = SubResource("StyleBoxFlat_aa11v")
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
-OptionButton/constants/arrow_margin = 8
-OptionButton/icons/arrow = ExtResource("1_8g03f")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 16
+OptionButton/constants/h_separation = 32
+OptionButton/icons/arrow = ExtResource("1_xvkoa")
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_7ffu8")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_eccjl")
 OptionButton/styles/focus = SubResource("StyleBoxFlat_4wrdr")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_4wrdr")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_t3t2n")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_xvkoa")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxFlat_rxfgv")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_txpvc")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_7muqo")
+PopupMenu/constants/h_separation = 16
+PopupMenu/icons/radio_checked = SubResource("GradientTexture2D_xjwy5")
+PopupMenu/icons/radio_unchecked = SubResource("GradientTexture2D_ajxab")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_cdvkf")
 VBoxContainer/constants/separation = 8
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_yvg6q")

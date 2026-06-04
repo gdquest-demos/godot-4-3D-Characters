@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://birqyoesacalq"]
+[gd_scene format=3 uid="uid://birqyoesacalq"]
 
 [ext_resource type="Script" uid="uid://bijckwsxrp35q" path="res://addons/gdquest_model_viewer_3d/viewer/model_viewer_3d.gd" id="1_3jhs4"]
 [ext_resource type="Shader" uid="uid://cmu4l7tiy7ipg" path="res://addons/gdquest_model_viewer_3d/viewer/assets/shaders/ground.gdshader" id="6_s8bys"]
@@ -39,12 +39,12 @@ size = Vector2(4, 4)
 [sub_resource type="QuadMesh" id="QuadMesh_purc5"]
 size = Vector2(2, 1)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1946291518]
 script = ExtResource("1_3jhs4")
 
-[node name="TopLayer" type="CanvasLayer" parent="."]
+[node name="TopLayer" type="CanvasLayer" parent="." unique_id=1732162562]
 
-[node name="UI" type="Control" parent="TopLayer"]
+[node name="UI" type="Control" parent="TopLayer" unique_id=1229228767]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,11 +54,11 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("10_l4eat")
 
-[node name="ModelSelector" parent="TopLayer/UI" instance=ExtResource("9_yvaan")]
+[node name="ModelSelector" parent="TopLayer/UI" unique_id=90636845 instance=ExtResource("9_yvaan")]
 unique_name_in_owner = true
 layout_mode = 1
 
-[node name="AnimationSelector" type="OptionButton" parent="TopLayer/UI"]
+[node name="AnimationSelector" type="OptionButton" parent="TopLayer/UI" unique_id=132581324]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
@@ -73,9 +73,10 @@ offset_right = 41.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
+allow_reselect = true
 script = ExtResource("10_ylcjv")
 
-[node name="Parameters" type="MarginContainer" parent="TopLayer/UI"]
+[node name="Parameters" type="MarginContainer" parent="TopLayer/UI" unique_id=924247821]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -91,49 +92,49 @@ grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("11_rc064")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/UI/Parameters"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/UI/Parameters" unique_id=278862094]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 2
 
-[node name="World" type="Node3D" parent="."]
+[node name="World" type="Node3D" parent="." unique_id=372642065]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=579592968]
 environment = SubResource("Environment_cw67r")
 
-[node name="Ground" type="MeshInstance3D" parent="World"]
+[node name="Ground" type="MeshInstance3D" parent="World" unique_id=613842969]
 material_override = SubResource("ShaderMaterial_25vcg")
 mesh = SubResource("PlaneMesh_pcsvn")
 skeleton = NodePath("../..")
 
-[node name="Turner" type="Node3D" parent="World"]
+[node name="Turner" type="Node3D" parent="World" unique_id=1594138443]
 unique_name_in_owner = true
 transform = Transform3D(0.906308, 0.0368336, -0.42101, 0, 0.996195, 0.0871557, 0.422618, -0.0789899, 0.902859, 0, 0.6, 0)
 script = ExtResource("7_0tn27")
 metadata/_edit_group_ = true
 
-[node name="Camera3D" type="Camera3D" parent="World/Turner"]
+[node name="Camera3D" type="Camera3D" parent="World/Turner" unique_id=1547104347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 fov = 60.0
 
-[node name="BackgroundPlane" type="MeshInstance3D" parent="World/Turner"]
+[node name="BackgroundPlane" type="MeshInstance3D" parent="World/Turner" unique_id=2077412112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 material_override = ExtResource("8_nxs1c")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_purc5")
 skeleton = NodePath("../..")
 
-[node name="FrontLight" type="DirectionalLight3D" parent="World/Turner"]
+[node name="FrontLight" type="DirectionalLight3D" parent="World/Turner" unique_id=2026574633]
 transform = Transform3D(0.707107, -0.298836, 0.640856, -1.49012e-08, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, -0.609801, 1.49012e-08)
 light_energy = 0.65
 shadow_enabled = true
 directional_shadow_max_distance = 20.0
 directional_shadow_pancake_size = 0.0
 
-[node name="BackLight" type="OmniLight3D" parent="World/Turner"]
+[node name="BackLight" type="OmniLight3D" parent="World/Turner" unique_id=1305870285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.653888, 0, -0.722009)
 light_energy = 0.5
 omni_attenuation = 0.554785
 
-[node name="ModelHolder" type="Node3D" parent="World"]
+[node name="ModelHolder" type="Node3D" parent="World" unique_id=1700593800]
 unique_name_in_owner = true
