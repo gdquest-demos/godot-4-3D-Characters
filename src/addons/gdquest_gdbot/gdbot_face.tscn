@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvy2nao23i4rl"]
+[gd_scene format=3 uid="uid://dvy2nao23i4rl"]
 
-[ext_resource type="Script" path="res://addons/gdquest_gdbot/gdbot_face.gd" id="1_g7fgr"]
+[ext_resource type="Script" uid="uid://8sqitarj6fkw" path="res://addons/gdquest_gdbot/gdbot_face.gd" id="1_g7fgr"]
 [ext_resource type="Texture2D" uid="uid://cbp882a2a27qw" path="res://addons/gdquest_gdbot/texture/parts/eye_happy.png" id="2_fa0xy"]
 [ext_resource type="Texture2D" uid="uid://blacn6s3yc88h" path="res://addons/gdquest_gdbot/texture/parts/eye_open.png" id="2_qfyd4"]
 [ext_resource type="Texture2D" uid="uid://dt0veafbpw6ih" path="res://addons/gdquest_gdbot/texture/parts/eye_spiral.png" id="3_rdwvm"]
@@ -330,44 +330,42 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l5i24"]
 _data = {
-"RESET": SubResource("Animation_33is7"),
-"dizzy": SubResource("Animation_ne3is"),
-"happy": SubResource("Animation_ttnon"),
-"look_around": SubResource("Animation_rbq53"),
-"sleepy": SubResource("Animation_4tctg")
+&"RESET": SubResource("Animation_33is7"),
+&"dizzy": SubResource("Animation_ne3is"),
+&"happy": SubResource("Animation_ttnon"),
+&"look_around": SubResource("Animation_rbq53"),
+&"sleepy": SubResource("Animation_4tctg")
 }
 
-[node name="GDbotFace" type="Node2D"]
+[node name="GDbotFace" type="Node2D" unique_id=2120507506]
 script = ExtResource("1_g7fgr")
 
-[node name="BG" type="ColorRect" parent="."]
+[node name="BG" type="ColorRect" parent="." unique_id=1435706715]
 offset_left = -144.0
 offset_top = -144.0
 offset_right = 144.0
 offset_bottom = 144.0
 size_flags_horizontal = 4
 
-[node name="RightEye" type="Sprite2D" parent="."]
+[node name="RightEye" type="Sprite2D" parent="." unique_id=557512797]
 position = Vector2(45, -2)
 texture = ExtResource("2_qfyd4")
 
-[node name="LeftEye" type="Sprite2D" parent="."]
+[node name="LeftEye" type="Sprite2D" parent="." unique_id=362699835]
 position = Vector2(-45, -2)
 texture = ExtResource("2_qfyd4")
 flip_h = true
 
-[node name="Mouth" type="Sprite2D" parent="."]
+[node name="Mouth" type="Sprite2D" parent="." unique_id=631193934]
 position = Vector2(0, 20.2222)
 scale = Vector2(1, 1.2)
 texture = ExtResource("3_xjkgv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_l5i24")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1295869009]
+libraries/ = SubResource("AnimationLibrary_l5i24")
 
-[node name="BlinkTimer" type="Timer" parent="."]
+[node name="BlinkTimer" type="Timer" parent="." unique_id=736360999]
 one_shot = true
 
-[node name="ClosedTimer" type="Timer" parent="."]
+[node name="ClosedTimer" type="Timer" parent="." unique_id=13672189]
 one_shot = true

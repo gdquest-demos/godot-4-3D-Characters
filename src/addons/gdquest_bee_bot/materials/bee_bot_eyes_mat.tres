@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dx8xfrepk0a68"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dx8xfrepk0a68"]
 
 [ext_resource type="Shader" uid="uid://dmqt66iywru6d" path="res://addons/gdquest_models_shared/shaders/screen_shader.gdshader" id="1_itpnc"]
 [ext_resource type="Texture2D" uid="uid://bvxkh2pa1nqdq" path="res://addons/gdquest_models_shared/textures/eye_mask.png" id="2_acs8v"]

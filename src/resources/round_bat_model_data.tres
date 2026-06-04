@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ModelData" load_steps=4 format=3 uid="uid://e2lsqklpx61"]
+[gd_resource type="Resource" script_class="ModelData" format=3 uid="uid://e2lsqklpx61"]
 
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_whule"]
-[ext_resource type="Script" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_dt7st"]
+[ext_resource type="Script" uid="uid://bpk07sgyftnyy" path="res://addons/gdquest_model_viewer_3d/viewer/option_list_data_builder.gd" id="1_whule"]
+[ext_resource type="Script" uid="uid://cieem5bgp44xo" path="res://addons/gdquest_model_viewer_3d/viewer/model_data_builder.gd" id="2_dt7st"]
 [ext_resource type="Texture2D" uid="uid://b76ei28a2hyd" path="res://resources/round_bat_vignette.png" id="3_cufyi"]
 
 [resource]
@@ -11,7 +11,4 @@ scene_path = "res://addons/gdquest_round_bat/round_bat_skin.tscn"
 vignette = ExtResource("3_cufyi")
 y_offset = 0.5
 scale_compensation = 0.9
-camera_offset_y = 0.5
-animations_list = PackedStringArray()
-range_bind = PackedStringArray()
-dropdown_bind = Array[ExtResource("1_whule")]([])
+animations_list = PackedStringArray("Idle:idle", "Hurt:hurt")
