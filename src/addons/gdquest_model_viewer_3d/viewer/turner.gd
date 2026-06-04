@@ -1,11 +1,14 @@
 extends Node3D
 
-@export var low_angle: float = -5.0
-@export var high_angle: float = -50.0
-@export var min_zoom: float = 1.5
-@export var max_zoom: float = 5.0
-@onready var _camera = $Camera3D
-var _is_grabbing = false
+@export var low_angle := -5.0
+@export var high_angle := -50.0
+@export var min_zoom := 1.5
+@export var max_zoom := 5.0
+
+var _tween: Tween = null
+var _is_grabbing := false
+
+@onready var _camera: Camera3D = $Camera3D
 
 
 func _ready() -> void:
@@ -29,10 +32,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			_is_grabbing = event.pressed
+			if _tween != null:
+				_tween.kill()
+
 		if event.pressed:
 			var wheel_up = event.button_index == MOUSE_BUTTON_WHEEL_UP
 			var wheel_down = event.button_index == MOUSE_BUTTON_WHEEL_DOWN
 			wheel_direction = float(wheel_down) - float(wheel_up)
+
+		if (_tween == null or _tween != null and not _tween.is_valid()) and event.button_index == MOUSE_BUTTON_RIGHT:
+			_tween = create_tween().set_loops()
+			_tween.tween_property(self, "rotation:y", rotation.y + TAU, 4.0).from(rotation.y)
 
 	if wheel_direction != 0:
 		_camera.position.z += wheel_direction * 0.25

@@ -57,20 +57,22 @@ theme = ExtResource("10_l4eat")
 [node name="ModelSelector" parent="TopLayer/UI" unique_id=90636845 instance=ExtResource("9_yvaan")]
 unique_name_in_owner = true
 layout_mode = 1
+offset_top = -140.0
+offset_right = 490.0
 
 [node name="AnimationSelector" type="OptionButton" parent="TopLayer/UI" unique_id=132581324]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(400, 108)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -87.0
-offset_right = 41.0
-offset_bottom = -56.0
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 allow_reselect = true
