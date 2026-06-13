@@ -1,27 +1,39 @@
 @icon("./gdquest_model_viewer_3d.svg")
-class_name GDQuestModelViewer3D extends Node
+class_name GDQuestModelViewer3D
+extends Node
 
-const _ModelViewer3d = preload("./viewer/model_viewer_3d.gd")
-const _MODEL_VIEWER_3D_SCENE = preload("./viewer/model_viewer_3d.tscn")
+const ModelViewer3D = preload("./viewer/model_viewer_3d.gd")
+const MODEL_VIEWER_3D_SCENE = preload("./viewer/model_viewer_3d.tscn")
 
 signal children_ready
 
-var _data_models_map := { }
-var _scene: _ModelViewer3d
-var _children_are_ready := false
+@export var known_models: Array[ModelData] = []
 
-@export var known_models: Array[ModelData]
+var _data_models_map := { }
+var _scene: ModelViewer3D = MODEL_VIEWER_3D_SCENE.instantiate()
+var _children_are_ready := false
+var _time := 0.0
 
 
 func _ready() -> void:
-	_scene = _MODEL_VIEWER_3D_SCENE.instantiate() as _ModelViewer3d
-	_scene.known_models = known_models
-	add_child(_scene)
-
 	for index in known_models.size():
 		var model := known_models[index]
 		var model_name := model.name.to_lower().replace(" ", "_")
 		_data_models_map[model_name] = index
+
+	_scene.known_models = known_models
+	if OS.has_feature("movie"):
+		var meta_file: String = get_meta("movie_file")
+		var info := meta_file.get_file().get_basename().split("-")
+
+		_scene.selected_model_idx = get_selected_model_idx(info[0])
+		_scene.selected_animation_idx = get_selected_animation_idx(_scene.selected_model_idx, info[1])
+		_scene.selected_animation_name = info[1]
+
+		if _scene.selected_model_idx < 0 or _scene.selected_animation_idx < 0:
+			_scene.selected_model_idx = 0
+			_scene.selected_animation_idx = 0
+	add_child(_scene)
 
 	# allow the side menu to get its size
 	await get_tree().physics_frame
@@ -62,3 +74,13 @@ func set_model_from_browser_hash() -> void:
 			arguments[key_value[0]] = key_value[1]
 	if 'model' in arguments:
 		set_model_by_name(arguments['model'])
+
+
+func get_selected_model_idx(model_name: String) -> int:
+	return _data_models_map[model_name]
+
+
+func get_selected_animation_idx(selected_model_idx: int, animation_name: String) -> int:
+	var animations_list: Array[Dictionary] = known_models[selected_model_idx].animations_list
+	var animation_names: Array = animations_list.map(func(d: Dictionary) -> String: return d.value)
+	return animation_names.find(animation_name)

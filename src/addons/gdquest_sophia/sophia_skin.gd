@@ -1,68 +1,77 @@
 extends Node3D
 
-@onready var animation_tree = %AnimationTree
-@onready var state_machine: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
-@onready var move_tilt_path: String = "parameters/StateMachine/Move/tilt/add_amount"
+## Emitted when Gobot's feet hit the ground will running.
+@warning_ignore("unused_signal")
+signal stepped
 
-var run_tilt = 0.0:
-	set = _set_run_tilt
+## Use it to make the run animation lean left (-1.0), right (1.0) or straight (0.0).
+@export_range(-1.0, 1.0, 0.01) var run_tilt = 0.0:
+	set = set_run_tilt
 
-@export var blink = true:
-	set = set_blink
-@onready var blink_timer = %BlinkTimer
-@onready var closed_eyes_timer = %ClosedEyesTimer
-@onready var eye_mat = $sophia/rig/Skeleton3D/Sophia.get("surface_material_override/2")
+## Determines whether blinking is enabled or disabled.
+@export var is_blinking = true:
+	set = set_is_blinking
+
+@onready var _animation_tree = %AnimationTree
+@onready var _state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get("parameters/playback")
+@onready var _move_tilt_path: String = "parameters/Run/tilt/add_amount"
+@onready var _blink_timer = %BlinkTimer
+@onready var _closed_eyes_timer = %ClosedEyesTimer
+@onready var _eye_mat = $sophia/rig/Skeleton3D/Sophia.get("surface_material_override/2")
 
 
 func _ready() -> void:
-	blink_timer.timeout.connect(
+	_blink_timer.timeout.connect(
 		func() -> void:
-			eye_mat.set("uv1_offset", Vector3(0.0, 0.5, 0.0))
-			closed_eyes_timer.start(0.2)
+			_eye_mat.set("uv1_offset", Vector3(0.0, 0.5, 0.0))
+			_closed_eyes_timer.start(0.2)
 	)
 
-	closed_eyes_timer.timeout.connect(
+	_closed_eyes_timer.timeout.connect(
 		func() -> void:
-			eye_mat.set("uv1_offset", Vector3.ZERO)
-			blink_timer.start(randf_range(1.0, 4.0))
+			_eye_mat.set("uv1_offset", Vector3.ZERO)
+			_blink_timer.start(randf_range(1.0, 4.0))
 	)
 
 
-func set_blink(state: bool) -> void:
-	if blink == state:
+func set_is_blinking(new_is_blinking: bool) -> void:
+	is_blinking = new_is_blinking
+	if not is_node_ready():
 		return
-	blink = state
-	if blink:
-		blink_timer.start(0.2)
+
+	if is_blinking:
+		_blink_timer.start(0.2)
 	else:
-		blink_timer.stop()
-		closed_eyes_timer.stop()
+		_blink_timer.stop()
+		_closed_eyes_timer.stop()
 
 
-func _set_run_tilt(value: float) -> void:
+func set_run_tilt(value: float) -> void:
 	run_tilt = clamp(value, -1.0, 1.0)
-	animation_tree.set(move_tilt_path, run_tilt)
+	if not is_node_ready():
+		return
+	_animation_tree.set(_move_tilt_path, run_tilt)
 
 
 func idle() -> void:
-	state_machine.travel("Idle")
+	_state_machine.travel("Idle")
 
 
-func move() -> void:
-	state_machine.travel("Move")
+func run() -> void:
+	_state_machine.travel("Run")
 
 
 func fall() -> void:
-	state_machine.travel("Fall")
+	_state_machine.travel("Fall")
 
 
 func jump() -> void:
-	state_machine.travel("Jump")
+	_state_machine.travel("Jump")
 
 
 func edge_grab() -> void:
-	state_machine.travel("EdgeGrab")
+	_state_machine.travel("EdgeGrab")
 
 
 func wall_slide() -> void:
-	state_machine.travel("WallSlide")
+	_state_machine.travel("WallSlide")

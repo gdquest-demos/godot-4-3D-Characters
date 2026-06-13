@@ -2,12 +2,18 @@ extends Node
 
 const ModelSelector = preload("./ui/model_selector/model_selector.gd")
 
-@export var known_models: Array[ModelData]
 @onready var model_selector: ModelSelector = %ModelSelector
 @onready var animation_selector: OptionButton = %AnimationSelector
 @onready var turner: Node3D = %Turner
 @onready var parameters: MarginContainer = %Parameters
 @onready var model_holder: Node3D = %ModelHolder
+
+var known_models: Array[ModelData] = []
+
+var selected_model_idx := 0
+var selected_animation_idx := 0
+var selected_animation_name: String = ""
+var animations: Dictionary[String, int] = { }
 
 var current_model: Node3D = null
 var current_animations := []
@@ -16,15 +22,37 @@ var dropdown_list := []
 
 
 func _ready() -> void:
-	for model_data in known_models:
-		model_data.scene = load(model_data.scene_path)
-	model_selector.setup(known_models)
-	set_model(known_models[0])
+	model_selector.selection_changed.connect(_on_model_selection)
 	animation_selector.item_selected.connect(
 		func(item_index: int) -> void:
 			call_method(current_animations[item_index].value)
 	)
-	model_selector.selection_changed.connect(_on_model_selection)
+
+	for model_data in known_models:
+		model_data.scene = load(model_data.scene_path)
+	model_selector.setup(known_models)
+	model_selector.selection_changed.emit(selected_model_idx)
+
+	if OS.has_feature("movie"):
+		if "_animation_tree" in current_model:
+			var animation_tree: AnimationTree = current_model._animation_tree
+			for animation_name in animation_tree.get_animation_list():
+				animations[animation_name] = 0
+				var animation := animation_tree.get_animation(animation_name)
+				var track_idx := animation.add_track(Animation.TYPE_METHOD)
+				animation.track_set_path(track_idx, animation_tree.get_path_to(self))
+				animation.track_insert_key(track_idx, animation.length, { method = "animation_inc", args = [animation_name] })
+
+		model_selector.set_selection(selected_model_idx)
+
+		await get_tree().process_frame
+		animation_selector.selected = selected_animation_idx
+
+		if selected_animation_name in ["attack", "power_off", "fall", "jump", "flip", "victory_sign", "wall_slide", "edge_grab", "hurt"]:
+			await get_tree().create_timer(0.5).timeout
+			animation_selector.item_selected.emit(selected_animation_idx)
+		elif selected_animation_name in ["walk", "run", "move"]:
+			animation_selector.item_selected.emit(selected_animation_idx)
 
 
 func _on_model_selection(value: int) -> void:
@@ -41,6 +69,7 @@ func set_model(model_data: ModelData) -> void:
 
 	# Set the new current model node
 	current_model = model_data.scene.instantiate()
+
 	# Set a model wrapper and put the model in it
 	var base_scale := Vector3.ONE * model_data.scale_compensation
 	var wrapper = Node3D.new()
@@ -49,10 +78,6 @@ func set_model(model_data: ModelData) -> void:
 	wrapper.add_child(current_model)
 	model_holder.add_child(wrapper)
 
-	var t = create_tween().set_parallel(true)
-	t.tween_property(turner, "position:y", model_data.camera_offset_y, 0.2)
-	t.tween_property(wrapper, "scale", base_scale, 0.2)
-
 	# Set animations
 	animation_selector.hide()
 	current_animations = model_data.animations_list
@@ -60,7 +85,6 @@ func set_model(model_data: ModelData) -> void:
 		var method_names = current_animations.map(func(m: Dictionary) -> String: return m.name)
 		animation_selector.setup(method_names)
 		animation_selector.show()
-		call_method(current_animations[0].value)
 
 	# Check if the parameters panel already show something, remove the children if so.
 	if parameters.has_childrens():
@@ -70,11 +94,21 @@ func set_model(model_data: ModelData) -> void:
 	current_range_values = model_data.range_bind
 	if current_range_values.size() != 0:
 		for range_index in current_range_values.size():
-			var slider: HSlider = parameters.add_slider(current_range_values[range_index].name)
+			var slider_info: Dictionary = current_range_values[range_index]
+			var slider: HSlider = parameters.add_slider(
+				slider_info.name,
+				slider_info.get("min_value", 0.0),
+				slider_info.get("max_value", 1.0),
+			)
+
 			slider.value_changed.connect(
 				func(value: float) -> void:
-					set_variable(current_range_values[range_index].value, remap(value, 0, 100, 0, 1))
+					set_variable(current_range_values[range_index].value, value)
 			)
+
+			var slider_value := current_model.get(current_range_values[range_index].value)
+			if slider_value != null:
+				slider.value = slider_value
 	# Dropdown
 	dropdown_list = []
 	for option_setter_index in model_data.dropdown_bind.size():
@@ -97,6 +131,14 @@ func set_model(model_data: ModelData) -> void:
 					current_model.call(setter.bind_name, v_value)
 		)
 
+	if OS.has_feature("movie"):
+		turner.position.y = model_data.camera_offset_y
+		wrapper.scale = base_scale
+	else:
+		var t = create_tween().set_parallel(true)
+		t.tween_property(turner, "position:y", model_data.camera_offset_y, 0.2)
+		t.tween_property(wrapper, "scale", base_scale, 0.2)
+
 
 func call_method(method_name: String) -> void:
 	current_model.call(method_name)
@@ -104,3 +146,15 @@ func call_method(method_name: String) -> void:
 
 func set_variable(variable_name: String, new_value: Variant) -> void:
 	current_model.set(variable_name, new_value)
+
+
+func animation_inc(anim_name: String) -> void:
+	animations[anim_name] += 1
+
+	if anim_name in ["fall", "jump", "power_off", "flip", "victory_sign", "wall_slide", "edge_grab", "hurt"] and animations[anim_name] == 1 and anim_name == selected_animation_name:
+		await get_tree().create_timer(1.0).timeout
+		animations.idle = 0
+		current_model.idle()
+
+	elif anim_name in ["idle", "head_movement", "walk", "run"] and animations[anim_name] == 1:
+		get_tree().quit()

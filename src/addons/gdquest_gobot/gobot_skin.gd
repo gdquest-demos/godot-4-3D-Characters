@@ -2,58 +2,73 @@ extends Node3D
 
 ## Emitted when Gobot's feet hit the ground will running.
 @warning_ignore("unused_signal")
-signal foot_step
-## Gobot's MeshInstance3D model.
-@export var gobot_model: MeshInstance3D
+signal stepped
+
+## Represents the blending between the walking and running animations.
+## It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between
+## the two animations, resulting in the model appearing to walk or run depending on the value.
+@export_range(0.0, 1.0, 0.01) var walk_run_blending = 0.0:
+	set = set_walk_run_blending
+
 ## Determines whether blinking is enabled or disabled.
-@export var blink = true:
-	set = _set_blink
-@export var _left_eye_mat_override: String
-@export var _right_eye_mat_override: String
-@export var _open_eye: CompressedTexture2D
-@export var _close_eye: CompressedTexture2D
+@export var is_blinking := true:
+	set = set_blinking
+
+## Gobot's MeshInstance3D model.
+@export var gobot_model: MeshInstance3D = null
+
+@export var left_eye_mat_override := ""
+@export var right_eye_mat_override := ""
+@export var opened_eye: CompressedTexture2D = null
+@export var closed_eye: CompressedTexture2D = null
 
 @onready var _animation_tree: AnimationTree = %AnimationTree
-@onready var _state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get(
-	"parameters/StateMachine/playback",
-)
+@onready var _state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get("parameters/StateMachine/playback")
+@onready var _walk_run_blend_position: String = "parameters/StateMachine/Move/blend_position"
 
-@onready var _flip_shot_path: String = "parameters/FlipShot/request"
-@onready var _hurt_shot_path: String = "parameters/HurtShot/request"
+@onready var _flip_shot_path := "parameters/FlipShot/request"
+@onready var _hurt_shot_path := "parameters/HurtShot/request"
 
 @onready var _blink_timer = %BlinkTimer
 @onready var _closed_eyes_timer = %ClosedEyesTimer
 
-@onready var _left_eye_mat: StandardMaterial3D = gobot_model.get(_left_eye_mat_override)
-@onready var _right_eye_mat: StandardMaterial3D = gobot_model.get(_right_eye_mat_override)
+@onready var _left_eye_mat: StandardMaterial3D = gobot_model.get(left_eye_mat_override)
+@onready var _right_eye_mat: StandardMaterial3D = gobot_model.get(right_eye_mat_override)
 
 
 func _ready() -> void:
 	_blink_timer.timeout.connect(
 		func() -> void:
-			_left_eye_mat.albedo_texture = _close_eye
-			_right_eye_mat.albedo_texture = _close_eye
-			_closed_eyes_timer.start(0.2)
+			_left_eye_mat.albedo_texture = closed_eye
+			_right_eye_mat.albedo_texture = closed_eye
+			_closed_eyes_timer.start(_closed_eyes_timer.wait_time)
 	)
 
 	_closed_eyes_timer.timeout.connect(
 		func() -> void:
-			_left_eye_mat.albedo_texture = _open_eye
-			_right_eye_mat.albedo_texture = _open_eye
+			_left_eye_mat.albedo_texture = opened_eye
+			_right_eye_mat.albedo_texture = opened_eye
 			_blink_timer.start(randf_range(1.0, 8.0))
 	)
 
 
-func _set_blink(state: bool) -> void:
-	if _blink_timer == null or blink == state:
+func set_blinking(new_is_blinking: bool) -> void:
+	is_blinking = new_is_blinking
+	if not is_node_ready():
 		return
 
-	blink = state
-	if blink:
+	if is_blinking:
 		_blink_timer.start(0.2)
 	else:
 		_blink_timer.stop()
 		_closed_eyes_timer.stop()
+
+
+func set_walk_run_blending(value: float) -> void:
+	walk_run_blending = value
+	if not is_node_ready():
+		return
+	_animation_tree.set(_walk_run_blend_position, walk_run_blending)
 
 
 ## Sets the model to a neutral, action-free state.
@@ -62,8 +77,8 @@ func idle() -> void:
 
 
 ## Sets the model to a running animation or forward movement.
-func run() -> void:
-	_state_machine.travel("Run")
+func move() -> void:
+	_state_machine.travel("Move")
 
 
 ## Sets the model to an upward-leaping animation, simulating a jump.

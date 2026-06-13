@@ -1,17 +1,26 @@
 extends Node3D
 
-## Represents the blending between the walking and running animations. It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between the two animations, resulting in the model appearing to walk or run depending on the value.
-var walk_run_blending = 0.0:
-	set = _set_walk_run_blending
+## Emitted when Gobot's feet hit the ground will running.
+@warning_ignore("unused_signal")
+signal stepped
 
-@onready var _animation_tree = $AnimationTree
+## Represents the blending between the walking and running animations.
+## It can be set to different values (e.g. 0.0 to 1.0) to adjust the balance between
+## the two animations, resulting in the model appearing to walk or run depending on the value.
+@export_range(0.0, 1.0, 0.01) var walk_run_blending = 0.0:
+	set = set_walk_run_blending
+
+@onready var _animation_tree = %AnimationTree
 @onready var _main_state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get("parameters/StateMachine/playback")
-@onready var _walk_run_blend_position: String = "parameters/StateMachine/Walk/blend_position"
-@onready var _face = $SubViewport/GDbotFace
+@onready var _walk_run_blend_position: String = "parameters/StateMachine/Move/blend_position"
+@onready var _attack_one_shot: String = "parameters/AttackOneShot/request"
+@onready var _face: Node2D = %GDbotFace
 
 
-func _set_walk_run_blending(value: float) -> void:
+func set_walk_run_blending(value: float) -> void:
 	walk_run_blending = value
+	if not is_node_ready():
+		return
 	_animation_tree.set(_walk_run_blend_position, walk_run_blending)
 
 
@@ -21,8 +30,8 @@ func idle() -> void:
 
 
 ## Sets the model to a walking or running animation or forward movement.
-func walk() -> void:
-	_main_state_machine.travel("Walk")
+func move() -> void:
+	_main_state_machine.travel("Move")
 
 
 ## Sets the model to an upward-leaping animation, simulating a jump.
@@ -35,7 +44,15 @@ func fall() -> void:
 	_main_state_machine.travel("Fall")
 
 
-## Changes the model's facial expression based on the provided input string values. Possible expressions include "default" (for default blinking), "happy" (for a joyful expression), "dizzy" (for spiraling eyes), and "sleepy" (for a drowsy countenance).
-##[br][b]Note:[/b] To add new expressions, you can edit gdbot_face.tscn, which is a 2D scene utilized by a viewport node to display on Gdbot's face.
+func attack() -> void:
+	_animation_tree.set(_attack_one_shot, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+
+## Changes the model's facial expression based on the provided input string values.
+## Possible expressions include "default" (for default blinking),
+## "happy" (for a joyful expression), "dizzy" (for spiraling eyes),
+## and "sleepy" (for a drowsy countenance).
+## [br][b]Note:[/b] To add new expressions, you can edit gdbot_face.tscn, which is a 2D scene
+## utilized by a viewport node to display on Gdbot's face.
 func set_face(face_name: String) -> void:
 	_face._set_face(face_name)

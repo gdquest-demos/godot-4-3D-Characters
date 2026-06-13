@@ -10,4 +10,5 @@ name = "Gobot"
 scene_path = "res://addons/gdquest_gobot/gobot_skin.tscn"
 vignette = ExtResource("3_onmb7")
 scale_compensation = 0.65
-animations_list = PackedStringArray("Idle:idle", "Run:run", "Fall:fall", "Jump:jump", "Flip:flip", "Victory:victory_sign", "Wall Slide:wall_slide", "Edge Grab:edge_grab", "Hurt:hurt")
+animations_list = PackedStringArray("Idle:idle", "Move:move", "Fall:fall", "Jump:jump", "Flip:flip", "Victory:victory_sign", "Wall Slide:wall_slide", "Edge Grab:edge_grab", "Hurt:hurt")
+range_bind = PackedStringArray("Walk/Run blending:walk_run_blending")

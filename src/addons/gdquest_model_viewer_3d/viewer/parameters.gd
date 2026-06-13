@@ -12,8 +12,11 @@ func clear() -> void:
 		child.queue_free()
 
 
-func add_slider(tag_name: String) -> HSlider:
+func add_slider(tag_name: String, min_value := 0.0, max_value := 1.0) -> HSlider:
 	var slider: HSlider = HSlider.new()
+	slider.min_value = min_value
+	slider.max_value = max_value
+	slider.step = 0.01
 
 	var tag: Label = Label.new()
 	tag.text = tag_name

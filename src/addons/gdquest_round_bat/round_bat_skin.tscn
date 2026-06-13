@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://h2we7rb772hy" path="res://addons/gdquest_round_bat/model/bat.glb" id="1_tt0gg"]
 [ext_resource type="Script" uid="uid://d3ton6yy514il" path="res://addons/gdquest_round_bat/round_bat_skin.gd" id="1_vbemd"]
-[ext_resource type="AnimationLibrary" uid="uid://c1irgai81674w" path="res://addons/gdquest_round_bat/model/custom/custom_lib.res" id="2_er7fn"]
+[ext_resource type="AnimationLibrary" uid="uid://c1irgai81674w" path="res://addons/gdquest_round_bat/custom_animations/custom_lib.res" id="2_er7fn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0xry"]
 render_priority = 1
@@ -11,6 +11,33 @@ albedo_color = Color(0.972549, 0.27451, 0, 0)
 emission_enabled = true
 emission = Color(0.972549, 0.27451, 0, 1)
 emission_energy_multiplier = 3.93
+
+[sub_resource type="Animation" id="Animation_rjhsk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Bat:material_overlay:albedo_color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D/Bat:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_tk2r3"]
 resource_name = "Idle"
@@ -108,37 +135,10 @@ tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = PackedFloat32Array(0, 1, 2.54238e-08, 0.690882, 0.722967, 3.63776e-08, 0.0333333, 1, 2.11774e-08, 0.673013, 0.739631, 4.78233e-08, 0.0666667, 1, 2.49787e-08, 0.650774, 0.759271, 3.23632e-08, 0.133333, 1, 3.67218e-08, 0.60042, 0.799685, 4.70949e-08, 0.166667, 1, 2.63662e-08, 0.576432, 0.817145, 4.85832e-08, 0.2, 1, 2.33095e-08, 0.556296, 0.830984, 3.56522e-08, 0.233333, 1, 2.52265e-08, 0.542441, 0.840094, 4.39632e-08, 0.3, 1, 2.52265e-08, 0.542441, 0.840094, 4.39632e-08, 0.333333, 1, 2.31416e-08, 0.556296, 0.830984, 3.54843e-08, 0.366667, 1, 2.63662e-08, 0.576432, 0.817145, 4.85832e-08, 0.4, 1, 3.15666e-08, 0.60042, 0.799685, 3.09642e-08, 0.466667, 1, 2.49787e-08, 0.650774, 0.759271, 3.23632e-08, 0.5, 1, 2.11774e-08, 0.673013, 0.739631, 4.78233e-08, 0.533333, 1, 2.52591e-08, 0.690882, 0.722967, 3.62129e-08, 0.566667, 1, 2.11702e-08, 0.702774, 0.711413, 3.50482e-08, 0.633333, 1, 2.14994e-08, 0.702774, 0.711413, 3.53775e-08, 0.666667, 1, 2.54238e-08, 0.690882, 0.722967, 3.63776e-08, 0.7, 1, 2.11774e-08, 0.673013, 0.739631, 4.78233e-08, 0.733333, 1, 2.49787e-08, 0.650774, 0.759271, 3.23632e-08, 0.8, 1, 3.67218e-08, 0.60042, 0.799685, 4.70949e-08, 0.833333, 1, 2.63662e-08, 0.576432, 0.817145, 4.85832e-08, 0.866667, 1, 2.33095e-08, 0.556296, 0.830984, 3.56522e-08, 0.9, 1, 2.52265e-08, 0.542441, 0.840094, 4.39632e-08, 0.966667, 1, 2.52265e-08, 0.542441, 0.840094, 4.39632e-08, 1, 1, 2.31416e-08, 0.556296, 0.830984, 3.54843e-08, 1.03333, 1, 2.63662e-08, 0.576432, 0.817145, 4.85832e-08, 1.06667, 1, 3.15666e-08, 0.60042, 0.799685, 3.09642e-08, 1.13333, 1, 2.49787e-08, 0.650774, 0.759271, 3.23632e-08, 1.16667, 1, 2.11774e-08, 0.673013, 0.739631, 4.78233e-08, 1.2, 1, 2.52591e-08, 0.690882, 0.722967, 3.62129e-08, 1.23333, 1, 2.11702e-08, 0.702774, 0.711413, 3.50482e-08, 1.3, 1, 2.14994e-08, 0.702774, 0.711413, 3.53775e-08, 1.33333, 1, 2.54238e-08, 0.690882, 0.722967, 3.63776e-08)
 
-[sub_resource type="Animation" id="Animation_rjhsk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton3D/Bat:material_overlay:albedo_color:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Armature/Skeleton3D/Bat:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sqho5"]
 _data = {
-&"Idle": SubResource("Animation_tk2r3"),
-&"RESET": SubResource("Animation_rjhsk")
+&"RESET": SubResource("Animation_rjhsk"),
+&"idle": SubResource("Animation_tk2r3")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_448ki"]
@@ -148,7 +148,7 @@ animation = &"custom/hurt"
 mix_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v8u50"]
-animation = &"Idle"
+animation = &"idle"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_omnlg"]
 graph_offset = Vector2(-311.3, 96.3)
@@ -166,25 +166,25 @@ script = ExtResource("1_vbemd")
 
 [node name="RoundBat" parent="." unique_id=328778515 instance=ExtResource("1_tt0gg")]
 
-[node name="Skeleton3D" parent="RoundBat/Armature" parent_id_path=PackedInt32Array(328778515, 1531492047) index="0" unique_id=579558784]
-bones/0/position = Vector3(0, -0.014845823, 0)
-bones/1/rotation = Quaternion(-0.0518184, 0.20950116, -0.6762229, 0.7043768)
-bones/2/rotation = Quaternion(-0.11262446, -0.0305512, 0.26019898, 0.9584773)
-bones/3/rotation = Quaternion(-0.022576755, 0.04253481, 0.24299026, 0.9688327)
-bones/4/rotation = Quaternion(-0.0518184, -0.20950116, 0.6762229, 0.7043768)
-bones/5/rotation = Quaternion(-0.11262446, 0.0305512, -0.26019898, 0.9584773)
-bones/6/rotation = Quaternion(-0.022576755, -0.04253481, -0.24299026, 0.9688327)
+[node name="Skeleton3D" parent="RoundBat/Armature" parent_id_path=PackedInt32Array(328778515, 1133049933) index="0" unique_id=919415694]
+bones/0/position = Vector3(0, -0.022062251, 0)
+bones/1/rotation = Quaternion(0.0044043055, 0.1441667, -0.6295171, 0.7634821)
+bones/2/rotation = Quaternion(-0.16485198, -0.05227708, 0.2986702, 0.9385559)
+bones/3/rotation = Quaternion(-0.20129472, 0.0015179544, 0.22252455, 0.95391876)
+bones/4/rotation = Quaternion(0.0044043055, -0.1441667, 0.6295171, 0.7634821)
+bones/5/rotation = Quaternion(-0.16485198, 0.05227708, -0.2986702, 0.9385559)
+bones/6/rotation = Quaternion(-0.20129472, -0.0015179544, -0.22252455, 0.95391876)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(3.605495e-08, 0.67047757, 0.7419298, 2.1182665e-08)
+bones/8/rotation = Quaternion(3.5264023e-08, 0.56832427, 0.82280475, 2.1875586e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(2.1616795e-08, 0.67047805, 0.7419295, 4.604223e-08)
+bones/11/rotation = Quaternion(2.5131042e-08, 0.56832445, 0.82280463, 4.335347e-08)
 
-[node name="Bat" parent="RoundBat/Armature/Skeleton3D" index="0" unique_id=1151989321]
+[node name="Bat" parent="RoundBat/Armature/Skeleton3D" index="0" unique_id=1566482261]
 material_overlay = SubResource("StandardMaterial3D_u0xry")
 
-[node name="AnimationPlayer" parent="RoundBat" index="1" unique_id=77987593]
+[node name="AnimationPlayer" parent="RoundBat" index="1" unique_id=1390343512]
 libraries/ = SubResource("AnimationLibrary_sqho5")
 libraries/custom = ExtResource("2_er7fn")
 

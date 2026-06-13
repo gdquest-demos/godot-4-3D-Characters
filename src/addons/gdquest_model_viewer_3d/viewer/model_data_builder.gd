@@ -40,5 +40,8 @@ func _array_string_to_dict(source_array: PackedStringArray) -> Array[Dictionary]
 	var result: Array[Dictionary] = []
 	for text in source_array:
 		var s = text.split(":")
-		result.append({ "name": s[0], "value": s[1] })
+		var dict := { name = s[0], value = s[1] }
+		if s.size() > 2:
+			dict.merge({ min_value = s[2].to_float(), max_value = s[3].to_float() })
+		result.append(dict)
 	return result

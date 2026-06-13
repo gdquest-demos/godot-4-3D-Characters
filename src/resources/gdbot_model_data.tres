@@ -18,6 +18,6 @@ scene_path = "res://addons/gdquest_gdbot/gdbot_skin.tscn"
 vignette = ExtResource("3_0e4oe")
 scale_compensation = 0.65
 camera_offset_y = 0.6
-animations_list = PackedStringArray("Idle:idle", "Walk:walk", "Jump:jump", "Fall:fall")
+animations_list = PackedStringArray("Idle:idle", "Move:move", "Jump:jump", "Fall:fall", "Attack:attack")
 range_bind = PackedStringArray("Walk/Run blending:walk_run_blending")
 dropdown_bind = Array[ExtResource("1_qi7lk")]([SubResource("Resource_00o35")])

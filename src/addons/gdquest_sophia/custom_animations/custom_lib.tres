@@ -1,0 +1,8 @@
+[gd_resource type="AnimationLibrary" format=3 uid="uid://dm2sfe4lclqul"]
+
+[ext_resource type="Animation" uid="uid://b66jk0ta4wghb" path="res://addons/gdquest_sophia/custom_animations/run_step.res" id="1_1er5d"]
+
+[resource]
+_data = {
+&"run_step": ExtResource("1_1er5d")
+}
