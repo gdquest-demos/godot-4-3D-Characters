@@ -12,4 +12,4 @@
 [node name="Main" type="Node" unique_id=363657921]
 script = ExtResource("1_hkj8v")
 known_models = Array[ExtResource("2_5vw27")]([ExtResource("2_1sljj"), ExtResource("3_oo8mq"), ExtResource("5_msdmc"), ExtResource("5_d7mk8"), ExtResource("6_gdx7t"), ExtResource("7_lyn7l")])
-metadata/movie_file = &"/home/razcore-rad/Videos/Screencasts/gobot-wall_slide.ogv"
+metadata/movie_file = &"/home/razcore-rad/Videos/Screencasts/sophia-wall_slide.ogv"

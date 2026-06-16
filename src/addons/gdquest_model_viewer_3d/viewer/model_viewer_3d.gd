@@ -37,11 +37,12 @@ func _ready() -> void:
 		if "_animation_tree" in current_model:
 			var animation_tree: AnimationTree = current_model._animation_tree
 			for animation_name in animation_tree.get_animation_list():
-				animations[animation_name] = 0
+				var animation_name_snake := animation_name.to_snake_case()
+				animations[animation_name.to_snake_case()] = 0
 				var animation := animation_tree.get_animation(animation_name)
 				var track_idx := animation.add_track(Animation.TYPE_METHOD)
 				animation.track_set_path(track_idx, animation_tree.get_path_to(self))
-				animation.track_insert_key(track_idx, animation.length, { method = "animation_inc", args = [animation_name] })
+				animation.track_insert_key(track_idx, animation.length, { method = "animation_inc", args = [animation_name_snake] })
 
 		model_selector.set_selection(selected_model_idx)
 
