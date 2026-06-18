@@ -2,21 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgkj45d67dalm"
-path="res://.godot/imported/gobot_gobot_roughness.png-5887c4e280f3fe4a428d75eac0776749.ctex"
+uid="uid://ds07txn7ueh6h"
+path.s3tc="res://.godot/imported/gobot_gobot_roughness.png-5887c4e280f3fe4a428d75eac0776749.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "1623f1102e6845fdcae9122d22d0d4a3"
+}
 
 [deps]
 
 source_file="res://addons/gdquest_gobot/model/gobot_gobot_roughness.png"
-dest_files=["res://.godot/imported/gobot_gobot_roughness.png-5887c4e280f3fe4a428d75eac0776749.ctex"]
+dest_files=["res://.godot/imported/gobot_gobot_roughness.png-5887c4e280f3fe4a428d75eac0776749.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -17,7 +17,7 @@ signal stepped
 @onready var _move_tilt_path: String = "parameters/Run/tilt/add_amount"
 @onready var _blink_timer = %BlinkTimer
 @onready var _closed_eyes_timer = %ClosedEyesTimer
-@onready var _eye_mat = $sophia/rig/Skeleton3D/Sophia.get("surface_material_override/2")
+@onready var _eye_mat = $sophia/rig/Skeleton3D/Sophia.get("surface_material_override/1")
 
 
 func _ready() -> void:

@@ -12,7 +12,8 @@ var known_models: Array[ModelData] = []
 
 var selected_model_idx := 0
 var selected_animation_idx := 0
-var selected_animation_name: String = ""
+var selected_animation_name := ""
+var selected_animation_loop := 1
 var animations: Dictionary[String, int] = { }
 
 var current_model: Node3D = null
@@ -157,5 +158,5 @@ func animation_inc(anim_name: String) -> void:
 		animations.idle = 0
 		current_model.idle()
 
-	elif anim_name in ["idle", "head_movement", "walk", "run"] and animations[anim_name] == 1:
+	elif anim_name in ["idle", "head_movement", "walk", "run"] and animations[anim_name] == selected_animation_loop:
 		get_tree().quit()

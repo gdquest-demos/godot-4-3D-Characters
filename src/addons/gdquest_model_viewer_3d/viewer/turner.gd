@@ -8,6 +8,8 @@ extends Node3D
 var _tween: Tween = null
 var _is_grabbing := false
 
+var turn_around_duration := 4.0
+
 @onready var _camera: Camera3D = $Camera3D
 
 
@@ -42,7 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		if (_tween == null or _tween != null and not _tween.is_valid()) and event.button_index == MOUSE_BUTTON_RIGHT:
 			_tween = create_tween().set_loops()
-			_tween.tween_property(self, "rotation:y", rotation.y + TAU, 4.0).from(rotation.y)
+			_tween.tween_property(self, "rotation:y", rotation.y + TAU, turn_around_duration).from(rotation.y)
 
 	if wheel_direction != 0:
 		_camera.position.z += wheel_direction * 0.25

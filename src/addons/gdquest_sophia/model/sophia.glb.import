@@ -12380,22 +12380,22 @@ _subresources={
 },
 "materials": {
 "eye_mat_L": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/fallback_path": "",
 "use_external/path": "res://models/sophia/model/materials/eye_mat_L.tres"
 },
 "eye_mat_R": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/fallback_path": "",
 "use_external/path": "res://models/sophia/model/materials/eye_mat_R.tres"
 },
 "mouth_mat": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/fallback_path": "",
 "use_external/path": "res://models/sophia/model/materials/mouth_mat.tres"
 },
 "sophia_material": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/fallback_path": "",
 "use_external/path": "res://models/sophia/model/materials/sophia_material.tres"
 }

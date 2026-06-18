@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bdyptm7smjixm"]
 
 [ext_resource type="Script" uid="uid://dk2a8ahqexwrw" path="res://addons/gdquest_gdbot/gdbot_skin.gd" id="1_dt082"]
-[ext_resource type="PackedScene" uid="uid://c4fba1hyqkstw" path="res://addons/gdquest_gdbot/gdbot.glb" id="1_no8yw"]
-[ext_resource type="Material" uid="uid://cq6bdna8ieu87" path="res://addons/gdquest_gdbot/materials/heart_core_mat.tres" id="3_b5fb6"]
+[ext_resource type="PackedScene" uid="uid://c4fba1hyqkstw" path="res://addons/gdquest_gdbot/model/gdbot.glb" id="1_no8yw"]
+[ext_resource type="Material" uid="uid://cq6bdna8ieu87" path="res://addons/gdquest_gdbot/model/materials/heart_core_mat.tres" id="3_b5fb6"]
 [ext_resource type="Shader" uid="uid://dmqt66iywru6d" path="res://addons/gdquest_models_shared/shaders/screen_shader.gdshader" id="3_johvk"]
-[ext_resource type="Material" uid="uid://4ugdxr58llu8" path="res://addons/gdquest_gdbot/materials/glass_mat.tres" id="4_jt2os"]
+[ext_resource type="Material" uid="uid://4ugdxr58llu8" path="res://addons/gdquest_gdbot/model/materials/glass_mat.tres" id="4_jt2os"]
 [ext_resource type="AnimationLibrary" uid="uid://dlohfyy3w0jbd" path="res://addons/gdquest_gdbot/custom_animations/custom_lib.res" id="6_dcd8b"]
 [ext_resource type="PackedScene" uid="uid://dvy2nao23i4rl" path="res://addons/gdquest_gdbot/gdbot_face.tscn" id="7_6dl0h"]
 

@@ -9,8 +9,8 @@ var _blinking = null:
 @onready var _right_eye: Sprite2D = $RightEye
 
 var eyes_textures = {
-	"open": preload("./texture/parts/eye_open.png"),
-	"closed": preload("./texture/parts/eye_close.png"),
+	"open": preload("./model/texture/parts/eye_open.png"),
+	"closed": preload("./model/texture/parts/eye_close.png"),
 }
 
 var current_face = null:

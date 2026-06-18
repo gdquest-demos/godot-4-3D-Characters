@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpjqcswabdtyb"]
 
 [ext_resource type="Script" uid="uid://bayxkg4v3lp4r" path="res://addons/gdquest_beetle_bot/beetle_bot_skin.gd" id="1_gujli"]
-[ext_resource type="PackedScene" uid="uid://dbqoj8oam1dsg" path="res://addons/gdquest_beetle_bot/model/beetle_bot_fused.glb" id="1_r7amh"]
+[ext_resource type="PackedScene" uid="uid://dbqoj8oam1dsg" path="res://addons/gdquest_beetle_bot/model/beetle_bot.glb" id="1_r7amh"]
 [ext_resource type="Material" uid="uid://dg5h8p8fu3mhh" path="res://addons/gdquest_beetle_bot/materials/beetle_bot_eyes_mat.tres" id="3_nbf2s"]
 [ext_resource type="Material" uid="uid://h2e57pyy6lu4" path="res://addons/gdquest_beetle_bot/materials/beetle_bot_lights_mat.tres" id="4_4158y"]
 [ext_resource type="AnimationLibrary" uid="uid://812ebxlqmeit" path="res://addons/gdquest_beetle_bot/model/custom/custom_lib.res" id="5_y1ouw"]

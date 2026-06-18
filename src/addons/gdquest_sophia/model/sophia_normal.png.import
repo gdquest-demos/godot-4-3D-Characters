@@ -2,21 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mdhln8lltmyo"
-path="res://.godot/imported/sophia_normal.png-d846250744009b1a183907c9d9d83106.ctex"
+uid="uid://csw1fhyonils3"
+path.s3tc="res://.godot/imported/sophia_normal.png-d846250744009b1a183907c9d9d83106.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "298a25eded77ffe49d6eeb5cb93d6347"
+}
 
 [deps]
 
 source_file="res://addons/gdquest_sophia/model/sophia_normal.png"
-dest_files=["res://.godot/imported/sophia_normal.png-d846250744009b1a183907c9d9d83106.ctex"]
+dest_files=["res://.godot/imported/sophia_normal.png-d846250744009b1a183907c9d9d83106.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://sophia/model/sophia_normal.png"
+roughness/src_normal="res://addons/gdquest_sophia/model/sophia_normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

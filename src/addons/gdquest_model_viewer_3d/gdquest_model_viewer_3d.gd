@@ -7,6 +7,7 @@ const MODEL_VIEWER_3D_SCENE = preload("./viewer/model_viewer_3d.tscn")
 
 signal children_ready
 
+@export var do_turn_around := false
 @export var known_models: Array[ModelData] = []
 
 var _data_models_map := { }
@@ -43,6 +44,20 @@ func _ready() -> void:
 
 	set_model_from_arguments()
 	set_model_from_browser_hash()
+
+	if do_turn_around and OS.has_feature("movie"):
+		var animation_tree: AnimationTree = _scene.current_model._animation_tree
+		for animation_name in animation_tree.get_animation_list():
+			if animation_name.to_snake_case() == _scene.selected_animation_name:
+				var animation := animation_tree.get_animation(animation_name)
+				_scene.selected_animation_loop = 2
+				_scene.turner.turn_around_duration = _scene.selected_animation_loop * animation.length
+
+				var event := InputEventMouseButton.new()
+				event.button_index = MOUSE_BUTTON_RIGHT
+				event.pressed = true
+				Input.parse_input_event(event)
+				break
 
 
 func set_model_by_name(model_name: String) -> void:

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://482rxnrhe64v"]
 
-[ext_resource type="PackedScene" uid="uid://d0gfx2lihdq44" path="res://addons/gdquest_bee_bot/bee_bot.glb" id="1_ehj7o"]
+[ext_resource type="PackedScene" uid="uid://d0gfx2lihdq44" path="res://addons/gdquest_bee_bot/model/bee_bot.glb" id="1_ehj7o"]
 [ext_resource type="Script" uid="uid://j3jmdmhevnsu" path="res://addons/gdquest_bee_bot/bee_bot_skin.gd" id="1_vvvv8"]
-[ext_resource type="Material" uid="uid://bww7by8cvcuoe" path="res://addons/gdquest_bee_bot/materials/bee_bot_lights_mat.tres" id="3_7rf2o"]
-[ext_resource type="Material" uid="uid://dx8xfrepk0a68" path="res://addons/gdquest_bee_bot/materials/bee_bot_eyes_mat.tres" id="4_76kpj"]
-[ext_resource type="Material" uid="uid://cruyb7vmbaabx" path="res://addons/gdquest_bee_bot/materials/bee_bot_wings_mat.tres" id="5_uomwq"]
+[ext_resource type="Material" uid="uid://bww7by8cvcuoe" path="res://addons/gdquest_bee_bot/model/materials/bee_bot_lights_mat.tres" id="3_7rf2o"]
+[ext_resource type="Material" uid="uid://dx8xfrepk0a68" path="res://addons/gdquest_bee_bot/model/materials/bee_bot_eyes_mat.tres" id="4_76kpj"]
+[ext_resource type="Material" uid="uid://cruyb7vmbaabx" path="res://addons/gdquest_bee_bot/model/materials/bee_bot_wings_mat.tres" id="5_uomwq"]
 [ext_resource type="AnimationLibrary" uid="uid://rb3v0562tes3" path="res://addons/gdquest_bee_bot/custom_animations/custom_lib.res" id="6_6725d"]
 
 [sub_resource type="Animation" id="Animation_lfeqv"]

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dvy2nao23i4rl"]
 
 [ext_resource type="Script" uid="uid://8sqitarj6fkw" path="res://addons/gdquest_gdbot/gdbot_face.gd" id="1_g7fgr"]
-[ext_resource type="Texture2D" uid="uid://cbp882a2a27qw" path="res://addons/gdquest_gdbot/texture/parts/eye_happy.png" id="2_fa0xy"]
-[ext_resource type="Texture2D" uid="uid://blacn6s3yc88h" path="res://addons/gdquest_gdbot/texture/parts/eye_open.png" id="2_qfyd4"]
-[ext_resource type="Texture2D" uid="uid://dt0veafbpw6ih" path="res://addons/gdquest_gdbot/texture/parts/eye_spiral.png" id="3_rdwvm"]
-[ext_resource type="Texture2D" uid="uid://blet3qwl4cbi3" path="res://addons/gdquest_gdbot/texture/parts/smile.png" id="3_xjkgv"]
-[ext_resource type="Texture2D" uid="uid://b37rqx42rwpv" path="res://addons/gdquest_gdbot/texture/parts/open_mouth.png" id="4_wxn47"]
-[ext_resource type="Texture2D" uid="uid://b3b243yxcn5vq" path="res://addons/gdquest_gdbot/texture/parts/eye_close.png" id="6_rog2n"]
+[ext_resource type="Texture2D" uid="uid://cbp882a2a27qw" path="res://addons/gdquest_gdbot/model/texture/parts/eye_happy.png" id="2_fa0xy"]
+[ext_resource type="Texture2D" uid="uid://blacn6s3yc88h" path="res://addons/gdquest_gdbot/model/texture/parts/eye_open.png" id="2_qfyd4"]
+[ext_resource type="Texture2D" uid="uid://dt0veafbpw6ih" path="res://addons/gdquest_gdbot/model/texture/parts/eye_spiral.png" id="3_rdwvm"]
+[ext_resource type="Texture2D" uid="uid://blet3qwl4cbi3" path="res://addons/gdquest_gdbot/model/texture/parts/smile.png" id="3_xjkgv"]
+[ext_resource type="Texture2D" uid="uid://b37rqx42rwpv" path="res://addons/gdquest_gdbot/model/texture/parts/open_mouth.png" id="4_wxn47"]
+[ext_resource type="Texture2D" uid="uid://b3b243yxcn5vq" path="res://addons/gdquest_gdbot/model/texture/parts/eye_close.png" id="6_rog2n"]
 
 [sub_resource type="Animation" id="Animation_33is7"]
 length = 0.001
