@@ -37,6 +37,9 @@ signal stepped
 
 
 func _ready() -> void:
+	walk_run_blending = walk_run_blending
+	is_blinking = is_blinking
+
 	_blink_timer.timeout.connect(
 		func() -> void:
 			_left_eye_mat.albedo_texture = closed_eye

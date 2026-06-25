@@ -5,8 +5,8 @@ extends Node3D
 signal stepped
 
 ## Use it to make the move animation lean left (-1.0), right (1.0) or straight (0.0).
-@export_range(-1.0, 1.0, 0.01) var move_tilt = 0.0:
-	set = set_move_tilt
+@export_range(-1.0, 1.0, 0.01) var run_tilt = 0.0:
+	set = set_run_tilt
 
 ## Determines whether blinking is enabled or disabled.
 @export var is_blinking = true:
@@ -21,6 +21,9 @@ signal stepped
 
 
 func _ready() -> void:
+	run_tilt = run_tilt
+	is_blinking = is_blinking
+
 	_blink_timer.timeout.connect(
 		func() -> void:
 			_eye_mat.set("uv1_offset", Vector3(0.0, 0.5, 0.0))
@@ -46,11 +49,11 @@ func set_is_blinking(new_is_blinking: bool) -> void:
 		_closed_eyes_timer.stop()
 
 
-func set_move_tilt(value: float) -> void:
-	move_tilt = clamp(value, -1.0, 1.0)
+func set_run_tilt(value: float) -> void:
+	run_tilt = clamp(value, -1.0, 1.0)
 	if not is_node_ready():
 		return
-	_animation_tree.set(_move_tilt_path, move_tilt)
+	_animation_tree.set(_move_tilt_path, run_tilt)
 
 
 func idle() -> void:
