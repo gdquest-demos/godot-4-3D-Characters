@@ -19,8 +19,8 @@ func idle() -> void:
 
 
 ## Sets the model to a walking animation or forward movement.
-func walk() -> void:
-	_main_state_machine.travel("Walk")
+func move() -> void:
+	_main_state_machine.travel("Move")
 
 
 ## Plays a one-shot attack animation.

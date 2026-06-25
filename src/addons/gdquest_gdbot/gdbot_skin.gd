@@ -17,6 +17,10 @@ signal stepped
 @onready var _face: Node2D = %GDbotFace
 
 
+func _ready() -> void:
+	walk_run_blending = walk_run_blending
+
+
 func set_walk_run_blending(value: float) -> void:
 	walk_run_blending = value
 	if not is_node_ready():

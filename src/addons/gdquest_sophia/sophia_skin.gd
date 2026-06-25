@@ -4,9 +4,9 @@ extends Node3D
 @warning_ignore("unused_signal")
 signal stepped
 
-## Use it to make the run animation lean left (-1.0), right (1.0) or straight (0.0).
-@export_range(-1.0, 1.0, 0.01) var run_tilt = 0.0:
-	set = set_run_tilt
+## Use it to make the move animation lean left (-1.0), right (1.0) or straight (0.0).
+@export_range(-1.0, 1.0, 0.01) var move_tilt = 0.0:
+	set = set_move_tilt
 
 ## Determines whether blinking is enabled or disabled.
 @export var is_blinking = true:
@@ -14,7 +14,7 @@ signal stepped
 
 @onready var _animation_tree = %AnimationTree
 @onready var _state_machine: AnimationNodeStateMachinePlayback = _animation_tree.get("parameters/playback")
-@onready var _move_tilt_path: String = "parameters/Run/tilt/add_amount"
+@onready var _move_tilt_path: String = "parameters/Move/tilt/add_amount"
 @onready var _blink_timer = %BlinkTimer
 @onready var _closed_eyes_timer = %ClosedEyesTimer
 @onready var _eye_mat = $sophia/rig/Skeleton3D/Sophia.get("surface_material_override/1")
@@ -46,19 +46,19 @@ func set_is_blinking(new_is_blinking: bool) -> void:
 		_closed_eyes_timer.stop()
 
 
-func set_run_tilt(value: float) -> void:
-	run_tilt = clamp(value, -1.0, 1.0)
+func set_move_tilt(value: float) -> void:
+	move_tilt = clamp(value, -1.0, 1.0)
 	if not is_node_ready():
 		return
-	_animation_tree.set(_move_tilt_path, run_tilt)
+	_animation_tree.set(_move_tilt_path, move_tilt)
 
 
 func idle() -> void:
 	_state_machine.travel("Idle")
 
 
-func run() -> void:
-	_state_machine.travel("Run")
+func move() -> void:
+	_state_machine.travel("Move")
 
 
 func fall() -> void:

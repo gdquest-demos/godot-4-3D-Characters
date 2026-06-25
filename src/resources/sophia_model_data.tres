@@ -11,5 +11,5 @@ scene_path = "res://addons/gdquest_sophia/sophia_skin.tscn"
 vignette = ExtResource("3_r3aix")
 scale_compensation = 0.6
 camera_offset_y = 0.6
-animations_list = PackedStringArray("Idle:idle", "Run:run", "Jump:jump", "Fall:fall", "Wall Slide:wall_slide", "Edge Grab:edge_grab")
-range_bind = PackedStringArray("Run Tilt:run_tilt:-1.0:1.0")
+animations_list = PackedStringArray("Idle:idle", "Move:move", "Jump:jump", "Fall:fall", "Wall Slide:wall_slide", "Edge Grab:edge_grab")
+range_bind = PackedStringArray("Move Tilt:move_tilt:-1.0:1.0")

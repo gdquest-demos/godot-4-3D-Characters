@@ -1964,6 +1964,9 @@ animation = &"head_movement"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g032c"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4vya8"]
+animation = &"walk"
+
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_p5iv8"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1kno4"]
@@ -1982,9 +1985,6 @@ nodes/Animation/position = Vector2(-200, 0)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1kno4")
 "nodes/Animation 2/position" = Vector2(-192, 176)
 node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4vya8"]
-animation = &"walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o8ubx"]
 advance_mode = 2
@@ -2043,11 +2043,11 @@ states/HeadMovement/node = SubResource("AnimationNodeAnimation_x5pkv")
 states/HeadMovement/position = Vector2(352, 202.8)
 states/Idle/node = SubResource("AnimationNodeAnimation_g032c")
 states/Idle/position = Vector2(352, 100)
+states/Move/node = SubResource("AnimationNodeAnimation_4vya8")
+states/Move/position = Vector2(476.2, 15.199997)
 states/PowerOff/node = SubResource("AnimationNodeBlendTree_5ggwp")
 states/PowerOff/position = Vector2(308, 0.8000002)
-states/Walk/node = SubResource("AnimationNodeAnimation_4vya8")
-states/Walk/position = Vector2(477, 15.199997)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o8ubx"), "Idle", "HeadMovement", SubResource("AnimationNodeStateMachineTransition_vvrak"), "HeadMovement", "Idle", SubResource("AnimationNodeStateMachineTransition_offbj"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_8b75v"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ih736"), "HeadMovement", "Attack", SubResource("AnimationNodeStateMachineTransition_fkab0"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_lstkt"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_67rqm"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_idlv2"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_echn7"), "HeadMovement", "Walk", SubResource("AnimationNodeStateMachineTransition_8w6un"), "HeadMovement", "PowerOff", SubResource("AnimationNodeStateMachineTransition_pngnc"), "Idle", "PowerOff", SubResource("AnimationNodeStateMachineTransition_e5dv3"), "Walk", "PowerOff", SubResource("AnimationNodeStateMachineTransition_jkt8b"), "Attack", "PowerOff", SubResource("AnimationNodeStateMachineTransition_b5goj")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o8ubx"), "Idle", "HeadMovement", SubResource("AnimationNodeStateMachineTransition_vvrak"), "HeadMovement", "Idle", SubResource("AnimationNodeStateMachineTransition_offbj"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_8b75v"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ih736"), "HeadMovement", "Attack", SubResource("AnimationNodeStateMachineTransition_fkab0"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_lstkt"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_67rqm"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_idlv2"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_echn7"), "HeadMovement", "Move", SubResource("AnimationNodeStateMachineTransition_8w6un"), "HeadMovement", "PowerOff", SubResource("AnimationNodeStateMachineTransition_pngnc"), "Idle", "PowerOff", SubResource("AnimationNodeStateMachineTransition_e5dv3"), "Move", "PowerOff", SubResource("AnimationNodeStateMachineTransition_jkt8b"), "Attack", "PowerOff", SubResource("AnimationNodeStateMachineTransition_b5goj")]
 graph_offset = Vector2(39, -41)
 
 [node name="BeetleBotSkin" type="Node3D" unique_id=2100310467]
@@ -2055,7 +2055,7 @@ script = ExtResource("1_gujli")
 
 [node name="beetle_bot" parent="." unique_id=77965837 instance=ExtResource("1_r7amh")]
 
-[node name="Skeleton3D" parent="beetle_bot/Armature" parent_id_path=PackedInt32Array(77965837, 1324351196) index="0" unique_id=1293851220]
+[node name="Skeleton3D" parent="beetle_bot/Armature" parent_id_path=PackedInt32Array(77965837, 1957596217) index="0" unique_id=43164770]
 bones/1/position = Vector3(-0.4584, 0.1718, 0.0044344887)
 bones/1/rotation = Quaternion(0, 0, 0.6890807, 0.7246847)
 bones/2/position = Vector3(1.92784e-06, 1.4035e-05, -6.77304e-06)
@@ -2074,21 +2074,21 @@ bones/12/position = Vector3(-4.30854e-06, 3.20733e-05, -1.70988e-05)
 bones/12/rotation = Quaternion(-0.7071068, 3.4421288e-07, -2.5465093e-07, 0.7071068)
 bones/13/rotation = Quaternion(0.56098515, 0.56098616, 0.43045914, 0.4304591)
 bones/14/rotation = Quaternion(0.43045917, 0.4304592, 0.56098616, 0.5609852)
-bones/16/position = Vector3(-0.015934987, -0.02, 0.35249263)
-bones/17/rotation = Quaternion(0.16509359, 0.17518802, 0.61812484, 0.7483147)
-bones/18/rotation = Quaternion(-0.6631501, -0.012042196, -0.02154299, 0.74807954)
-bones/19/rotation = Quaternion(0.096749716, 0.28374982, 0.85977954, 0.41340643)
-bones/20/rotation = Quaternion(-0.80260515, -0.0102672335, -0.026086638, 0.59585154)
+bones/16/position = Vector3(0.01567721, -0.02, 0.35894117)
+bones/17/rotation = Quaternion(0.13239561, 0.14689846, 0.6300383, 0.75096214)
+bones/18/rotation = Quaternion(-0.5936897, -0.012948147, -0.019286549, 0.8043588)
+bones/19/rotation = Quaternion(0.082093075, 0.26165512, 0.84946936, 0.45077616)
+bones/20/rotation = Quaternion(-0.7632147, -0.011123982, -0.02480639, 0.6455728)
 bones/21/position = Vector3(-0.0239784, 0.285311, -0.245566)
-bones/21/rotation = Quaternion(0.21876737, 0.08395601, 0.4664915, 0.8529233)
-bones/22/rotation = Quaternion(-0.6726165, -0.012476769, -0.021756897, 0.7395662)
-bones/24/rotation = Quaternion(0.13935797, -0.15231492, -0.6292089, 0.74931675)
-bones/25/rotation = Quaternion(-0.5964502, 0.012915251, 0.019376177, 0.8023123)
-bones/26/rotation = Quaternion(0.0877268, -0.2712254, -0.84694904, 0.4487964)
-bones/27/rotation = Quaternion(-0.7661259, 0.011064321, 0.024900971, 0.6421126)
+bones/21/rotation = Quaternion(0.18813887, 0.06311188, 0.49107677, 0.8482125)
+bones/22/rotation = Quaternion(-0.6130287, -0.013322487, -0.019829424, 0.7896993)
+bones/24/rotation = Quaternion(0.15740936, -0.16929623, -0.61932176, 0.75033444)
+bones/25/rotation = Quaternion(-0.65974814, 0.012090584, 0.021432422, 0.7510838)
+bones/26/rotation = Quaternion(0.09106495, -0.27324262, -0.8625605, 0.41597497)
+bones/27/rotation = Quaternion(-0.7992119, 0.01034551, 0.025976345, 0.6003987)
 bones/28/position = Vector3(0.0239784, 0.285311, -0.245566)
-bones/28/rotation = Quaternion(0.18987201, -0.0658949, -0.48020515, 0.85382056)
-bones/29/rotation = Quaternion(-0.60339636, 0.013447197, 0.019517878, 0.7970891)
+bones/28/rotation = Quaternion(0.20376717, -0.07780486, -0.45741042, 0.8620911)
+bones/29/rotation = Quaternion(-0.65658504, 0.012717648, 0.021238372, 0.7538458)
 bones/30/position = Vector3(0.4584, 0.1718, 0.0044344887)
 bones/30/rotation = Quaternion(0, 0, -0.6890807, 0.7246847)
 bones/31/position = Vector3(-1.63913e-06, 1.20485e-05, -5.83427e-06)
@@ -2108,17 +2108,17 @@ bones/41/rotation = Quaternion(-0.7071068, -3.4421288e-07, 2.5465093e-07, 0.7071
 bones/42/rotation = Quaternion(-0.56098515, 0.56098616, 0.43045914, -0.4304591)
 bones/43/rotation = Quaternion(-0.43045917, 0.4304592, 0.56098616, -0.5609852)
 
-[node name="Beetle" parent="beetle_bot/Armature/Skeleton3D" index="0" unique_id=1769302252]
+[node name="Beetle" parent="beetle_bot/Armature/Skeleton3D" index="0" unique_id=84173132]
 surface_material_override/1 = ExtResource("3_nbf2s")
 surface_material_override/2 = ExtResource("4_4158y")
 
-[node name="AnimationPlayer" parent="beetle_bot" index="1" unique_id=1886666687]
+[node name="AnimationPlayer" parent="beetle_bot" index="1" unique_id=1822725394]
 libraries/ = SubResource("AnimationLibrary_w6t5q")
 libraries/custom_lib = ExtResource("5_y1ouw")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1368004534]
 unique_name_in_owner = true
-root_node = NodePath("../beetle_bot")
+root_node = NodePath("%AnimationTree/../beetle_bot")
 tree_root = SubResource("AnimationNodeStateMachine_mavgj")
 anim_player = NodePath("../beetle_bot/AnimationPlayer")
 parameters/PowerOff/Add2/add_amount = 1.0
