@@ -52,6 +52,8 @@ func _ready() -> void:
 				var animation := animation_tree.get_animation(animation_name)
 				_scene.selected_animation_loop = 2
 				_scene.turner.turn_around_duration = _scene.selected_animation_loop * animation.length
+				for timer: Timer in _scene.current_model.find_children("", "Timer"):
+					timer.process_mode = Node.PROCESS_MODE_DISABLED
 
 				var event := InputEventMouseButton.new()
 				event.button_index = MOUSE_BUTTON_RIGHT

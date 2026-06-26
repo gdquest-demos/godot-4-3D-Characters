@@ -51,7 +51,7 @@ func _ready() -> void:
 		animation_selector.selected = selected_animation_idx
 
 		if selected_animation_name in ["attack", "power_off", "fall", "jump", "flip", "victory_sign", "wall_slide", "edge_grab", "hurt"]:
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.1).timeout
 			animation_selector.item_selected.emit(selected_animation_idx)
 		elif selected_animation_name in ["walk", "run", "move"]:
 			animation_selector.item_selected.emit(selected_animation_idx)
@@ -154,9 +154,9 @@ func animation_inc(anim_name: String) -> void:
 	animations[anim_name] += 1
 
 	if anim_name in ["fall", "jump", "power_off", "flip", "victory_sign", "wall_slide", "edge_grab", "hurt"] and animations[anim_name] == 1 and anim_name == selected_animation_name:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.3).timeout
 		animations.idle = 0
 		current_model.idle()
 
-	elif anim_name in ["idle", "head_movement", "walk", "run"] and animations[anim_name] == selected_animation_loop:
+	elif anim_name in ["idle", "head_movement", "walk", "run", "move"] and animations[anim_name] == selected_animation_loop:
 		get_tree().quit()
