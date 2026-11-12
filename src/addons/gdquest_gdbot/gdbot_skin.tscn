@@ -2695,20 +2695,20 @@ script = ExtResource("1_dt082")
 
 [node name="gdbot" parent="." unique_id=657343024 instance=ExtResource("1_no8yw")]
 
-[node name="Skeleton3D" parent="gdbot/Armature" parent_id_path=PackedInt32Array(657343024, 1756102635) index="0" unique_id=1555490949]
-bones/2/position = Vector3(-0.016187008, 1.4151152e-09, 0.5178223)
-bones/2/rotation = Quaternion(-0.03873619, 0.7064276, 0.7060447, -0.030994194)
-bones/3/rotation = Quaternion(1, 1.03791156e-10, -7.549821e-08, 1.0728434e-12)
-bones/4/rotation = Quaternion(-0.25462165, -0.100575514, -0.06292759, 0.95973563)
-bones/5/rotation = Quaternion(0.35581467, 6.120509e-08, -9.238039e-08, 0.93455654)
-bones/7/rotation = Quaternion(-0.087439366, 0.23967123, 0.12519853, 0.95876867)
-bones/8/rotation = Quaternion(0.26626375, -6.391551e-08, 9.432079e-08, 0.96390027)
-bones/10/rotation = Quaternion(-0.5254441, -0.5046981, -0.44451565, 0.5211471)
-bones/11/rotation = Quaternion(-8.530885e-09, 2.5581627e-08, -0.32344145, 0.9462482)
+[node name="Skeleton3D" parent="gdbot/Armature" parent_id_path=PackedInt32Array(657343024, 1086381852) index="0" unique_id=2128858680]
+bones/2/position = Vector3(0.013845743, -1.2104311e-09, 0.5138456)
+bones/2/rotation = Quaternion(0.069175564, 0.70493555, 0.70371497, 0.05537182)
+bones/3/rotation = Quaternion(1, -4.726765e-10, -7.342107e-08, 1.8553836e-11)
+bones/4/rotation = Quaternion(-0.1813121, -0.2536567, -0.12749198, 0.94155735)
+bones/5/rotation = Quaternion(0.33060175, 4.3556977e-08, -8.347356e-08, 0.94377035)
+bones/7/rotation = Quaternion(-0.21975839, 0.07541829, 0.080678836, 0.96928287)
+bones/8/rotation = Quaternion(0.387304, -3.9844764e-08, 1.2744204e-07, 0.9219521)
+bones/10/rotation = Quaternion(-0.5645373, -0.44859108, -0.41003907, 0.5585086)
+bones/11/rotation = Quaternion(2.7891878e-10, 2.170571e-08, -0.001759366, 0.9999985)
 bones/13/rotation = Quaternion(0.08193458, 1.6237294e-07, 6.185887e-09, 0.9966377)
-bones/14/rotation = Quaternion(-0.08192837, -0.0010092397, -0.012276263, 0.9965621)
-bones/16/rotation = Quaternion(-0.7021819, -0.21387002, -0.63686436, 0.23580544)
-bones/17/rotation = Quaternion(3.4866299e-09, 1.5843517e-08, -0.38958123, 0.92099214)
+bones/14/rotation = Quaternion(-0.08191445, 0.00181811, 0.022115156, 0.9963923)
+bones/16/rotation = Quaternion(-0.62827694, -0.24704172, -0.7040121, 0.22046658)
+bones/17/rotation = Quaternion(4.5051354e-09, 1.4948839e-08, -0.45761698, 0.8891495)
 bones/19/rotation = Quaternion(-0.39111394, -0.007980099, -0.0012922098, 0.92030674)
 bones/20/rotation = Quaternion(-0.27750692, -2.5235795e-07, -9.943406e-08, 0.96072364)
 bones/21/rotation = Quaternion(-0.38504007, -0.13018103, 0.0023969118, 0.9136692)
@@ -2719,13 +2719,13 @@ bones/25/rotation = Quaternion(-0.38689613, 0.08551781, -0.022721905, 0.91786814
 bones/26/rotation = Quaternion(-0.27750596, -2.5829219e-09, -9.822449e-08, 0.9607239)
 bones/27/rotation = Quaternion(-0.29395416, 0.7944383, -0.10576605, 0.5208382)
 bones/28/rotation = Quaternion(-0.27750596, -3.6370798e-07, -5.313959e-07, 0.9607239)
-bones/29/rotation = Quaternion(-0.7021819, -0.21387002, -0.63686436, 0.23580544)
-bones/30/rotation = Quaternion(3.4866299e-09, 1.5843517e-08, -0.38958123, 0.92099214)
-bones/32/rotation = Quaternion(-0.021690836, 0.04362615, -0.44468537, 0.89436084)
-bones/33/rotation = Quaternion(-0.537469, 0.478735, 0.4435456, 0.534048)
-bones/34/rotation = Quaternion(-4.9714177e-11, 5.422069e-09, 0.0017555886, 0.9999985)
-bones/37/rotation = Quaternion(-0.6520025, 0.23109294, 0.6881484, 0.21895364)
-bones/38/rotation = Quaternion(4.70044e-10, 1.0687886e-08, 0.43873096, 0.89861846)
+bones/29/rotation = Quaternion(-0.62827694, -0.24704172, -0.7040121, 0.22046658)
+bones/30/rotation = Quaternion(4.5051354e-09, 1.4948839e-08, -0.45761698, 0.8891495)
+bones/32/rotation = Quaternion(0.024579618, -0.05115536, -0.43239045, 0.8998986)
+bones/33/rotation = Quaternion(-0.4874931, 0.5487059, 0.4728252, 0.48755395)
+bones/34/rotation = Quaternion(-8.676883e-09, 5.2507962e-09, 0.29546785, 0.95535266)
+bones/37/rotation = Quaternion(-0.71752447, 0.21503524, 0.6127997, 0.2517837)
+bones/38/rotation = Quaternion(-3.839066e-09, 1.4997878e-08, 0.36990225, 0.92907065)
 bones/40/rotation = Quaternion(-0.39111394, 0.007980109, 0.0012922097, 0.92030674)
 bones/41/rotation = Quaternion(-0.27750692, 2.4190692e-07, 1.2057896e-07, 0.96072364)
 bones/42/rotation = Quaternion(-0.38504007, 0.13018103, -0.0023968858, 0.9136692)
@@ -2736,22 +2736,22 @@ bones/46/rotation = Quaternion(-0.38689613, -0.08551781, 0.022721905, 0.91786814
 bones/47/rotation = Quaternion(-0.27750596, -2.3665493e-08, 1.00421985e-07, 0.9607239)
 bones/48/rotation = Quaternion(-0.29395416, -0.7944383, 0.10576605, 0.5208382)
 bones/49/rotation = Quaternion(-0.27750596, 3.6960492e-07, 5.065189e-07, 0.9607239)
-bones/50/rotation = Quaternion(-0.6520025, 0.23109294, 0.6881484, 0.21895364)
-bones/51/rotation = Quaternion(4.70044e-10, 1.0687886e-08, 0.43873096, 0.89861846)
-bones/53/rotation = Quaternion(0.012003374, 0.024142629, 0.44505218, 0.89509875)
+bones/50/rotation = Quaternion(-0.71752447, 0.21503524, 0.6127997, 0.2517837)
+bones/51/rotation = Quaternion(-3.839066e-09, 1.4997878e-08, 0.36990225, 0.92907065)
+bones/53/rotation = Quaternion(-0.033988323, -0.07073701, 0.43175265, 0.8985715)
 bones/54/position = Vector3(-0.174585, 0.00406308, 0.113821)
 bones/54/rotation = Quaternion(0, 0, 0.14700902, 0.98913515)
 bones/55/position = Vector3(0, -1.49012e-08, 0)
 bones/58/position = Vector3(0.171403, -0.051028, 0.113821)
 bones/58/rotation = Quaternion(0, 0, -0.15167993, 0.98842967)
-bones/59/position = Vector3(-1.1477268e-05, 7.125877e-06, 5.456562e-05)
+bones/59/position = Vector3(-3.2590772e-06, 2.014736e-06, 1.5486221e-05)
 
-[node name="gdbot_mesh" parent="gdbot/Armature/Skeleton3D" index="0" unique_id=908142205]
+[node name="gdbot_mesh" parent="gdbot/Armature/Skeleton3D" index="0" unique_id=937870950]
 surface_material_override/1 = SubResource("ShaderMaterial_fl8xa")
 surface_material_override/2 = ExtResource("3_b5fb6")
 surface_material_override/3 = ExtResource("4_jt2os")
 
-[node name="AnimationPlayer" parent="gdbot" index="1" unique_id=64772800]
+[node name="AnimationPlayer" parent="gdbot" index="1" unique_id=2021234178]
 libraries/ = SubResource("AnimationLibrary_n4s66")
 libraries/custom_lib = ExtResource("6_dcd8b")
 
@@ -2767,6 +2767,7 @@ parameters/StateMachine/Move/WalkRunBlending/blend_amount = 0.0
 parameters/AttackOneShot/active = false
 parameters/AttackOneShot/internal_active = false
 parameters/AttackOneShot/request = 0
+parameters/AttackOneShot/observer = null
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1217186117]
 disable_3d = true

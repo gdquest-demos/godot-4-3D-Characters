@@ -21,6 +21,7 @@ dest_files=["res://.godot/imported/gobot_gobot_normal.png-8366be89fe368dc5e96570
 
 compress/mode=2
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
@@ -29,6 +30,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=1
 roughness/src_normal="res://addons/gdquest_gobot/model/gobot_gobot_normal.png"
 process/channel_remap/red=0

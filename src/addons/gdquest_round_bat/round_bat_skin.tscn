@@ -166,7 +166,7 @@ script = ExtResource("1_vbemd")
 
 [node name="RoundBat" parent="." unique_id=328778515 instance=ExtResource("1_tt0gg")]
 
-[node name="Skeleton3D" parent="RoundBat/Armature" parent_id_path=PackedInt32Array(328778515, 1133049933) index="0" unique_id=919415694]
+[node name="Skeleton3D" parent="RoundBat/Armature" parent_id_path=PackedInt32Array(328778515, 953224690) index="0" unique_id=401588458]
 bones/0/position = Vector3(0, -0.022062251, 0)
 bones/1/rotation = Quaternion(0.0044043055, 0.1441667, -0.6295171, 0.7634821)
 bones/2/rotation = Quaternion(-0.16485198, -0.05227708, 0.2986702, 0.9385559)
@@ -181,10 +181,10 @@ bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
 bones/11/rotation = Quaternion(2.5131042e-08, 0.56832445, 0.82280463, 4.335347e-08)
 
-[node name="Bat" parent="RoundBat/Armature/Skeleton3D" index="0" unique_id=1566482261]
+[node name="Bat" parent="RoundBat/Armature/Skeleton3D" index="0" unique_id=70140771]
 material_overlay = SubResource("StandardMaterial3D_u0xry")
 
-[node name="AnimationPlayer" parent="RoundBat" index="1" unique_id=1390343512]
+[node name="AnimationPlayer" parent="RoundBat" index="1" unique_id=130033925]
 libraries/ = SubResource("AnimationLibrary_sqho5")
 libraries/custom = ExtResource("2_er7fn")
 
@@ -196,5 +196,6 @@ anim_player = NodePath("../RoundBat/AnimationPlayer")
 parameters/HurtShot/active = false
 parameters/HurtShot/internal_active = false
 parameters/HurtShot/request = 0
+parameters/HurtShot/observer = null
 
 [editable path="RoundBat"]

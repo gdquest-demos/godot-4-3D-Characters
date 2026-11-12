@@ -2015,50 +2015,20 @@ animation = &"idle"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gnq7n"]
 animation = &"jump"
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_ge76d"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhg17"]
-animation = &"custom_lib/run_step"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x5eul"]
-animation = &"run"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_n25xx"]
-graph_offset = Vector2(-6.4, 63.2)
-nodes/output/position = Vector2(640, 144)
-nodes/Add2/node = SubResource("AnimationNodeAdd2_ge76d")
-nodes/Add2/position = Vector2(400, 128)
-nodes/Walk/node = SubResource("AnimationNodeAnimation_x5eul")
-nodes/Walk/position = Vector2(144, 96)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_mhg17")
-"nodes/Animation 2/position" = Vector2(144, 288)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Walk", &"Add2", 1, &"Animation 2"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_x50t6"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ge76d"]
-animation = &"custom_lib/walk_step"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e376u"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u0n88"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3368a"]
-nodes/output/position = Vector2(704, 144)
-nodes/Add2/node = SubResource("AnimationNodeAdd2_x50t6")
-nodes/Add2/position = Vector2(464, 128)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_e376u")
-nodes/Animation/position = Vector2(224, 64)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ge76d")
-"nodes/Animation 2/position" = Vector2(224, 272)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68dk0"]
+animation = &"run"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_n25xx"]
-blend_point_0/node = SubResource("AnimationNodeBlendTree_n25xx")
-blend_point_0/pos = 1.0
-blend_point_0/name = &"BlendTree 2"
-blend_point_1/node = SubResource("AnimationNodeBlendTree_3368a")
-blend_point_1/pos = -1.0
-blend_point_1/name = &"BlendTree"
+sync_mode = 2
+blend_point_0/node = SubResource("AnimationNodeAnimation_u0n88")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"walk"
+blend_point_1/node = SubResource("AnimationNodeAnimation_68dk0")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"run"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1d5g"]
 animation = &"victory_sign"
@@ -2146,7 +2116,7 @@ graph_offset = Vector2(111.34375, 8.8203125)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8xvna"]
 graph_offset = Vector2(-204.8, -58.4)
-nodes/output/position = Vector2(580, 80)
+nodes/output/position = Vector2(904, 56)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_g4wg5")
 nodes/Animation/position = Vector2(192, 352)
 nodes/Flip/node = SubResource("AnimationNodeAnimation_oi1x1")
@@ -2154,7 +2124,7 @@ nodes/Flip/position = Vector2(20, 240)
 nodes/FlipShot/node = SubResource("AnimationNodeOneShot_5to6b")
 nodes/FlipShot/position = Vector2(220, 60)
 nodes/HurtShot/node = SubResource("AnimationNodeOneShot_g3q2d")
-nodes/HurtShot/position = Vector2(420, 80)
+nodes/HurtShot/position = Vector2(616, 56)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_fdt88")
 nodes/StateMachine/position = Vector2(-32, 0)
 node_connections = [&"output", 0, &"HurtShot", &"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"HurtShot", 0, &"FlipShot", &"HurtShot", 1, &"Animation"]
@@ -2169,43 +2139,43 @@ closed_eye = ExtResource("3_atmtp")
 
 [node name="gobot" parent="." unique_id=772802592 instance=ExtResource("1_qg1mb")]
 
-[node name="Skeleton3D" parent="gobot/Armature" parent_id_path=PackedInt32Array(772802592, 160294289) index="0" unique_id=61221292]
-bones/0/position = Vector3(0.125361, 0.0989139, 0.0728901)
-bones/0/rotation = Quaternion(0.77254915, 0.10769103, -0.13622104, 0.61074907)
-bones/1/position = Vector3(-0.109875, 0.0989111, -0.0510765)
-bones/1/rotation = Quaternion(0.6793683, -0.31008515, 0.39223418, 0.5370832)
-bones/2/position = Vector3(0, 0.34973523, 0)
-bones/2/rotation = Quaternion(0.069748044, 0.015476375, -0.0010822086, 0.997444)
-bones/3/rotation = Quaternion(1, -5.8180696e-11, -7.5031814e-08, 3.7254617e-09)
-bones/4/rotation = Quaternion(-0.5032205, -0.14506833, -0.054064173, 0.85017735)
-bones/5/rotation = Quaternion(0.39798513, 1.0424023e-06, -1.3600679e-05, 0.91739196)
-bones/6/rotation = Quaternion(-0.23429245, 0.535214, 0.23502803, 0.7767978)
-bones/7/rotation = Quaternion(0.53143954, -9.573889e-07, 1.818236e-05, 0.8470963)
-bones/8/rotation = Quaternion(-0.69786173, -0.25077647, -0.605428, 0.28906265)
-bones/9/rotation = Quaternion(2.1693694e-07, 5.3554083e-07, -0.3950289, 0.91866875)
-bones/10/rotation = Quaternion(-0.28973204, -0.6374582, -0.21743803, 0.6800171)
-bones/11/rotation = Quaternion(0.48790604, -0.017439902, 0.008545421, 0.87268007)
-bones/12/rotation = Quaternion(-0.3712239, -0.0019769692, 0.005853659, 0.9285228)
-bones/13/rotation = Quaternion(-0.5023331, 1.5004906e-05, -2.8505408e-05, 0.86467415)
-bones/14/rotation = Quaternion(-0.3712239, -0.0019769794, 0.0058536893, 0.9285228)
-bones/15/rotation = Quaternion(-0.5023331, 1.4999904e-05, -2.8506805e-05, 0.86467415)
-bones/16/rotation = Quaternion(-0.6155099, 0.28538692, 0.68898594, 0.25495157)
-bones/17/rotation = Quaternion(2.2720293e-07, -5.847489e-07, 0.3950289, 0.91866875)
-bones/18/rotation = Quaternion(-0.28973204, 0.6374582, 0.21743803, 0.6800171)
-bones/19/rotation = Quaternion(0.48790604, 0.017439902, -0.008545411, 0.87268007)
-bones/20/rotation = Quaternion(-0.3712239, 0.0019769697, -0.005853649, 0.9285228)
-bones/21/rotation = Quaternion(-0.5023331, -1.4988003e-05, 2.8498605e-05, 0.86467415)
-bones/22/rotation = Quaternion(-0.3712239, 0.0019769797, -0.005853679, 0.9285228)
-bones/23/rotation = Quaternion(-0.5023331, -1.5003405e-05, 2.8491406e-05, 0.86467415)
-bones/24/position = Vector3(0, 0.189977, 0)
-bones/24/rotation = Quaternion(-0.06975651, 4.5896506e-08, 3.0345004e-09, 0.99756414)
+[node name="Skeleton3D" parent="gobot/Armature" parent_id_path=PackedInt32Array(772802592, 703951883) index="0" unique_id=1168231648]
+bones/0/position = Vector3(0.09754708, 0.11961327, 0.04699036)
+bones/0/rotation = Quaternion(0.6024025, -3.489007e-08, -2.6331833e-08, 0.79819256)
+bones/1/position = Vector3(-0.09754702, 0.2177388, -0.17034303)
+bones/1/rotation = Quaternion(0.9591174, 1.2370718e-08, -4.1924345e-08, -0.28300872)
+bones/2/position = Vector3(0, 0.3201891, 0)
+bones/2/rotation = Quaternion(0.021574765, -0.033863734, 0.0017792981, 0.99919206)
+bones/3/rotation = Quaternion(1, -3.7837063e-11, -7.641894e-08, -2.124496e-09)
+bones/4/rotation = Quaternion(-0.61624837, -0.022358347, -0.016643792, 0.7870585)
+bones/5/rotation = Quaternion(0.74956614, 7.6446065e-07, -2.5594118e-05, 0.66192955)
+bones/6/rotation = Quaternion(0.2676235, -0.0341781, 0.010645277, 0.96285844)
+bones/7/rotation = Quaternion(0.65665054, -8.575349e-07, 2.2464172e-05, 0.754195)
+bones/8/rotation = Quaternion(-0.67763853, -0.16014291, -0.56054145, 0.44827837)
+bones/9/rotation = Quaternion(3.6483945e-07, 4.6539765e-07, -0.15097208, 0.9885381)
+bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217439, 0.68001693)
+bones/11/rotation = Quaternion(0.48790604, -0.017439898, 0.008545432, 0.87268007)
+bones/12/rotation = Quaternion(-0.371224, -0.0019769566, 0.005853661, 0.9285229)
+bones/13/rotation = Quaternion(-0.5023331, 1.5022931e-05, -2.8509492e-05, 0.86467427)
+bones/14/rotation = Quaternion(-0.371224, -0.001976962, 0.00585368, 0.9285229)
+bones/15/rotation = Quaternion(-0.5023331, 1.50165815e-05, -2.8523777e-05, 0.86467427)
+bones/16/rotation = Quaternion(-0.5079642, 0.5539354, 0.6564241, 0.06508046)
+bones/17/rotation = Quaternion(1.6554597e-07, -5.832731e-07, 0.47605044, 0.879418)
+bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217439, 0.68001693)
+bones/19/rotation = Quaternion(0.48790604, 0.017439902, -0.008545427, 0.87268007)
+bones/20/rotation = Quaternion(-0.371224, 0.0019769657, -0.005853656, 0.9285229)
+bones/21/rotation = Quaternion(-0.5023331, -1.5002653e-05, 2.850088e-05, 0.86467427)
+bones/22/rotation = Quaternion(-0.371224, 0.0019769655, -0.0058536655, 0.9285229)
+bones/23/rotation = Quaternion(-0.5023331, -1.5024982e-05, 2.8509663e-05, 0.86467427)
+bones/24/position = Vector3(3.170218e-11, 0.19024129, 1.2089978e-09)
+bones/24/rotation = Quaternion(-0.0484365, 0.0042948388, 0.00020827376, 0.998817)
 
-[node name="Gobot" parent="gobot/Armature/Skeleton3D" index="0" unique_id=313264827]
+[node name="Gobot" parent="gobot/Armature/Skeleton3D" index="0" unique_id=867846019]
 material_overlay = SubResource("StandardMaterial3D_t4001")
 surface_material_override/1 = SubResource("StandardMaterial3D_u0n88")
 surface_material_override/2 = SubResource("StandardMaterial3D_68dk0")
 
-[node name="AnimationPlayer" parent="gobot" index="1" unique_id=171818979]
+[node name="AnimationPlayer" parent="gobot" index="1" unique_id=1469748592]
 libraries/ = SubResource("AnimationLibrary_03he3")
 libraries/custom_lib = ExtResource("6_vjupt")
 
@@ -2218,15 +2188,16 @@ anim_player = NodePath("../gobot/AnimationPlayer")
 parameters/FlipShot/active = false
 parameters/FlipShot/internal_active = false
 parameters/FlipShot/request = 0
+parameters/FlipShot/observer = null
 parameters/HurtShot/active = false
 parameters/HurtShot/internal_active = false
 parameters/HurtShot/request = 0
+parameters/HurtShot/observer = null
 parameters/StateMachine/BlendTree/Add2/add_amount = 1.0
 parameters/StateMachine/BlendTree/StepTimeScale/scale = 1.0
 parameters/StateMachine/BlendTree/WalkRunBlending/blend_amount = 0.0
-parameters/StateMachine/Move/blend_position = 0.0
-"parameters/StateMachine/Move/BlendTree 2/Add2/add_amount" = 1.0
-parameters/StateMachine/Move/BlendTree/Add2/add_amount = 1.0
+parameters/StateMachine/Move/blend_position = -0.07456505
+parameters/StateMachine/Move/observer = null
 
 [node name="BlinkTimer" type="Timer" parent="." unique_id=1256929395]
 unique_name_in_owner = true

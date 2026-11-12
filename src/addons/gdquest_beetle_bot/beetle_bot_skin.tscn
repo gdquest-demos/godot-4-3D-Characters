@@ -2072,7 +2072,7 @@ script = ExtResource("1_gujli")
 
 [node name="beetle_bot" parent="." unique_id=77965837 instance=ExtResource("1_r7amh")]
 
-[node name="Skeleton3D" parent="beetle_bot/Armature" parent_id_path=PackedInt32Array(77965837, 1957596217) index="0" unique_id=43164770]
+[node name="Skeleton3D" parent="beetle_bot/Armature" parent_id_path=PackedInt32Array(77965837, 1494387834) index="0" unique_id=1028788090]
 bones/1/position = Vector3(-0.4584, 0.1718, 0.0044344887)
 bones/1/rotation = Quaternion(0, 0, 0.6890807, 0.7246847)
 bones/2/position = Vector3(1.92784e-06, 1.4035e-05, -6.77304e-06)
@@ -2091,21 +2091,21 @@ bones/12/position = Vector3(-4.30854e-06, 3.20733e-05, -1.70988e-05)
 bones/12/rotation = Quaternion(-0.7071068, 3.4421288e-07, -2.5465093e-07, 0.7071068)
 bones/13/rotation = Quaternion(0.56098515, 0.56098616, 0.43045914, 0.4304591)
 bones/14/rotation = Quaternion(0.43045917, 0.4304592, 0.56098616, 0.5609852)
-bones/16/position = Vector3(-0.0064765755, -0.02, 0.36313894)
-bones/17/rotation = Quaternion(0.14585334, 0.15955183, 0.6232251, 0.75157213)
-bones/18/rotation = Quaternion(-0.6391694, -0.012373942, -0.020763973, 0.76868606)
-bones/19/rotation = Quaternion(0.08494896, 0.26351923, 0.86015236, 0.42834476)
-bones/20/rotation = Quaternion(-0.7871093, -0.01061773, -0.025582945, 0.6161914)
+bones/16/position = Vector3(-0.015542314, -0.02, 0.35029602)
+bones/17/rotation = Quaternion(0.16733794, 0.17686747, 0.6178813, 0.747622)
+bones/18/rotation = Quaternion(-0.6632235, -0.012041137, -0.021545375, 0.74801433)
+bones/19/rotation = Quaternion(0.09855824, 0.2871531, 0.8585866, 0.41310835)
+bones/20/rotation = Quaternion(-0.8029097, -0.010260156, -0.026096545, 0.595441)
 bones/21/position = Vector3(-0.0239784, 0.285311, -0.245566)
-bones/21/rotation = Quaternion(0.19799596, 0.071743235, 0.47588778, 0.8539212)
-bones/22/rotation = Quaternion(-0.6507545, -0.012802718, -0.021049652, 0.7588884)
-bones/24/rotation = Quaternion(0.13541958, -0.15018776, -0.6276241, 0.7517934)
-bones/25/rotation = Quaternion(-0.611657, 0.012729446, 0.019870218, 0.790771)
-bones/26/rotation = Quaternion(0.081218734, -0.2589392, -0.85461986, 0.4426951)
-bones/27/rotation = Quaternion(-0.7721945, 0.010938267, 0.025098259, 0.6347961)
+bones/21/rotation = Quaternion(0.22152804, 0.0853294, 0.4663853, 0.8521321)
+bones/22/rotation = Quaternion(-0.6729341, -0.012471878, -0.021767156, 0.73927695)
+bones/24/rotation = Quaternion(0.14213198, -0.15452205, -0.6287572, 0.7487229)
+bones/25/rotation = Quaternion(-0.5985564, 0.012889922, 0.019444592, 0.80074096)
+bones/26/rotation = Quaternion(0.089788124, -0.27468574, -0.8462361, 0.4476276)
+bones/27/rotation = Quaternion(-0.7676842, 0.011032152, 0.024951614, 0.64024734)
 bones/28/position = Vector3(0.0239784, 0.285311, -0.245566)
-bones/28/rotation = Quaternion(0.18287286, -0.063563704, -0.47524217, 0.85829026)
-bones/29/rotation = Quaternion(-0.61498475, 0.013296846, 0.019892626, 0.78817594)
+bones/28/rotation = Quaternion(0.1930563, -0.067665465, -0.47959146, 0.8533128)
+bones/29/rotation = Quaternion(-0.6054749, 0.01342056, 0.01958511, 0.7955102)
 bones/30/position = Vector3(0.4584, 0.1718, 0.0044344887)
 bones/30/rotation = Quaternion(0, 0, -0.6890807, 0.7246847)
 bones/31/position = Vector3(-1.63913e-06, 1.20485e-05, -5.83427e-06)
@@ -2125,11 +2125,11 @@ bones/41/rotation = Quaternion(-0.7071068, -3.4421288e-07, 2.5465093e-07, 0.7071
 bones/42/rotation = Quaternion(-0.56098515, 0.56098616, 0.43045914, -0.4304591)
 bones/43/rotation = Quaternion(-0.43045917, 0.4304592, 0.56098616, -0.5609852)
 
-[node name="Beetle" parent="beetle_bot/Armature/Skeleton3D" index="0" unique_id=84173132]
+[node name="Beetle" parent="beetle_bot/Armature/Skeleton3D" index="0" unique_id=1747467360]
 surface_material_override/1 = ExtResource("3_nbf2s")
 surface_material_override/2 = ExtResource("4_4158y")
 
-[node name="AnimationPlayer" parent="beetle_bot" index="1" unique_id=1822725394]
+[node name="AnimationPlayer" parent="beetle_bot" index="1" unique_id=1129812299]
 libraries/ = SubResource("AnimationLibrary_w6t5q")
 libraries/custom_lib = ExtResource("5_y1ouw")
 

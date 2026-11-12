@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj6led5eh25bo"]
+[gd_scene format=3 uid="uid://cj6led5eh25bo"]
 
 [ext_resource type="Script" uid="uid://b2mu4wa0kab1a" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_selector.gd" id="1_8owei"]
 [ext_resource type="PackedScene" uid="uid://bfs31qyude6h2" path="res://addons/gdquest_model_viewer_3d/viewer/ui/model_selector/model_tag.tscn" id="2_botqh"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="Theme" id="Theme_b1ojb"]
 
-[node name="ModelSelector" type="VBoxContainer"]
+[node name="ModelSelector" type="VBoxContainer" unique_id=1782436769]
 clip_contents = true
 anchors_preset = 2
 anchor_top = 1.0
@@ -21,20 +21,20 @@ alignment = 2
 script = ExtResource("1_8owei")
 model_tag_scene = ExtResource("2_botqh")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2085881305]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_b1ojb")
 script = ExtResource("3_8hjj3")
 
-[node name="TagList" type="VBoxContainer" parent="ScrollContainer"]
+[node name="TagList" type="VBoxContainer" parent="ScrollContainer" unique_id=624767955]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_constants/separation = 8
 
-[node name="ModelTag" parent="." instance=ExtResource("2_botqh")]
+[node name="ModelTag" parent="." unique_id=742194637 instance=ExtResource("2_botqh")]
 unique_name_in_owner = true
 layout_mode = 2
 
